@@ -1,0 +1,34 @@
+[ 2026-01-16 09:18:34:210 ] 
+2026/01/16 09:18:33.904
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #1302: Wrong value of control parameter 2 in operator gen_image1
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HOperatorSet.GenImage1(HObject& image, HTuple type, HTuple width, HTuple height, HTuple pixelPointer)
+   위치: Vision_Align.ClsAlgorithm.SetImage(HTuple hWindow, Byte[] img, Int32 nWidth, Int32 nHeight) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsAlgorithm.cs:줄 790
+   위치: Vision_Align.ClsCamera.Grab() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsCamera.cs:줄 110
+   위치: Vision_Align.ClsAutoThread.GrabAllCamera() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\7.Thread\ClsAutoThread.cs:줄 50
+   위치: Vision_Align.ClsAutoThread.MainThreadRunAsync() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\7.Thread\ClsAutoThread.cs:줄 298
+   위치: System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   위치: System.Threading.ThreadHelper.ThreadStart()
+[ 2026-01-16 12:01:51:722 ] 
+2026/01/16 12:01:51.694
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #1302: Wrong value of control parameter 2 in operator gen_image1
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HOperatorSet.GenImage1(HObject& image, HTuple type, HTuple width, HTuple height, HTuple pixelPointer)
+   위치: Vision_Align.ClsAlgorithm.SetImage(HTuple hWindow, Byte[] img, Int32 nWidth, Int32 nHeight) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsAlgorithm.cs:줄 790
+   위치: Vision_Align.ClsCamera.Grab() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsCamera.cs:줄 110
+   위치: Vision_Align.ClsAutoThread.GrabAllCamera() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\7.Thread\ClsAutoThread.cs:줄 50
+   위치: Vision_Align.ClsAutoThread.MainThreadRunAsync() 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\7.Thread\ClsAutoThread.cs:줄 123
+   위치: System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   위치: System.Threading.ThreadHelper.ThreadStart()

@@ -1,0 +1,1418 @@
+[ 2026-01-08 10:33:42:681 ] 
+2026/01/08 10:33:42.673
+Exception Found:
+Type: System.IO.FileNotFoundException
+Message: 'D:\1.Program\BIN\RESULT\PRE_ALIGN_Cam2_20260105_174448_654.bmp' 파일을 찾을 수 없습니다.
+Source: mscorlib
+Stacktrace:    위치: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   위치: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding)
+   위치: System.IO.File.ReadLines(String path)
+   위치: Vision_Align.FormLogView.btn_Log_Folder_Click(Object sender, EventArgs e) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\2.FormViewer\FormLogView.cs:줄 120
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[ 2026-01-08 10:33:45:478 ] 
+2026/01/08 10:33:45.478
+Exception Found:
+Type: System.IO.FileNotFoundException
+Message: 'D:\1.Program\BIN\RESULT\PRE_ALIGN_Cam2_20260105_174448_654.bmp' 파일을 찾을 수 없습니다.
+Source: mscorlib
+Stacktrace:    위치: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   위치: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding)
+   위치: System.IO.File.ReadLines(String path)
+   위치: Vision_Align.FormLogView.btn_Log_Folder_Click(Object sender, EventArgs e) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\2.FormViewer\FormLogView.cs:줄 120
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[ 2026-01-08 10:33:47:319 ] 
+2026/01/08 10:33:47.319
+Exception Found:
+Type: System.IO.FileNotFoundException
+Message: 'D:\1.Program\BIN\RESULT\PRE_ALIGN_Cam2_20260105_174448_654.bmp' 파일을 찾을 수 없습니다.
+Source: mscorlib
+Stacktrace:    위치: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   위치: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding)
+   위치: System.IO.File.ReadLines(String path)
+   위치: Vision_Align.FormLogView.btn_Log_Folder_Click(Object sender, EventArgs e) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\2.FormViewer\FormLogView.cs:줄 120
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[ 2026-01-08 10:50:19:957 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Global.cs:줄 233
+[ 2026-01-08 10:50:21:083 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Global.cs:줄 233
+[ 2026-01-08 11:09:43:442 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Global.cs:줄 233
+[ 2026-01-08 11:09:44:529 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_260104\Vision_Align\Global.cs:줄 233
+[ 2026-01-08 11:18:41:079 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:18:42:182 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:20:38:434 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:20:39:534 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:23:02:681 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:23:03:787 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:26:16:598 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:26:17:703 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:28:37:132 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 11:28:38:238 ] IsLoad_List<NCC_List> : Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: [. Path 'dRow', line 2, position 11.
+   위치: Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   위치: Newtonsoft.Json.JsonTextReader.ReadAsDouble()
+   위치: Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   위치: Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   위치: Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   위치: Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   위치: Vision_Align.JsonConvertor.JsonToClass[T](String _path) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\JsonConvertor.cs:줄 10
+   위치: Vision_Align.Global.IsLoad_List[T](Boolean isLoad, T obj, String strFullPaht) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Global.cs:줄 227
+[ 2026-01-08 16:13:40:832 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:14:12:855 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:15:24:399 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:16:02:488 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:16:46:686 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:20:05:030 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:27:20:920 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:27:37:060 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:36:49:553 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:39:05:269 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:39:05:390 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:44:44:044 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:44:44:149 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:03:951 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:16:724 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:30:699 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:30:885 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:31:332 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:31:480 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:31:947 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:32:072 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:32:522 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:32:678 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:33:153 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:33:323 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:33:742 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:33:907 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:34:356 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:34:474 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:34:877 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:35:040 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:35:564 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:35:738 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:36:156 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:36:299 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:36:717 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:36:852 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:37:257 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:37:421 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:37:913 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:38:037 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:38:451 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:47:38:589 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-08 16:56:31:887 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57
+[ 2026-01-08 16:58:28:846 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57
+[ 2026-01-08 16:58:47:112 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57
+[ 2026-01-08 17:06:17:435 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57
+[ 2026-01-08 17:06:32:112 ] ClsUvwStage.Move Exception: System.ArgumentNullException: 값은 null일 수 없습니다.
+매개 변수 이름: writeData
+
+Server stack trace: 
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57
+[ 2026-01-08 17:09:34:962 ] ClsUvwStage.Move Exception: System.ArgumentOutOfRangeException: 지정한 인수가 유효한 값 범위를 벗어났습니다.
+
+Server stack trace: 
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemDataToPLCData(Object data, Int32 destByteWidth, Int32 plcDataFormat)
+   위치: OMRON.CIP.ObjectLibrary.PLCDataConverter.SystemIntegerToPLC2ByteAsBIN(Int32[] systemNumeric, Byte[]& array, Int32 startIndex)
+   위치: OMRON.Compolet.CIP.DataConverter.IntsToWords(Int32[] writeData, DataTypes dtype)
+   위치: OMRON.Compolet.CIP.DataConverter.SystemDataToPLCData(VariableType vtype, Object systemData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.InternalWriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.<>c__DisplayClass4.<WriteVariable>b__3()
+   위치: OMRON.Compolet.CIP.CIPPlcCompolet.ProxyProc(StatisticsTargetType targetType, MethodInvoker invoker)
+   위치: OMRON.Compolet.CIP.CJ2Compolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.DataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.PrivateProcessMessage(RuntimeMethodHandle md, Object[] args, Object server, Int32 methodPtr, Boolean fExecuteInContext, Object[]& outArgs)
+   위치: System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg, Int32 methodPtr, Boolean fExecuteInContext)
+
+Exception rethrown at [0]: 
+   위치: System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.WriteVariable(Guid id, String variableName, Object writeData)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.WriteVariable(String variableName, Object writeData)
+   위치: Vision_Align.ClsOmron.WriteVariable(String strVariable, Object val) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsOmron.cs:줄 260
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t) 파일 D:\1.Program\wonik_sd_vision_align_250107\Vision_Align\Utill\ClsUvwStage.cs:줄 57

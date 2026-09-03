@@ -1,0 +1,51 @@
+[ 2025-11-17 11:32:20:240 ] 
+2025/11/17 11:32:20.231
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #3359: Wrong number of image channels in operator uncalibrated_photometric_stereo
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HWindow.SetContentUpdateCallback(IntPtr callbackFunction, IntPtr callbackContext)
+   위치: HalconDotNet.HSmartWindowControl.CreateHWindow()
+   위치: HalconDotNet.HSmartWindowControl.get_HalconWindow()
+   위치: Vision_Align.FormHalconDisplay..ctor(Int32 nCamNo, Boolean bContextMenu) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormHalconDisplay.cs:줄 36
+   위치: Vision_Align.FormDisplay.Initializ(Int32 nCamNo) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormMainDisplay.cs:줄 40
+   위치: Vision_Align.FormBase.CreateForm() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 192
+   위치: Vision_Align.FormBase.Initializ() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 56
+   위치: Vision_Align.FormBase..ctor() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 20
+   위치: Vision_Align.Program.Main() 파일 D:\1.Program\Vision_Align\Vision_Align\Program.cs:줄 49
+[ 2025-11-17 11:33:23:526 ] 
+2025/11/17 11:33:23.518
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #3359: Wrong number of image channels in operator uncalibrated_photometric_stereo
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HWindow.SetContentUpdateCallback(IntPtr callbackFunction, IntPtr callbackContext)
+   위치: HalconDotNet.HSmartWindowControl.CreateHWindow()
+   위치: HalconDotNet.HSmartWindowControl.get_HalconWindow()
+   위치: Vision_Align.FormHalconDisplay..ctor(Int32 nCamNo, Boolean bContextMenu) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormHalconDisplay.cs:줄 36
+   위치: Vision_Align.FormDisplay.Initializ(Int32 nCamNo) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormMainDisplay.cs:줄 40
+   위치: Vision_Align.FormBase.CreateForm() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 192
+   위치: Vision_Align.FormBase.Initializ() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 56
+   위치: Vision_Align.FormBase..ctor() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 20
+   위치: Vision_Align.Program.Main() 파일 D:\1.Program\Vision_Align\Vision_Align\Program.cs:줄 49
+[ 2025-11-17 11:33:43:863 ] 
+2025/11/17 11:33:43.855
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #3359: Wrong number of image channels in operator uncalibrated_photometric_stereo
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HWindow.SetContentUpdateCallback(IntPtr callbackFunction, IntPtr callbackContext)
+   위치: HalconDotNet.HSmartWindowControl.CreateHWindow()
+   위치: HalconDotNet.HSmartWindowControl.get_HalconWindow()
+   위치: Vision_Align.FormHalconDisplay..ctor(Int32 nCamNo, Boolean bContextMenu) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormHalconDisplay.cs:줄 36
+   위치: Vision_Align.FormDisplay.Initializ(Int32 nCamNo) 파일 D:\1.Program\Vision_Align\Vision_Align\3.FormMain\FormMainDisplay.cs:줄 40
+   위치: Vision_Align.FormBase.CreateForm() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 192
+   위치: Vision_Align.FormBase.Initializ() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 56
+   위치: Vision_Align.FormBase..ctor() 파일 D:\1.Program\Vision_Align\Vision_Align\1.FormBase\FormBase.cs:줄 20
+   위치: Vision_Align.Program.Main() 파일 D:\1.Program\Vision_Align\Vision_Align\Program.cs:줄 49

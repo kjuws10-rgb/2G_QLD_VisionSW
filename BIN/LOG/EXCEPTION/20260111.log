@@ -1,0 +1,63 @@
+[ 2026-01-11 10:54:24:712 ] ClsUvwStage.Move Exception: System.Threading.ThreadAbortException: 스레드가 중단되었습니다.
+   위치: System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+   위치: System.Runtime.Remoting.Proxies.RemotingProxy.CallProcessMessage(IMessageSink ms, IMessage reqMsg, ArrayWithSize proxySinks, Thread currentThread, Context currentContext, Boolean bSkippingContextChain)
+   위치: System.Runtime.Remoting.Proxies.RemotingProxy.InternalInvoke(IMethodCallMessage reqMcmMsg, Boolean useDispatchMessage, Int32 callType)
+   위치: System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   위치: OMRON.Compolet.CIPCompoletProxyLib.DataAccess.IDataAccessCompoletProxy.ReadVariable(Guid id, String variableName)
+   위치: OMRON.Compolet.CIPCompolet64.DataAccess.DataAccessCompolet.ReadVariable(String variableName)
+   위치: Vision_Align.ClsOmron.ReadVariable(String strVariable, Object& val)
+   위치: Vision_Align.ClsOmron.UpdateInput()
+   위치: Vision_Align.ClsOmron.UpdateIO()
+   위치: Vision_Align.ClsUvwStage.WaitMoveDoneAndInPos(Double targetU, Double targetV, Double targetW, Int32 inPosGap, Int32 timeoutMs)
+   위치: Vision_Align.ClsUvwStage.Move(Double x, Double y, Double t)
+[ 2026-01-11 13:24:20:196 ] 
+2026/01/11 13:24:20.186
+Exception Found:
+Type: System.IndexOutOfRangeException
+Message: 인덱스가 배열 범위를 벗어났습니다.
+Source: Vision_Align
+Stacktrace:    위치: Vision_Align.ClsAutoThread.MainThreadRunAsync()
+   위치: System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   위치: System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   위치: System.Threading.ThreadHelper.ThreadStart()
+[ 2026-01-11 13:52:42:901 ] 
+2026/01/11 13:52:42.894
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #2453: HALCON handle is NULL in operator get_ncc_model_region
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HOperatorSet.GetNccModelRegion(HObject& modelRegion, HTuple modelID)
+   위치: Vision_Align.ClsAlgorithm.CreateRoi(HTuple window, HModelInfo modelInfo, Double dRow, Double dCol)
+   위치: Vision_Align.FormModel.CreateRoi()
+   위치: Vision_Align.FormModel.btn_SetRoi_Click(Object sender, EventArgs e)
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[ 2026-01-11 13:53:27:639 ] 
+2026/01/11 13:53:27.639
+Exception Found:
+Type: HalconDotNet.HOperatorException
+Message: HALCON error #2453: HALCON handle is NULL in operator get_ncc_model_region
+Source: halcondotnet
+Stacktrace:    위치: HalconDotNet.HOperatorException.throwOperator(Int32 err, Int32 procIndex)
+   위치: HalconDotNet.HalconAPI.PostCall(IntPtr proc, Int32 procResult)
+   위치: HalconDotNet.HOperatorSet.GetNccModelRegion(HObject& modelRegion, HTuple modelID)
+   위치: Vision_Align.ClsAlgorithm.CreateRoi(HTuple window, HModelInfo modelInfo, Double dRow, Double dCol)
+   위치: Vision_Align.FormModel.CreateRoi()
+   위치: Vision_Align.FormModel.btn_SetRoi_Click(Object sender, EventArgs e)
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
