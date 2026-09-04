@@ -1,0 +1,5 @@
+# Patch mailboxes must remain byte-for-byte stable so binary deltas and SHA-256 stay valid.
+**/*.patch -text -diff
+
+# Full changed-file copies are patch artifacts; review the functional commit for source diffs.
+**/files/** -diff
