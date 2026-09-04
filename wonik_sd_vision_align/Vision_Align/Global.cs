@@ -61,9 +61,9 @@ namespace Vision_Align
         #endregion
 
         #region FilePaht
-        public static string strRecipePath = Environment.CurrentDirectory + "\\RECIPE";
-        public static string strConfigPath = Environment.CurrentDirectory + "\\CONFIG";
-        public static string strRsltPath   = Environment.CurrentDirectory + "\\RESULT";
+        public static string strRecipePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RECIPE");
+        public static string strConfigPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CONFIG");
+        public static string strRsltPath   = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RESULT");
 
         public static string[] strMatchPath = new string[(int)Matching_Type.MAX];
         #endregion
@@ -194,9 +194,9 @@ namespace Vision_Align
             Calibration_Param = IsLoad_List(IsLoad, Calibration_Param);
             inforUvw          = IsLoad_List(IsLoad, inforUvw         );
 
-            strMatchPath[(int)Matching_Type.MARK_GRAY  ] = Environment.CurrentDirectory + "\\RECIPE\\MaskG" ;
-            strMatchPath[(int)Matching_Type.MASK_SHAPE ] = Environment.CurrentDirectory + "\\RECIPE\\MaskS" ;
-            strMatchPath[(int)Matching_Type.GLASS_SHAPE] = Environment.CurrentDirectory + "\\RECIPE\\GlassS";
+            strMatchPath[(int)Matching_Type.MARK_GRAY  ] = System.IO.Path.Combine(strRecipePath, "MaskG");
+            strMatchPath[(int)Matching_Type.MASK_SHAPE ] = System.IO.Path.Combine(strRecipePath, "MaskS");
+            strMatchPath[(int)Matching_Type.GLASS_SHAPE] = System.IO.Path.Combine(strRecipePath, "GlassS");
 
             string strPath = "";
             for (int nType = 0; nType < (int)Matching_Type.MAX; nType++)
@@ -238,7 +238,9 @@ namespace Vision_Align
                 }
                 catch (Exception e)
                 {
-                    Global.logger[LogType.EXCEPTION].Write($"IsLoad_List<{typeof(T).Name}> : " + e.ToString());
+                    CrashDiagnostics.ReportRecoverableException($"Configuration {typeof(T).Name}", e);
+                    if (Global.logger != null && Global.logger.ContainsKey(LogType.EXCEPTION))
+                        Global.logger[LogType.EXCEPTION].Write($"IsLoad_List<{typeof(T).Name}> : " + e.ToString());
                 }
             return obj;
         }

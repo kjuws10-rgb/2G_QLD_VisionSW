@@ -16,6 +16,8 @@ namespace Vision_Align
 
         private readonly AutoResetEvent _signal = new AutoResetEvent(false);
         private readonly ConcurrentQueue<SaveJob> _jobs = new ConcurrentQueue<SaveJob>();
+        private volatile bool _stopRequested;
+        private bool _started;
 
         private class SaveJob
         {
@@ -25,18 +27,36 @@ namespace Vision_Align
 
         public ClsFolderThread()
         {
-            m_MainThread = new Thread(MainThreadRunAsync);
+        }
+
+        public void Start()
+        {
+            if (_started)
+                return;
+
+            _started = true;
+            _stopRequested = false;
+            m_MainThread = new Thread(MainThreadRunAsync)
+            {
+                IsBackground = true,
+                Name = "VisionAlign.FileSave"
+            };
             m_MainThread.Start();
         }
 
         public void Release()
         {
-            if (m_MainThread != null)
-                m_MainThread.Abort();
+            _stopRequested = true;
+            _signal.Set();
 
+            if (m_MainThread != null && m_MainThread != Thread.CurrentThread && m_MainThread.IsAlive)
+                m_MainThread.Join(5000);
         }
         public void RequestSave(DateTime ts, string tag)
         {
+            if (_stopRequested)
+                return;
+
             if (string.IsNullOrWhiteSpace(tag))
                 tag = "RESULT";
 
@@ -46,31 +66,45 @@ namespace Vision_Align
 
         public void MainThreadRunAsync()
         {
-            while (true)
+            CrashDiagnostics.PulseWorker("FileSave", "Started");
+
+            try
             {
-                Thread.Sleep(10);
-                //OST 결과 이미지, 및 Data 저장.
-                //OST ClsCsvFile 활용하여 결과값 저장
-
-                if (_jobs.IsEmpty)
-                    _signal.WaitOne(200);
-
-                while (_jobs.TryDequeue(out var job))
+                while (!_stopRequested || !_jobs.IsEmpty)
                 {
-                    Thread.Sleep(10);
-                    try
-                    {
-                        // BMP 2장 저장 + SaveImageNo 세팅
-                        SaveBothCamsBmpAndSetSaveNo(job.Ts, job.Tag);
+                    CrashDiagnostics.PulseWorker("FileSave", _jobs.IsEmpty ? "Waiting" : "Saving queued result");
 
-                        // CSV 1줄 저장 (Global 기반) 
-                        Global.clsCSV.WriteCsv(job.Tag);
-                    }
-                    catch
+                    if (_jobs.IsEmpty)
+                        _signal.WaitOne(200);
+
+                    SaveJob job;
+                    while (_jobs.TryDequeue(out job))
                     {
-                        // 예외 로그 처리
+                        try
+                        {
+                            CrashDiagnostics.RecordActivity("Saving result: " + job.Tag);
+
+                            // BMP 2장 저장 + SaveImageNo 세팅
+                            SaveBothCamsBmpAndSetSaveNo(job.Ts, job.Tag);
+
+                            // CSV 1줄 저장 (Global 기반)
+                            Global.clsCSV.WriteCsv(job.Tag);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Result persistence must never terminate the entire vision process.
+                            CrashDiagnostics.ReportWorkerException("FileSave", ex, job.Tag);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                CrashDiagnostics.ReportWorkerException("FileSave", ex, "worker boundary");
+            }
+            finally
+            {
+                CrashDiagnostics.PulseWorker("FileSave", "Stopped");
             }
         }
 
@@ -153,7 +187,7 @@ namespace Vision_Align
                 }
                 else
                 {
-                    if (algo.TryCopyOriImage(out HObject copy))
+                    if (algo.TryCopyProcessingImage(out HObject copy))
                     {
                         try
                         {

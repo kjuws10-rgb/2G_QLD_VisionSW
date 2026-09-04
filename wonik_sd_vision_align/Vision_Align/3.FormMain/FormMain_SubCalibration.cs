@@ -25,26 +25,33 @@ namespace Vision_Align
         private void ClsAutoThread_ProcessStatusMsg(object sender, string msg)
         {
             DateTime time = DateTime.Now;
-            Task.Run(() =>
+            Action updateUi = () =>
             {
+                if (!msg.Contains("[CALIBRATION_MODE]"))
+                    return;
+                if (msg.Contains("[CALIBRATION_MODE] Start"))
+                    listBoxCalStatus.Items.Clear();
+                if (listBoxCalStatus.Items.Count > 200)
+                    listBoxCalStatus.Items.Remove(0);
+                listBoxCalStatus.Items.Add($"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}");
+                if(listBoxCalStatus.Items.Count > 0)
+                    listBoxCalStatus.SelectedIndex = listBoxCalStatus.Items.Count - 1;
+            };
+
+            try
+            {
+                if (IsDisposed || Disposing || !IsHandleCreated)
+                    return;
+
                 if (InvokeRequired)
-                {
-                    Invoke(new Action(() =>
-                    {
-                        if (!msg.Contains("[CALIBRATION_MODE]"))
-                            return;
-                        if (msg.Contains("[CALIBRATION_MODE] Start"))
-                            listBoxCalStatus.Items.Clear();
-                        if (listBoxCalStatus.Items.Count > 200)
-                        {
-                            listBoxCalStatus.Items.Remove(0);
-                        }
-                        listBoxCalStatus.Items.Add($"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}");
-                        if(listBoxCalStatus.Items.Count > 0)
-                            listBoxCalStatus.SelectedIndex = listBoxCalStatus.Items.Count - 1;
-                    }));
-                }
-            });
+                    BeginInvoke(updateUi);
+                else
+                    updateUi();
+            }
+            catch (Exception ex)
+            {
+                CrashDiagnostics.ReportRecoverableException("Calibration status UI update", ex);
+            }
         }
 
         public void Initializ()

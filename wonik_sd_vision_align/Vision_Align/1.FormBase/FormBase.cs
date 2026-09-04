@@ -13,17 +13,19 @@ namespace Vision_Align
 {
     public partial class FormBase : Form
     {
+        private bool _shutdownStarted;
         
         public FormBase()
         {
             InitializeComponent();
-
+            FormClosing += FormBase_FormClosing;
             Initializ();
         }
 
         public void Initializ()
         {
             Global.formBase = this;
+            CrashDiagnostics.RecordActivity("FormBase initialization started");
 
             #region Logger 생성
             Global.logger = new Dictionary<LogType, ClsLogger>();
@@ -35,19 +37,24 @@ namespace Vision_Align
 #pragma warning restore CS0612 // 형식 또는 멤버는 사용되지 않습니다.
             }
             #endregion
+            CrashDiagnostics.MarkLoggerReady();
 
+            CrashDiagnostics.RecordActivity("HALCON initialization");
             ClsAlgorithm.init();
 
+            CrashDiagnostics.RecordActivity("Motion library initialization");
             ClsMotion.OpenLib();
 
             SetStyle();
 
-
+            CrashDiagnostics.RecordActivity("Configuration loading");
             Global.IsLoadConfig(true);
 
             CrateFolder();
 
+            CrashDiagnostics.RecordActivity("Light controller initialization");
             Global.clsLight.Open(Global.Serial_Param.nPort, Global.Serial_Param.nbaud);
+            CrashDiagnostics.RecordActivity("PLC initialization");
             Global.clsOmron.Open("192.168.240.80");
 
             Global.clsAlgorithm[0].SetTriangleDirectionMark(100, 100);
@@ -55,19 +62,87 @@ namespace Vision_Align
             Global.clsAlgorithm[0].SetSquarDirectionMark(100, 100);
             Global.clsAlgorithm[1].SetSquarDirectionMark(100, 100);
 
+            CrashDiagnostics.RecordActivity("Motion and camera object creation");
+            CreateDictionary();
+
+            // Worker objects are created before the forms so event handlers can subscribe,
+            // but they are started only after every hardware object and UI handle is ready.
             Global.clsAutoThread = new ClsAutoThread();
             Global.clsFolderThread = new ClsFolderThread();
             Global.clsOmronThread = new ClsOmronThread();
 
-            CreateDictionary();
+            CrashDiagnostics.RecordActivity("Form creation");
             CreateForm();
 
+            Global.clsFolderThread.Start();
+            Global.clsOmronThread.Start();
+            Global.clsAutoThread.Start();
 
-            Global.logger[(int)LogType.SYSTEM].Write("========= Program Start =========");
+            Global.logger[LogType.SYSTEM].Write("========= Program Start =========");
 
 
             timer_ViewerChange.Interval = 100;
             timer_ViewerChange.Start();
+
+            CrashDiagnostics.MarkApplicationReady();
+        }
+
+        public void RequestShutdown()
+        {
+            Close();
+        }
+
+        private void FormBase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ShutdownApplication();
+        }
+
+        private void ShutdownApplication()
+        {
+            if (_shutdownStarted)
+                return;
+
+            _shutdownStarted = true;
+            CrashDiagnostics.RecordActivity("Application shutdown started");
+            timer_ViewerChange.Stop();
+            Global.bAutoMode = false;
+
+            TryShutdownAction("Stop Auto worker", () => Global.clsAutoThread?.Release());
+            TryShutdownAction("Clear PLC output", () => Global.inforPLC.ClearOutput());
+            TryShutdownAction("Drain Folder worker", () => Global.clsFolderThread?.Release());
+            TryShutdownAction("Stop PLC worker", () => Global.clsOmronThread?.Release());
+
+            TryShutdownAction("Turn off light controller", () =>
+            {
+                for (int channel = 0; channel < 4; channel++)
+                    Global.clsLight.LightOnOff(false, channel);
+                Global.clsLight.Close();
+            });
+
+            TryShutdownAction("Close cameras", () =>
+            {
+                foreach (ClsCamera camera in Global.dicClsCam.Values)
+                    camera.Close();
+            });
+
+            TryShutdownAction("Close motion library", ClsMotion.CloseLib);
+
+            if (Global.logger != null && Global.logger.ContainsKey(LogType.SYSTEM))
+                Global.logger[LogType.SYSTEM].Write("------========= Program End =========------");
+
+            CrashDiagnostics.MarkCleanShutdown("FormBase closed");
+        }
+
+        private static void TryShutdownAction(string action, Action shutdownAction)
+        {
+            try
+            {
+                shutdownAction();
+            }
+            catch (Exception ex)
+            {
+                CrashDiagnostics.ReportRecoverableException("Shutdown: " + action, ex);
+            }
         }
 
         #region Style

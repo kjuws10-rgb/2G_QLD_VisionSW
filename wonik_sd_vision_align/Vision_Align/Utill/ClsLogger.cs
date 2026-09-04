@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System.IO;
 
 namespace Vision_Align
 {
@@ -24,7 +25,15 @@ namespace Vision_Align
         // Log Write
         public void Write(string _value)
         {
-            _Logger.Trace(_value);
+            try
+            {
+                _Logger.Trace(_value);
+            }
+            catch (Exception ex)
+            {
+                // The crash reporter has its own file writer and remains available when NLog fails.
+                CrashDiagnostics.ReportRecoverableException("NLog write: " + _Logger.Name, ex);
+            }
         }
 
         private LoggingConfiguration SetRule(string _logName, string _fileFormat)
@@ -32,8 +41,13 @@ namespace Vision_Align
             var _config = new LoggingConfiguration();
             var _logfile = new FileTarget();
             _logfile.Name = _logName;
-            _logfile.FileName = _fileFormat;
-            _logfile.Layout = "[ ${date:format=yyyy-MM-dd HH\\:mm\\:ss\\:fff} ] ${message}";
+            _logfile.FileName = Path.IsPathRooted(_fileFormat)
+                ? _fileFormat
+                : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _fileFormat);
+            _logfile.Layout = "[ ${date:format=yyyy-MM-dd HH\\:mm\\:ss\\:fff} ] [T${threadid}] ${message}";
+            _logfile.Encoding = Encoding.UTF8;
+            _logfile.KeepFileOpen = false;
+            _logfile.ConcurrentWrites = true;
             _config.AddTarget(_logfile.Name , _logfile);
 
             //Trace - 0 , Debug - 1 , Info - 2 , Warn - 3 , Error - 4 , Fatal - 5 , Off - 6

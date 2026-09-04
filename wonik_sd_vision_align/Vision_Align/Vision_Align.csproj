@@ -71,7 +71,7 @@
       <HintPath>..\..\BIN\CIPCompoletProxyLib.dll</HintPath>
     </Reference>
     <Reference Include="halcondotnet">
-      <HintPath>C:\Program Files\MVTec\HALCON-18.11-Steady\bin\dotnet35\halcondotnet.dll</HintPath>
+      <HintPath>..\..\BIN\halcondotnet.dll</HintPath>
     </Reference>
     <Reference Include="ids_peak_dotnet, Version=1.11.1.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -90,11 +90,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\BIN\DLL\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.5.4.0\lib\net46\NLog.dll</HintPath>
+      <HintPath>..\..\BIN\DLL\NLog.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -112,10 +112,10 @@
     <Reference Include="System.Xml" />
     <Reference Include="uEyeDotNet, Version=1.6.3.0, Culture=neutral, PublicKeyToken=c3038f81def77884, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\IDS\uEye\interfaces\dotnet\uEyeDotNet.dll</HintPath>
+      <HintPath>..\..\BIN\uEyeDotNet.dll</HintPath>
     </Reference>
     <Reference Include="uEyeDotNetFramework">
-      <HintPath>C:\Program Files\IDS\uEye\interfaces\dotnet\uEyeDotNetFramework.dll</HintPath>
+      <HintPath>..\..\BIN\uEyeDotNetFramework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +223,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utill\ClsAlgorithm.cs" />
     <Compile Include="Utill\ClsCamera.cs" />
+    <Compile Include="Utill\CrashDiagnostics.cs" />
     <Compile Include="Utill\ClsCsvFile.cs" />
     <Compile Include="Utill\ClsLight.cs" />
     <Compile Include="Utill\ClsLogger.cs" />

@@ -64,11 +64,10 @@ namespace Vision_Align
     {
         HObject OriImg;
         public HObject ProcessImg;
+        private readonly object _imageSync = new object();
         HTuple m_hDrawID;
 
         HTuple m_SquareModel, m_triangleModel;
-
-        HTuple m_ImgWidth, m_ImgHeight;
 
         static double[] m_dPinDeg    = new double[4];
         static double[] m_dStageDeg = new double[4];
@@ -261,27 +260,38 @@ namespace Vision_Align
 
         public double MeanGrayValue()
         {
-            double dRsult = 0;
-            if (OriImg == null) return 0;
+            lock (_imageSync)
+            {
+                return CalculateMeanGrayValue(OriImg);
+            }
+        }
 
-            HOperatorSet.GetImageSize(OriImg, out HTuple width, out HTuple height);
+        private static double CalculateMeanGrayValue(HObject image)
+        {
+            if (image == null)
+                return 0;
 
-            // 전체 영역 생성
-            HOperatorSet.GenRectangle1(out HObject fullRegion, 0, 0, height - 1, width - 1);
+            HTuple width = null;
+            HTuple height = null;
+            HTuple mean = null;
+            HTuple deviation = null;
+            HObject fullRegion = null;
 
-            // 평균 밝기 및 표준편차 계산
-            HOperatorSet.Intensity(fullRegion, OriImg, out HTuple mean, out HTuple deviation);
-
-            dRsult = mean.D;
-
-            width?.Dispose();
-            height?.Dispose();
-            mean?.Dispose();
-            fullRegion?.Dispose();
-            deviation?.Dispose();
-
-
-            return dRsult;
+            try
+            {
+                HOperatorSet.GetImageSize(image, out width, out height);
+                HOperatorSet.GenRectangle1(out fullRegion, 0, 0, height - 1, width - 1);
+                HOperatorSet.Intensity(fullRegion, image, out mean, out deviation);
+                return mean.D;
+            }
+            finally
+            {
+                width?.Dispose();
+                height?.Dispose();
+                mean?.Dispose();
+                deviation?.Dispose();
+                fullRegion?.Dispose();
+            }
         }
 
         static public double[,] MMULT(double[,] A, double[,] B)
@@ -773,32 +783,47 @@ namespace Vision_Align
 
         public double SetImage(HTuple hWindow, byte[] img, int nWidth, int nHeight)
         {
-            m_ImgWidth = new HTuple(nWidth);
-            m_ImgHeight = new HTuple(nHeight);
-            if (img == null || img.Length < m_ImgWidth * m_ImgHeight)
+            long requiredLength = (long)nWidth * nHeight;
+            if (img == null || nWidth <= 0 || nHeight <= 0 || img.LongLength < requiredLength)
                 throw new ArgumentException("버퍼 크기가 이미지 크기보다 작습니다.");
 
-            GCHandle handle = GCHandle.Alloc(img, GCHandleType.Pinned);
+            HObject newOriginalImage = null;
+            HObject newProcessImage = null;
+            GCHandle handle = default(GCHandle);
             try
             {
-                if(OriImg != null)
-                    OriImg.Dispose();
-                if(ProcessImg != null)
-                    ProcessImg.Dispose();
-
+                handle = GCHandle.Alloc(img, GCHandleType.Pinned);
                 IntPtr ptr = handle.AddrOfPinnedObject();
-                HOperatorSet.GenImage1(out OriImg, "byte", m_ImgWidth, m_ImgHeight, ptr);
+                HOperatorSet.GenImage1(out newOriginalImage, "byte", nWidth, nHeight, ptr);
+                HOperatorSet.CopyImage(newOriginalImage, out newProcessImage);
+
+                lock (_imageSync)
+                {
+                    // Keep the previous frame intact until the new frame is fully valid.
+                    HOperatorSet.DispObj(newOriginalImage, hWindow);
+
+                    HObject oldOriginalImage = OriImg;
+                    HObject oldProcessImage = ProcessImg;
+
+                    OriImg = newOriginalImage;
+                    ProcessImg = newProcessImage;
+                    newOriginalImage = null;
+                    newProcessImage = null;
+
+                    oldOriginalImage?.Dispose();
+                    oldProcessImage?.Dispose();
+
+                    return CalculateMeanGrayValue(OriImg);
+                }
             }
             finally
             {
-                handle.Free();
+                if (handle.IsAllocated)
+                    handle.Free();
+
+                newOriginalImage?.Dispose();
+                newProcessImage?.Dispose();
             }
-
-            HOperatorSet.DispObj(OriImg, hWindow);
-
-            HOperatorSet.CopyImage(OriImg, out ProcessImg);
-
-            return MeanGrayValue();
         }
 
         public void SetImage(HTuple hWindow, string strPath)
@@ -1621,48 +1646,74 @@ namespace Vision_Align
         public bool TryCopyOriImage(out HObject copy)
         {
             copy = null;
-            try
+            lock (_imageSync)
             {
-                if (OriImg == null) return false;
-                HOperatorSet.CopyImage(OriImg, out copy);
-                return true;
-            }
-            catch
-            {
-                copy?.Dispose();
-                copy = null;
-                return false;
+                try
+                {
+                    if (OriImg == null) return false;
+                    HOperatorSet.CopyImage(OriImg, out copy);
+                    return true;
+                }
+                catch
+                {
+                    copy?.Dispose();
+                    copy = null;
+                    return false;
+                }
             }
         }
 
         public double MeasureSharpness()
         {
-            HObject hLaplace;
-            HTuple m, d;
-            HOperatorSet.GetImageSize(OriImg, out HTuple width, out HTuple height);
-            
-            HOperatorSet.Laplace(OriImg, out hLaplace, "absolute", 3, "n_4");
-            HOperatorSet.GenRectangle1(out HObject fullRegion, 0, 0, height - 1, width - 1);
-            HOperatorSet.Intensity(hLaplace, hLaplace, out m, out d);
+            lock (_imageSync)
+            {
+                if (OriImg == null)
+                    return 0;
 
-            return d.D * d.D;
+                HObject hLaplace = null;
+                HObject fullRegion = null;
+                HTuple width = null;
+                HTuple height = null;
+                HTuple mean = null;
+                HTuple deviation = null;
 
+                try
+                {
+                    HOperatorSet.GetImageSize(OriImg, out width, out height);
+                    HOperatorSet.Laplace(OriImg, out hLaplace, "absolute", 3, "n_4");
+                    HOperatorSet.GenRectangle1(out fullRegion, 0, 0, height - 1, width - 1);
+                    HOperatorSet.Intensity(fullRegion, hLaplace, out mean, out deviation);
+                    return deviation.D * deviation.D;
+                }
+                finally
+                {
+                    hLaplace?.Dispose();
+                    fullRegion?.Dispose();
+                    width?.Dispose();
+                    height?.Dispose();
+                    mean?.Dispose();
+                    deviation?.Dispose();
+                }
+            }
         }
 
         public bool TryCopyProcessingImage(out HObject copy)
         {
             copy = null;
-            try
+            lock (_imageSync)
             {
-                if (ProcessImg == null) return false;
-                HOperatorSet.CopyImage(ProcessImg, out copy);
-                return true;
-            }
-            catch
-            {
-                copy?.Dispose();
-                copy = null;
-                return false;
+                try
+                {
+                    if (ProcessImg == null) return false;
+                    HOperatorSet.CopyImage(ProcessImg, out copy);
+                    return true;
+                }
+                catch
+                {
+                    copy?.Dispose();
+                    copy = null;
+                    return false;
+                }
             }
         }
     }

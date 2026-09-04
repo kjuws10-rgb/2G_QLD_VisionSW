@@ -95,13 +95,7 @@ namespace Vision_Align
             // 설비가 START 일때는 강제로 알람 발생 후 종료
             if (MessageBox.Show("Do you want exit program ?", "Exit program", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
 
-            Global.logger[LogType.SYSTEM].Write("------========= Program End =========------");
-
-            Global.clsOmronThread.Release();
-            Global.clsAutoThread.Release();
-            Global.clsFolderThread.Release();
-
-            Environment.Exit(0);
+            Global.formBase.RequestShutdown();
         }
 
         private void btn_Minimum_Click(object sender, EventArgs e)

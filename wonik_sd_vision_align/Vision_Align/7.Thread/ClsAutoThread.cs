@@ -32,6 +32,12 @@ namespace Vision_Align
         Thread m_MainThread = null;
         SeqStep m_Step = SeqStep.WAIT;
         SeqStep m_StepPrev = SeqStep.MAX;
+        private readonly ManualResetEvent _stopEvent = new ManualResetEvent(false);
+        private readonly Stopwatch _heartbeatStopwatch = new Stopwatch();
+        private const int MaximumAverageImageCount = 100;
+        private const int MaximumAngleCalibrationPointCount = 101;
+        private volatile bool _stopRequested;
+        private bool _started;
 
         public event EventHandler<string> ProcessStatusMsg;
 
@@ -43,19 +49,40 @@ namespace Vision_Align
 
         public ClsAutoThread()
         {
-            m_MainThread = new Thread(MainThreadRunAsync);
+        }
+
+        public void Start()
+        {
+            if (_started)
+                return;
+
+            _started = true;
+            _stopRequested = false;
+            _stopEvent.Reset();
+            _heartbeatStopwatch.Restart();
+
+            m_MainThread = new Thread(MainThreadRunAsync)
+            {
+                IsBackground = true,
+                Name = "VisionAlign.Auto"
+            };
             m_MainThread.Start();
         }
 
         public void Release()
         {
-            if (m_MainThread != null)
-                m_MainThread.Abort();
+            _stopRequested = true;
+            _stopEvent.Set();
 
+            if (m_MainThread != null && m_MainThread != Thread.CurrentThread && m_MainThread.IsAlive)
+            {
+                if (!m_MainThread.Join(5000))
+                    CrashDiagnostics.RecordActivity("Auto worker stop timed out; process shutdown will continue");
+            }
         }
         private bool GrabAllCamera()
         {
-            for (int cam = 0; cam < (int)CamInfo.MAX; cam++)
+            for (int cam = 0; cam < (int)CamInfo.MAX && !_stopRequested; cam++)
             {
                 if (!Global.dicClsCam.TryGetValue((CamInfo)cam, out var camObj))
                 {
@@ -71,18 +98,43 @@ namespace Vision_Align
 
                 Global.inforResult.dFocus[cam] = Global.clsAlgorithm[cam].MeasureSharpness();
             }
-            return true;
+            return !_stopRequested;
         }
 
         public void MainThreadRunAsync() // OST
+        {
+            CrashDiagnostics.PulseWorker("Auto", "Started");
+
+            while (!_stopRequested)
+            {
+                try
+                {
+                    MainThreadLoop();
+                }
+                catch (Exception ex)
+                {
+                    SeqStep failedStep = m_Step;
+                    CrashDiagnostics.ReportWorkerException("Auto", ex, failedStep.ToString());
+                    EnterFailSafeState(failedStep);
+
+                    if (!_stopRequested)
+                        _stopEvent.WaitOne(500);
+                }
+            }
+
+            CrashDiagnostics.PulseWorker("Auto", "Stopped");
+        }
+
+        private void MainThreadLoop()
         {
             bool success = false;
             int startTime = Environment.TickCount;
             const int REQ_OFF_TIMEOUT_MS = 10000;
             DateTime ts = DateTime.Now;
-            while (true)
+            while (!_stopRequested)
             {
                 Thread.Sleep(10);
+                PulseHeartbeat();
 
                 //AUTO 모드인지 확인.
                 if (!Global.bAutoMode)
@@ -155,11 +207,11 @@ namespace Vision_Align
 
                             ///     GetUvwTargetPos
                             double preX = 0, preY = 0, preT = 0;
-                            int imageCount = Global.Calibration_Param.AverageImageCount;
+                            int imageCount = GetValidatedAverageImageCount();
                             double mX1 = 0, mY1 = 0, mScore1 = 0, mScale1 = 0;
                             double mX2 = 0, mY2 = 0, mScore2 = 0, mScale2 = 0;
                             SetProcessMsg(m_Step, "    Image Grab && Measurement");
-                            for (int i = 0; i < imageCount; i++)
+                            for (int i = 0; i < imageCount && !_stopRequested; i++)
                             {
                                 double mX1Temp = 0, mY1Temp = 0, mScore1Temp = 0, mScale1Temp = 0;
                                 double mX2Temp = 0, mY2Temp = 0, mScore2Temp = 0, mScale2Temp = 0;                                ///     이미지 취득
@@ -181,6 +233,10 @@ namespace Vision_Align
                                     mScore2 = mScore2Temp;
                                 mScale2 += mScale2Temp;
                             }
+
+                            if (_stopRequested)
+                                return;
+
                             mX1 /= imageCount;
                             mY1 /= imageCount;
                             mScale1 /= imageCount;
@@ -219,7 +275,7 @@ namespace Vision_Align
                             // PLC가 PREALIGN_REQ(16) 내릴 때까지 대기
                             Stopwatch stopwatch = new Stopwatch();
                             stopwatch.Restart();
-                            while (stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
+                            while (!_stopRequested && stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
                             {
                                 if (!Global.inforPLC.InPreAlignRequest)
                                     break;
@@ -324,7 +380,7 @@ namespace Vision_Align
 
                             Stopwatch stopwatch = new Stopwatch();
                             stopwatch.Restart();
-                            while (stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
+                            while (!_stopRequested && stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
                             {
                                 if (!Global.inforPLC.InContactRequest)
                                 {
@@ -362,7 +418,7 @@ namespace Vision_Align
                             }
 
                             #region UVW Start Position Offset
-                            int imageCount = Global.Calibration_Param.AverageImageCount;
+                            int imageCount = GetValidatedAverageImageCount();
 
                             double preMoveX = Global.Calibration_Param.StartPositionX; //300;
                             double preMoveY = Global.Calibration_Param.StartPositionY; //-1200;
@@ -383,7 +439,7 @@ namespace Vision_Align
                                 camCalPoints[(int)CamInfo.CAM_2] = new PointF[9] { new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0), new PointF(0, 0) };
                                 camViberationPoints[(int)CamInfo.CAM_1] = new PointF[imageCount];
                                 camViberationPoints[(int)CamInfo.CAM_2] = new PointF[imageCount];
-                                for(int points = 0; points <  imageCount; points++)
+                                for(int points = 0; points < imageCount && !_stopRequested; points++)
                                 {
                                     camViberationPoints[(int)CamInfo.CAM_1][points] = new PointF(0, 0);
                                     camViberationPoints[(int)CamInfo.CAM_2][points] = new PointF(0, 0);
@@ -394,10 +450,10 @@ namespace Vision_Align
 
 
                                 //     총 9개 포인트 일정간격(Config 설정) XY 이동하여 이미지 취득 & Fiducial Mark 좌표 저장 (FindFiducialMark 활용)
-                                for (int yy = -1; yy <= 1; yy++)
+                                for (int yy = -1; yy <= 1 && !_stopRequested; yy++)
                                 {
                                     camCalY = camCalOffset * yy;
-                                    for (int xx = -1; xx <= 1; xx++)
+                                    for (int xx = -1; xx <= 1 && !_stopRequested; xx++)
                                     {
                                         SetProcessMsg(m_Step, $"    UVW Stage Move {pointIndex.ToString()} Start");
                                         camCalX = camCalOffset * xx;
@@ -419,7 +475,7 @@ namespace Vision_Align
                                         averagePoint[(int)CamInfo.CAM_2] = new PointF(0f, 0f);
 
                                         SetProcessMsg(m_Step, $"    Find Cal Index {pointIndex.ToString()} Point Start");
-                                        for (int icnt = 0; icnt < imageCount; icnt++)
+                                        for (int icnt = 0; icnt < imageCount && !_stopRequested; icnt++)
                                         {
                                             // 이미지 취득
                                             if (!GrabAllCamera())
@@ -491,6 +547,9 @@ namespace Vision_Align
                                     SetProcessMsg(m_Step, "9-Point Camera Calibration Failed");
                                 }
 
+                                if (_stopRequested)
+                                    return;
+
                                 if (camCalSuccess)
                                 {
                                     //     CalibrationCameraTilt 사용하여 Calibration.
@@ -526,12 +585,12 @@ namespace Vision_Align
                                 bool uvwCalMoveSuccess = true;
                                 double uvwCalX = 0.0, uvwCalY = 0.0, uvwCalT = 0.0;
                                 double uvwCalOffset = Global.Calibration_Param.MoveOffsetAngle;
-                                int uvwCalOffsetCount = Global.Calibration_Param.MoveOffsetAngleCount;
+                                int uvwCalOffsetCount = GetValidatedAngleCalibrationPointCount();
 
                                 double startAngle = -(uvwCalOffset * (uvwCalOffsetCount - 1)) / 2.0;
 
                                 SetProcessMsg(m_Step, "UVW Stage Calibration Start");
-                                for (int i = 0; i < uvwCalOffsetCount; i++)
+                                for (int i = 0; i < uvwCalOffsetCount && !_stopRequested; i++)
                                 {
                                     uvwCalT = startAngle + uvwCalOffset * i;
                                     SetProcessMsg(m_Step, $"    UVW Stage Move {pointIndex.ToString()} Start");
@@ -553,7 +612,7 @@ namespace Vision_Align
                                     averagePoint[(int)CamInfo.CAM_2] = new PointF(0f, 0f);
 
                                     SetProcessMsg(m_Step, $"    Find Cal Index {pointIndex.ToString()} Point Start");
-                                    for (int icnt = 0; icnt < imageCount; icnt++)
+                                    for (int icnt = 0; icnt < imageCount && !_stopRequested; icnt++)
                                     {
                                         // 이미지 취득
                                         if (!GrabAllCamera())
@@ -614,6 +673,9 @@ namespace Vision_Align
                                     Global.m_AlarmCode = AlarmCode.CalibrationError;
                                     SetProcessMsg(m_Step, "UVW Stage Calibration Failed");
                                 }
+
+                                if (_stopRequested)
+                                    return;
 
                                 if (uvwCalMoveSuccess && camCalSuccess)
                                 {
@@ -695,12 +757,13 @@ namespace Vision_Align
                             }
 
                             Global.inforPLC.OutCalibrationStop = true;
-                            Thread.Sleep(500);
+                            if (_stopEvent.WaitOne(500))
+                                return;
                             Global.inforPLC.OutCalibrationReply = false;
 
                             Stopwatch stopwatch = new Stopwatch();
                             stopwatch.Restart();
-                            while (stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
+                            while (!_stopRequested && stopwatch.ElapsedMilliseconds < REQ_OFF_TIMEOUT_MS)
                             {
                                 if (!Global.inforPLC.InCalibrationRequest)
                                     break;
@@ -747,11 +810,79 @@ namespace Vision_Align
             }
         }
 
+        private void PulseHeartbeat()
+        {
+            if (_heartbeatStopwatch.ElapsedMilliseconds < 1000)
+                return;
+
+            _heartbeatStopwatch.Restart();
+            CrashDiagnostics.PulseWorker("Auto", m_Step.ToString());
+        }
+
+        private static int GetValidatedAverageImageCount()
+        {
+            int count = Global.Calibration_Param.AverageImageCount;
+            if (count < 1 || count > MaximumAverageImageCount)
+            {
+                throw new InvalidOperationException(
+                    "Calibration AverageImageCount must be between 1 and " +
+                    MaximumAverageImageCount + ". Current value: " + count);
+            }
+
+            return count;
+        }
+
+        private static int GetValidatedAngleCalibrationPointCount()
+        {
+            int count = Global.Calibration_Param.MoveOffsetAngleCount;
+            if (count < 1 || count > MaximumAngleCalibrationPointCount)
+            {
+                throw new InvalidOperationException(
+                    "Calibration MoveOffsetAngleCount must be between 1 and " +
+                    MaximumAngleCalibrationPointCount + ". Current value: " + count);
+            }
+
+            return count;
+        }
+
+        private void EnterFailSafeState(SeqStep failedStep)
+        {
+            try
+            {
+                Global.inforPLC.ClearOutput();
+                Global.inforPLC.OutReady = false;
+                Global.inforPLC.OutBusy = false;
+                Global.m_AlarmCode = AlarmCode.Unknown;
+                m_StepPrev = SeqStep.MAX;
+                m_Step = SeqStep.ALARM;
+                SetProcessMsg(failedStep, "Unhandled worker error contained; outputs cleared and alarm requested");
+            }
+            catch (Exception ex)
+            {
+                CrashDiagnostics.ReportRecoverableException("Auto worker fail-safe transition", ex);
+            }
+        }
+
         private void SetProcessMsg(SeqStep step, string msg)
         {
-            if (ProcessStatusMsg == null)
+            string formattedMessage = $"[{step.ToString()}] {msg}";
+            CrashDiagnostics.RecordActivity(formattedMessage);
+
+            EventHandler<string> handlers = ProcessStatusMsg;
+            if (handlers == null)
                 return;
-            ProcessStatusMsg.Invoke(this, $"[{step.ToString()}] {msg}");
+
+            foreach (EventHandler<string> handler in handlers.GetInvocationList())
+            {
+                try
+                {
+                    handler(this, formattedMessage);
+                }
+                catch (Exception ex)
+                {
+                    CrashDiagnostics.ReportRecoverableException("Auto status event handler", ex);
+                }
+            }
         }
 
         private void WritePreAlignAoResult()
@@ -822,7 +953,7 @@ namespace Vision_Align
             double speed = 1;
             double pos = 1;
             bool moveSuccess = true;
-            for (int i = 0; i < (int)CamInfo.MAX; i++)
+            for (int i = 0; i < (int)CamInfo.MAX && !_stopRequested; i++)
             {
                 Thread.Sleep(10);
                 CamInfo cam = (CamInfo)i;
@@ -839,7 +970,7 @@ namespace Vision_Align
                 stopwatch.Restart();
                 Global.dicClsMotion[cam].UpdateStatus();
 
-                while (Global.inforMotion.bBasy[i])
+                while (!_stopRequested && Global.inforMotion.bBasy[i])
                 {
                     Global.dicClsMotion[cam].UpdateStatus();
                     if (stopwatch.ElapsedMilliseconds > 15000)
@@ -853,12 +984,12 @@ namespace Vision_Align
                 SetProcessMsg(m_Step, $"    {cam.ToString()} Z Axis Move End");
             }
 
-            return moveSuccess;
+            return moveSuccess && !_stopRequested;
         }
 
         private bool SetCamera(int teachingIndex)
         {
-            for(int i = 0; i < (int)CamInfo.MAX; i++)
+            for(int i = 0; i < (int)CamInfo.MAX && !_stopRequested; i++)
             {
                 CamInfo cam = (CamInfo)i;
 
@@ -873,12 +1004,12 @@ namespace Vision_Align
                 SetProcessMsg(m_Step, $"    {cam.ToString()} Camera Parameter Set");
 
             }
-            return true;
+            return !_stopRequested;
         }
 
         private bool SetLight(int teachingIndex)
         {
-            for (int i = 0; i < (int)CamInfo.MAX; i++)
+            for (int i = 0; i < (int)CamInfo.MAX && !_stopRequested; i++)
             {
                 CamInfo cam = (CamInfo)i;
                 int spotLightChennel = cam == 0 ? 2 : 0;
@@ -892,7 +1023,7 @@ namespace Vision_Align
 
                 SetProcessMsg(m_Step, $"    {cam.ToString()} Light Controller Set");
             }
-            return true;
+            return !_stopRequested;
         }
 
         private bool SetTeachingData(int teachingIndex)

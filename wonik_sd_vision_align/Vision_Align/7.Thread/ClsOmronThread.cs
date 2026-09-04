@@ -1,85 +1,104 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Vision_Align
 {
     public class ClsOmronThread
     {
-        Thread m_MainThread = null;
-        private const int RECONNECT_INTERVAL_MS = 10_000;
-        private const int ALIVE_SIGN_MS = 1000;
-        Stopwatch _ReconnectStopwatch = new Stopwatch();
-        Stopwatch _AliveSignStopwatch = new Stopwatch();
+        private const int ReconnectIntervalMs = 10_000;
+        private const int AliveSignMs = 1000;
 
+        private readonly ManualResetEvent _stopEvent = new ManualResetEvent(false);
+        private readonly Stopwatch _reconnectStopwatch = new Stopwatch();
+        private readonly Stopwatch _aliveSignStopwatch = new Stopwatch();
+        private readonly Stopwatch _heartbeatStopwatch = new Stopwatch();
 
-        public ClsOmronThread()
+        private Thread _mainThread;
+        private bool _started;
+
+        public void Start()
         {
-            m_MainThread = new Thread(MainThreadRunAsync);
-            m_MainThread.Start();
-            _ReconnectStopwatch.Restart();
-            _AliveSignStopwatch.Restart();
+            if (_started)
+                return;
+
+            _started = true;
+            _stopEvent.Reset();
+            _reconnectStopwatch.Restart();
+            _aliveSignStopwatch.Restart();
+            _heartbeatStopwatch.Restart();
+
+            _mainThread = new Thread(MainThreadRun)
+            {
+                IsBackground = true,
+                Name = "VisionAlign.PLC"
+            };
+            _mainThread.Start();
         }
 
         public void Release()
         {
-            if (m_MainThread != null)
-                m_MainThread.Abort();
+            _stopEvent.Set();
 
+            Thread thread = _mainThread;
+            if (thread != null && thread != Thread.CurrentThread && thread.IsAlive)
+                thread.Join(3000);
         }
 
-
-        public void MainThreadRunAsync()
+        private void MainThreadRun()
         {
-            int now = 0;
-            while (true)
+            CrashDiagnostics.PulseWorker("PLC", "Started");
+
+            while (!_stopEvent.WaitOne(10))
             {
-                Thread.Sleep(10);
-                //OST Omron 연결 실패시 자동으로 재연결 10초에 한번씩 재시도
-                //OST 실시간 시스템 상태에 따라 Alarm, Auto, Alive 등을 보냄
-
-                if (!Global.clsOmron.IsConnect)
+                try
                 {
-                    Global.bConnectPLC = false;
+                    PulseHeartbeat();
 
-                    // 2) 10초마다 재연결 시도
-                    if (_ReconnectStopwatch.ElapsedMilliseconds >= RECONNECT_INTERVAL_MS)
+                    if (!Global.clsOmron.IsConnect)
                     {
-                        _ReconnectStopwatch.Restart();
+                        Global.bConnectPLC = false;
 
-                        try
+                        if (_reconnectStopwatch.ElapsedMilliseconds >= ReconnectIntervalMs)
                         {
+                            _reconnectStopwatch.Restart();
+                            CrashDiagnostics.RecordActivity("PLC reconnect attempt");
                             Global.clsOmron.Open("192.168.240.80");
                         }
-                        catch (Exception ex)
-                        {
 
-                        }
+                        _stopEvent.WaitOne(20);
+                        continue;
                     }
 
-                    Thread.Sleep(20);
-                    continue;
+                    Global.bConnectPLC = true;
+                    Global.clsOmron.UpdateIO();
+
+                    if (_aliveSignStopwatch.ElapsedMilliseconds >= AliveSignMs)
+                    {
+                        _aliveSignStopwatch.Restart();
+                        Global.inforPLC.OutAlive = !Global.inforPLC.OutAlive;
+                    }
                 }
-
-                // 여기까지 왔으면 연결 OK
-                Global.bConnectPLC = true;
-
-                // 실시간 Omron 값 Read 하여 Global.clsOmron 값 반영
-                Global.clsOmron.UpdateIO();
-
-                
-                if (_AliveSignStopwatch.ElapsedMilliseconds >= ALIVE_SIGN_MS)
+                catch (Exception ex)
                 {
-                    _AliveSignStopwatch.Restart();
-                    Global.inforPLC.OutAlive = !Global.inforPLC.OutAlive;
+                    Global.bConnectPLC = false;
+                    CrashDiagnostics.ReportRecoverableException("Worker PLC polling", ex);
+                    _stopEvent.WaitOne(500);
                 }
-
-
             }
+
+            CrashDiagnostics.PulseWorker("PLC", "Stopped");
+        }
+
+        private void PulseHeartbeat()
+        {
+            if (_heartbeatStopwatch.ElapsedMilliseconds < 1000)
+                return;
+
+            _heartbeatStopwatch.Restart();
+            CrashDiagnostics.PulseWorker(
+                "PLC",
+                Global.bConnectPLC ? "Connected and polling" : "Disconnected/reconnecting");
         }
     }
 }

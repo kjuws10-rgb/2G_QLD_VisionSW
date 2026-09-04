@@ -1,89 +1,153 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Diagnostics;
+using System;
 using System.Threading;
-using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Vision_Align
 {
     static class Program
     {
+        private const string SingleInstanceMutexName = "Vision_Align.SingleInstance.2G_QLD";
+        private static int _uiExceptionNoticeShown;
+
         /// <summary>
         /// 해당 응용 프로그램의 주 진입점입니다.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            //try
-            //{
-            AppDomain.CurrentDomain.UnhandledException += (sender, e)
-            => FatalExceptionObject(e.ExceptionObject);
+            bool ownsMutex;
 
-            Application.ThreadException += (sender, e)
-            => FatalExceptionObject(e.Exception);
-
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            Process[] objProcess = Process.GetProcessesByName("Vision_Align");
-            Process objCurrentProcess = Process.GetCurrentProcess();
-            if (objProcess.Length > 1)
+            using (Mutex singleInstanceMutex = new Mutex(true, SingleInstanceMutexName, out ownsMutex))
             {
-                MessageBox.Show(String.Format("Vision_Align process already running.\nKill \"Vision_Align.exe\" in the TaskManager"));
-                objCurrentProcess.Kill();
-                return;
-            }
-            Application.Run(new FormBase());
-        }
+                if (!ownsMutex)
+                {
+                    MessageBox.Show(
+                        "Vision_Align is already running.",
+                        "Vision_Align",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
 
-        public static string CreateExceptionString(Exception e)
-        {
-            StringBuilder sb = new StringBuilder();
-            CreateExceptionString(sb, e, string.Empty);
+                RegisterExceptionHandlers();
 
-            return sb.ToString();
-        }
+                try
+                {
+                    CrashDiagnostics.StartSession();
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new FormBase());
+                }
+                catch (Exception ex)
+                {
+                    string reportPath = CrashDiagnostics.ReportException("Program.Main", ex, true);
+                    TryShowFatalStartupMessage(reportPath);
+                }
+                finally
+                {
+                    CrashDiagnostics.Stop();
 
-        private static void CreateExceptionString(StringBuilder sb, Exception e, string indent)
-        {
-            if (indent == null)
-            {
-                indent = string.Empty;
-            }
-            else if (indent.Length > 0)
-            {
-                sb.AppendFormat("{0}Inner ", indent);
-            }
-
-            sb.AppendFormat("Exception Found:\n{0}Type: {1}", indent, e.GetType().FullName);
-            sb.AppendFormat("\n{0}Message: {1}", indent, e.Message);
-            sb.AppendFormat("\n{0}Source: {1}", indent, e.Source);
-            sb.AppendFormat("\n{0}Stacktrace: {1}", indent, e.StackTrace);
-
-            if (e.InnerException != null)
-            {
-                sb.Append("\n");
-                CreateExceptionString(sb, e.InnerException, indent + "  ");
+                    try
+                    {
+                        singleInstanceMutex.ReleaseMutex();
+                    }
+                    catch (ApplicationException)
+                    {
+                        // The mutex was not owned anymore. Process shutdown can continue.
+                    }
+                }
             }
         }
 
-        static void FatalExceptionObject(object exceptionObject)
+        private static void RegisterExceptionHandlers()
         {
-            var huh = exceptionObject as Exception;
-            if (huh == null)
+            // Force WinForms UI exceptions through Application.ThreadException.
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+            Application.ThreadException += OnThreadException;
+            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+            TaskScheduler.UnobservedTaskException += OnUnobservedTaskException;
+            Application.ApplicationExit += OnApplicationExit;
+        }
+
+        private static void OnThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            string reportPath = CrashDiagnostics.ReportException("Windows Forms UI thread", e.Exception, false);
+            TryEnterSafeState("UI thread exception");
+
+            // A recurring UI timer exception could otherwise display an endless message loop.
+            if (Interlocked.CompareExchange(ref _uiExceptionNoticeShown, 1, 0) == 0)
             {
-                huh = new NotSupportedException(
-                "Unhandled exception doesn't derive from System.Exception: "
-                + exceptionObject.ToString()
-                );
+                try
+                {
+                    MessageBox.Show(
+                        "An unexpected error was contained and recorded.\r\n" +
+                        "Please stop automatic operation and contact the software engineer.\r\n\r\n" +
+                        reportPath,
+                        "Vision_Align error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                catch
+                {
+                    // Never let error notification hide the original exception.
+                }
             }
+        }
 
-            DateTime objTime = DateTime.Now;
-            string strCurrentDateTime = string.Format("\r\n{0:D04}/{1:D02}/{2:D02} {3:D02}:{4:D02}:{5:D02}.{6:D03}\r\n", objTime.Year, objTime.Month, objTime.Day, objTime.Hour, objTime.Minute, objTime.Second, objTime.Millisecond);
-            string strExceptionData = strCurrentDateTime + CreateExceptionString(huh);
+        private static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            CrashDiagnostics.ReportException(
+                "AppDomain unhandled exception",
+                e.ExceptionObject,
+                e.IsTerminating);
+        }
 
-            Global.logger[LogType.EXCEPTION].Write(strExceptionData);
+        private static void OnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            CrashDiagnostics.ReportException("Unobserved task exception", e.Exception, false);
+            e.SetObserved();
+        }
+
+        private static void OnApplicationExit(object sender, EventArgs e)
+        {
+            CrashDiagnostics.MarkCleanShutdown("ApplicationExit");
+        }
+
+        private static void TryEnterSafeState(string reason)
+        {
+            try
+            {
+                Global.bAutoMode = false;
+                Global.inforPLC.ClearOutput();
+                Global.inforPLC.OutReady = false;
+                Global.inforPLC.OutBusy = false;
+                Global.m_AlarmCode = AlarmCode.Unknown;
+                CrashDiagnostics.RecordActivity(reason + "; automatic operation stopped and outputs cleared");
+            }
+            catch (Exception safeStateException)
+            {
+                CrashDiagnostics.ReportRecoverableException(
+                    "Safe-state transition after " + reason,
+                    safeStateException);
+            }
+        }
+
+        private static void TryShowFatalStartupMessage(string reportPath)
+        {
+            try
+            {
+                MessageBox.Show(
+                    "Vision_Align could not start. A diagnostic report was saved.\r\n\r\n" + reportPath,
+                    "Vision_Align startup error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            catch
+            {
+                // The diagnostic file is the final fallback when the UI cannot be shown.
+            }
         }
     }
 }

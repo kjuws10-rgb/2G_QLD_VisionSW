@@ -38,23 +38,32 @@ namespace Vision_Align
         private void ClsAutoThread_ProcessStatusMsg(object sender, string msg)
         {
             DateTime time = DateTime.Now;
-            Task.Run(() =>
+            Action updateUi = () =>
             {
-                if(InvokeRequired)
+                if(listBoxProcessStatus.Items.Count > 200)
                 {
-                    Invoke(new Action(() =>
-                    {
-                        if(listBoxProcessStatus.Items.Count > 200)
-                        {
-                            listBoxProcessStatus.Items.Remove(0);
-                        }
-                        string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
-                        listBoxProcessStatus.Items.Add(message);
-                        listBoxProcessStatus.SelectedIndex = listBoxProcessStatus.Items.Count - 1;
-                        Global.logger[LogType.SYSTEM].Write(msg);
-                    }));
+                    listBoxProcessStatus.Items.Remove(0);
                 }
-            });
+                string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
+                listBoxProcessStatus.Items.Add(message);
+                listBoxProcessStatus.SelectedIndex = listBoxProcessStatus.Items.Count - 1;
+                Global.logger[LogType.SYSTEM].Write(msg);
+            };
+
+            try
+            {
+                if (IsDisposed || Disposing || !IsHandleCreated)
+                    return;
+
+                if (InvokeRequired)
+                    BeginInvoke(updateUi);
+                else
+                    updateUi();
+            }
+            catch (Exception ex)
+            {
+                CrashDiagnostics.ReportRecoverableException("Process status UI update", ex);
+            }
         }
 
 

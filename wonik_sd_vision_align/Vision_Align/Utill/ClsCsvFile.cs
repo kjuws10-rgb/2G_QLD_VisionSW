@@ -12,6 +12,10 @@ namespace Vision_Align
 {
     public class ClsCsvFile
     {
+        private const int FileWriteRetryCount = 5;
+        private const int FileWriteRetryDelayMs = 200;
+        private static readonly object FileWriteLock = new object();
+
         public ClsCsvFile()
         {
 
@@ -49,11 +53,7 @@ namespace Vision_Align
             }
 
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLineWithRetry(strPath, strHeader, true);
         }
 
         private void WriteCalHeader(string strPath)
@@ -73,11 +73,7 @@ namespace Vision_Align
                 }
             }
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLineWithRetry(strPath, strHeader, true);
         }
 
         private void WriteVibeHeader(string strPath)
@@ -98,11 +94,7 @@ namespace Vision_Align
                 }
             }
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLineWithRetry(strPath, strHeader, true);
         }
 
 
@@ -167,11 +159,7 @@ namespace Vision_Align
                 strData += string.Format("{0:F6}, ", Global.inforResult.dGray[n]);
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite)) 
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
-            {
-                sw.WriteLine(strData);
-            }
+            AppendLineWithRetry(strPath, strData);
 
         }
 
@@ -245,11 +233,7 @@ namespace Vision_Align
                 }
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
-            {
-                sw.WriteLine(strData);
-            }
+            AppendLineWithRetry(strPath, strData);
         }
    
     
@@ -286,11 +270,58 @@ namespace Vision_Align
                 }
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
+            AppendLineWithRetry(strPath, strData);
+        }
+
+        private static void AppendLineWithRetry(string path, string line, bool onlyIfEmpty = false)
+        {
+            Exception lastException = null;
+
+            for (int attempt = 1; attempt <= FileWriteRetryCount; attempt++)
             {
-                sw.WriteLine(strData);
+                try
+                {
+                    lock (FileWriteLock)
+                    {
+                        string directory = Path.GetDirectoryName(path);
+                        if (!string.IsNullOrWhiteSpace(directory))
+                            Directory.CreateDirectory(directory);
+
+                        using (FileStream stream = new FileStream(
+                            path,
+                            FileMode.OpenOrCreate,
+                            FileAccess.Write,
+                            FileShare.ReadWrite))
+                        {
+                            if (onlyIfEmpty && stream.Length > 0)
+                                return;
+
+                            stream.Seek(0, SeekOrigin.End);
+                            using (StreamWriter writer = new StreamWriter(stream, new UTF8Encoding(false)))
+                            {
+                                writer.WriteLine(line);
+                            }
+                        }
+                    }
+
+                    return;
+                }
+                catch (IOException ex)
+                {
+                    lastException = ex;
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    lastException = ex;
+                }
+
+                if (attempt < FileWriteRetryCount)
+                    Thread.Sleep(FileWriteRetryDelayMs * attempt);
             }
+
+            throw new IOException(
+                "Failed to append CSV after " + FileWriteRetryCount + " attempts: " + path,
+                lastException);
         }
     }
 
