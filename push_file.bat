@@ -1,31 +1,33 @@
 @echo off
-setlocal
-
-set REPO_URL=https://github.com/kjuws10-rgb/2G_QLD_VisionSW.git
-set BRANCH=main
-set COMMIT_MSG=auto commit
-
-echo ==============================
+echo =======================
 echo GitHub Push Start
-echo REPO: %REPO_URL%
+echo REPO: https://github.com/kjuws10-rgb/2G_QLD_VisionSW.git
 echo ==============================
+
+cd /d C:\Users\jwkang01\Downloads\2G_QLD_VisionSW
 
 git init
-git branch -M %BRANCH%
-
 git remote remove origin 2>nul
-git remote add origin %REPO_URL%
-
+git remote add origin https://github.com/kjuws10-rgb/2G_QLD_VisionSW.git
 git fetch origin
+git checkout main
 
-git add .
-git commit -m "%COMMIT_MSG%" 2>nul
+git rm --cached wonik_sd_vision_align -r 2>nul
 
-git pull origin %BRANCH% --rebase
+if exist wonik_sd_vision_align\.git (
+    rd /s /q wonik_sd_vision_align\.git
+)
 
-git push -u origin %BRANCH%
+git add -A
+
+git diff --cached --quiet
+if %errorlevel% == 1 (
+    git commit -m "Update files"
+    git push origin main
+) else (
+    echo No changes to commit.
+)
 
 echo ==============================
 echo Push Complete
-echo ==============================
 pause

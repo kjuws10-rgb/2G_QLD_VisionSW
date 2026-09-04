@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\\\\Professional\\\\MSBuild\\\\Current\\\\Bin\\\\MSBuild.exe\" \"D:\\\\LJH\\\\00_Work\\\\01_Project\\\\010_PO-25-012\\\\Source\\\\wonik_sd_vision_align\\\\Vision_Align\\\\Vision_Align.csproj\" -p:Configuration=Debug -p:Platform=x64 -t:Build -v:minimal)"
+    ]
+  }
+}
