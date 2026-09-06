@@ -12,6 +12,9 @@ namespace Vision_Align
 {
     public class ClsCsvFile
     {
+        private const int CsvWriteRetryCount = 3;
+        private const int CsvWriteRetryDelayMs = 200;
+
         public ClsCsvFile()
         {
 
@@ -49,19 +52,12 @@ namespace Vision_Align
             }
 
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLine(strPath, strHeader);
         }
 
         private void WriteCalHeader(string strPath)
         {
             string strHeader = "DateTime, Average Image Count,";
-            string dir = strPath.Remove(strPath.LastIndexOf('\\'));
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
 
             for (int n = 0; n < (int)CamInfo.MAX; n++)
             {
@@ -73,19 +69,12 @@ namespace Vision_Align
                 }
             }
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLine(strPath, strHeader);
         }
 
         private void WriteVibeHeader(string strPath)
         {
             string strHeader = "DateTime, Average Image Count,";
-            string dir = strPath.Remove(strPath.LastIndexOf('\\'));
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
 
 
             for (int n = 0; n < (int)CamInfo.MAX; n++)
@@ -98,11 +87,7 @@ namespace Vision_Align
                 }
             }
 
-            using (var sw = new StreamWriter(strPath, true)) // true = append
-            {
-                sw.WriteLine(strHeader);
-                sw.Close();
-            }
+            AppendLine(strPath, strHeader);
         }
 
 
@@ -167,11 +152,7 @@ namespace Vision_Align
                 strData += string.Format("{0:F6}, ", Global.inforResult.dGray[n]);
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite)) 
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
-            {
-                sw.WriteLine(strData);
-            }
+            AppendLine(strPath, strData);
 
         }
 
@@ -245,11 +226,7 @@ namespace Vision_Align
                 }
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
-            {
-                sw.WriteLine(strData);
-            }
+            AppendLine(strPath, strData);
         }
    
     
@@ -286,11 +263,36 @@ namespace Vision_Align
                 }
             }
 
-            using (var fs = new FileStream(strPath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
-            using (var sw = new StreamWriter(fs, Encoding.UTF8))
+            AppendLine(strPath, strData);
+        }
+
+        private static void AppendLine(string path, string value)
+        {
+            string directory = Path.GetDirectoryName(path);
+            IOException lastException = null;
+            for (int attempt = 1; attempt <= CsvWriteRetryCount; attempt++)
             {
-                sw.WriteLine(strData);
+                try
+                {
+                    if (!string.IsNullOrEmpty(directory))
+                        Directory.CreateDirectory(directory);
+
+                    using (var fs = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                    using (var sw = new StreamWriter(fs, Encoding.UTF8))
+                    {
+                        sw.WriteLine(value);
+                    }
+                    return;
+                }
+                catch (IOException ex)
+                {
+                    lastException = ex;
+                    if (attempt < CsvWriteRetryCount)
+                        Thread.Sleep(CsvWriteRetryDelayMs * attempt);
+                }
             }
+
+            throw new IOException("CSV write failed after retries: " + path, lastException);
         }
     }
 

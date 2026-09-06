@@ -45,7 +45,8 @@ namespace Vision_Align
 
         public ClsAutoThread()
         {
-            m_MainThread = new Thread(MainThreadRunAsync);
+            m_MainThread = new Thread(MainThreadRunSafely);
+            m_MainThread.Name = "Vision.Auto";
             m_MainThread.Start();
         }
 
@@ -55,6 +56,36 @@ namespace Vision_Align
                 m_MainThread.Abort();
 
         }
+
+        private void MainThreadRunSafely()
+        {
+            try
+            {
+                MainThreadRunAsync();
+            }
+            catch (ThreadAbortException)
+            {
+                // Release()에서 요청한 정상 종료입니다.
+            }
+            catch (Exception ex)
+            {
+                Program.WriteExceptionLog("ClsAutoThread.MainThreadRunAsync", ex, false);
+
+                try
+                {
+                    Global.bAutoMode = false;
+                    Global.inforPLC.ClearOutput();
+                    Global.clsAlarmManager.SetAlarm(AlarmCode.Unknown, "Auto thread stopped: " + ex.Message);
+                    Global.inforPLC.OutAlarm = true;
+                    Global.inforPLC.OutAlarmCode = (int)Global.clsAlarmManager.CurrentAlarm;
+                }
+                catch (Exception safeStateException)
+                {
+                    Program.WriteExceptionLog("ClsAutoThread.SafeState", safeStateException, false);
+                }
+            }
+        }
+
         private bool GrabAllCamera()
         {
             for (int cam = 0; cam < (int)CamInfo.MAX; cam++)

@@ -31,6 +31,7 @@ namespace Vision_Align
 
         int m_nWidth = 0;
         int m_nHeight = 0;
+        DateTime m_LastInvalidBufferLog = DateTime.MinValue;
 
         private void CameraAdded(object sender, EventArgs e)
         {
@@ -106,6 +107,24 @@ namespace Vision_Align
                 return false;
             }
             byte[] temp = GetImgBuff();
+
+            long expectedLength = (long)m_nWidth * m_nHeight;
+            if (temp == null || m_nWidth <= 0 || m_nHeight <= 0 || temp.LongLength < expectedLength)
+            {
+                DateTime now = DateTime.Now;
+                if ((now - m_LastInvalidBufferLog).TotalSeconds >= 30)
+                {
+                    m_LastInvalidBufferLog = now;
+                    long actualLength = temp == null ? 0 : temp.LongLength;
+                    Program.WriteExceptionLog(
+                        "ClsCamera.Grab.CAM_" + (m_nCamNo + 1),
+                        new InvalidDataException(string.Format(
+                            "Invalid image buffer. Width={0}, Height={1}, Expected>={2}, Actual={3}",
+                            m_nWidth, m_nHeight, expectedLength, actualLength)),
+                        false);
+                }
+                return false;
+            }
 
             Global.inforResult.dGray[m_nCamNo] = Global.clsAlgorithm[m_nCamNo].SetImage(Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].HWindow, temp, m_nWidth, m_nHeight);
 

@@ -19,7 +19,8 @@ namespace Vision_Align
 
         public ClsOmronThread()
         {
-            m_MainThread = new Thread(MainThreadRunAsync);
+            m_MainThread = new Thread(MainThreadRunSafely);
+            m_MainThread.Name = "Vision.PLC";
             m_MainThread.Start();
             _ReconnectStopwatch.Restart();
             _AliveSignStopwatch.Restart();
@@ -30,6 +31,27 @@ namespace Vision_Align
             if (m_MainThread != null)
                 m_MainThread.Abort();
 
+        }
+
+        private void MainThreadRunSafely()
+        {
+            while (true)
+            {
+                try
+                {
+                    MainThreadRunAsync();
+                }
+                catch (ThreadAbortException)
+                {
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    Global.bConnectPLC = false;
+                    Program.WriteExceptionLog("ClsOmronThread.MainThreadRunAsync", ex, false);
+                    Thread.Sleep(RECONNECT_INTERVAL_MS);
+                }
+            }
         }
 
 

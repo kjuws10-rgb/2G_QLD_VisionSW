@@ -33,6 +33,7 @@ namespace Vision_Align
         public ClsFolderThread()
         {
             m_MainThread = new Thread(MainThreadRunAsync);
+            m_MainThread.Name = "Vision.Storage";
             m_MainThread.Start();
         }
 
@@ -71,9 +72,9 @@ namespace Vision_Align
                         // CSV 1줄 저장 (Global 기반)
                         Global.clsCSV.WriteCsv(job.Tag);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        // 예외 로그 처리
+                        Program.WriteExceptionLog("ClsFolderThread.SaveJob", ex, false);
                     }
                 }
 
