@@ -1,0 +1,6 @@
+wonik_sd_vision_align/Vision_Align/Program.cs
+wonik_sd_vision_align/Vision_Align/7.Thread/ClsAutoThread.cs
+wonik_sd_vision_align/Vision_Align/7.Thread/ClsFolderThread.cs
+wonik_sd_vision_align/Vision_Align/7.Thread/ClsOmronThread.cs
+wonik_sd_vision_align/Vision_Align/Utill/ClsCamera.cs
+wonik_sd_vision_align/Vision_Align/Utill/ClsCsvFile.cs
