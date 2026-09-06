@@ -42,7 +42,8 @@ namespace Vision_Align
             FormDisposition();
             SetStyle();
 
-            
+            cb_Mode.Items.AddRange(Enum.GetNames( typeof(CamSet)));
+            cb_Mode.Items.RemoveAt(cb_Mode.Items.Count - 1); // CamSet Enum의 MAX 항목 제거
 
             m_timer.Interval = 500;
             m_timer.Tick += new EventHandler(OnTimer);

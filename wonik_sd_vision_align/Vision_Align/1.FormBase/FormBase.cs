@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using VoAlgorithm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +14,19 @@ namespace Vision_Align
 {
     public partial class FormBase : Form
     {
-        private bool _shutdownStarted;
         
         public FormBase()
         {
             InitializeComponent();
-            FormClosing += FormBase_FormClosing;
+
             Initializ();
         }
 
         public void Initializ()
         {
             Global.formBase = this;
-            CrashDiagnostics.RecordActivity("FormBase initialization started");
 
+            SplashManager.UpdateStatus("Creating Logger...");
             #region Logger 생성
             Global.logger = new Dictionary<LogType, ClsLogger>();
             for (LogType n = 0; n < LogType.MAX; n++)
@@ -37,112 +37,50 @@ namespace Vision_Align
 #pragma warning restore CS0612 // 형식 또는 멤버는 사용되지 않습니다.
             }
             #endregion
-            CrashDiagnostics.MarkLoggerReady();
 
-            CrashDiagnostics.RecordActivity("HALCON initialization");
-            ClsAlgorithm.init();
+            SplashManager.UpdateStatus("Initializing HALCON...");
+            VisionAlgorithm.Initialize();
 
-            CrashDiagnostics.RecordActivity("Motion library initialization");
+            SplashManager.UpdateStatus("Connecting Motion Library...");
             ClsMotion.OpenLib();
 
             SetStyle();
 
-            CrashDiagnostics.RecordActivity("Configuration loading");
+
+            SplashManager.UpdateStatus("Loading Configuration...");
             Global.IsLoadConfig(true);
 
             CrateFolder();
 
-            CrashDiagnostics.RecordActivity("Light controller initialization");
+            SplashManager.UpdateStatus("Connecting Light Controller...");
             Global.clsLight.Open(Global.Serial_Param.nPort, Global.Serial_Param.nbaud);
-            CrashDiagnostics.RecordActivity("PLC initialization");
+            SplashManager.UpdateStatus("Connecting PLC...");
             Global.clsOmron.Open("192.168.240.80");
 
             Global.clsAlgorithm[0].SetTriangleDirectionMark(100, 100);
             Global.clsAlgorithm[1].SetTriangleDirectionMark(100, 100);
-            Global.clsAlgorithm[0].SetSquarDirectionMark(100, 100);
-            Global.clsAlgorithm[1].SetSquarDirectionMark(100, 100);
+            Global.clsAlgorithm[0].SetSquareDirectionMark(100, 100);
+            Global.clsAlgorithm[1].SetSquareDirectionMark(100, 100);
 
-            CrashDiagnostics.RecordActivity("Motion and camera object creation");
-            CreateDictionary();
-
-            // Worker objects are created before the forms so event handlers can subscribe,
-            // but they are started only after every hardware object and UI handle is ready.
+            SplashManager.UpdateStatus("Creating Background Threads...");
             Global.clsAutoThread = new ClsAutoThread();
             Global.clsFolderThread = new ClsFolderThread();
             Global.clsOmronThread = new ClsOmronThread();
 
-            CrashDiagnostics.RecordActivity("Form creation");
+            SplashManager.UpdateStatus("Initializing Camera and Motor...");
+            CreateDictionary();
+
+            SplashManager.UpdateStatus("Creating Forms...");
             CreateForm();
 
-            Global.clsFolderThread.Start();
-            Global.clsOmronThread.Start();
-            Global.clsAutoThread.Start();
 
-            Global.logger[LogType.SYSTEM].Write("========= Program Start =========");
+            Global.logger[(int)LogType.SYSTEM].Write("========= Program Start =========");
 
+
+            SplashManager.Close();
 
             timer_ViewerChange.Interval = 100;
             timer_ViewerChange.Start();
-
-            CrashDiagnostics.MarkApplicationReady();
-        }
-
-        public void RequestShutdown()
-        {
-            Close();
-        }
-
-        private void FormBase_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShutdownApplication();
-        }
-
-        private void ShutdownApplication()
-        {
-            if (_shutdownStarted)
-                return;
-
-            _shutdownStarted = true;
-            CrashDiagnostics.RecordActivity("Application shutdown started");
-            timer_ViewerChange.Stop();
-            Global.bAutoMode = false;
-
-            TryShutdownAction("Stop Auto worker", () => Global.clsAutoThread?.Release());
-            TryShutdownAction("Clear PLC output", () => Global.inforPLC.ClearOutput());
-            TryShutdownAction("Drain Folder worker", () => Global.clsFolderThread?.Release());
-            TryShutdownAction("Stop PLC worker", () => Global.clsOmronThread?.Release());
-
-            TryShutdownAction("Turn off light controller", () =>
-            {
-                for (int channel = 0; channel < 4; channel++)
-                    Global.clsLight.LightOnOff(false, channel);
-                Global.clsLight.Close();
-            });
-
-            TryShutdownAction("Close cameras", () =>
-            {
-                foreach (ClsCamera camera in Global.dicClsCam.Values)
-                    camera.Close();
-            });
-
-            TryShutdownAction("Close motion library", ClsMotion.CloseLib);
-
-            if (Global.logger != null && Global.logger.ContainsKey(LogType.SYSTEM))
-                Global.logger[LogType.SYSTEM].Write("------========= Program End =========------");
-
-            CrashDiagnostics.MarkCleanShutdown("FormBase closed");
-        }
-
-        private static void TryShutdownAction(string action, Action shutdownAction)
-        {
-            try
-            {
-                shutdownAction();
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("Shutdown: " + action, ex);
-            }
         }
 
         #region Style
@@ -214,7 +152,7 @@ namespace Vision_Align
             if (!System.IO.Directory.Exists(Global.strRecipePath))
                 System.IO.Directory.CreateDirectory(Global.strRecipePath);
 
-            for (int n = 0; n < (int)Matching_Type.MAX; n++)
+            for (int n = 0; n < (int)MatchingType.Max; n++)
             {
                 if (!System.IO.Directory.Exists(Global.strMatchPath[n]))
                     System.IO.Directory.CreateDirectory(Global.strMatchPath[n]);
@@ -277,17 +215,18 @@ namespace Vision_Align
 
             // 폼 생성
             Global.formMain = new FormMain();
-            Global.formTopMsg = new FormTopMassage();
             Global.formLog = new FormLogView();
             Global.formIO = new FormIO();
             Global.formSetCam = new FormSetCam();
             Global.formModel = new FormModel();
+            Global.formAlarmView = new FormAlarmView();
 
 
             // 폼 도크
             Global.formMain.Dock = DockStyle.Fill;
             Global.formLog.Dock = DockStyle.Fill;
-            Global.formIO.Dock = DockStyle.Fill;    
+            Global.formIO.Dock = DockStyle.Fill;
+            Global.formAlarmView.Dock = DockStyle.Fill;
 
             // 폼 초기화
             Global.formMain.Initializ();
@@ -295,6 +234,7 @@ namespace Vision_Align
             Global.formSetCam.Initializ();
             Global.formModel.Initializ();
             Global.formIO.Initializ();
+            Global.formAlarmView.Initializ();
         }
 
         public void ViewChange()
@@ -304,17 +244,20 @@ namespace Vision_Align
             Global.formMain.HideViewer(); Global.formMain.TopLevel = false;
             Global.formLog.HideViewer(); Global.formLog.TopLevel = false;
             Global.formIO.HideViewer(); Global.formIO.TopLevel = false;
+            Global.formAlarmView.HideViewer(); Global.formAlarmView.TopLevel = false;
 
             panelView.Controls.Clear();
             switch (Global.m_nChangViewer)
             {
                 case Viewer.Main  : panelView.Controls.Add(Global.formMain  ); Global.formMain  .ShowViewr(); Global.m_nCurrViewer = Viewer.Main  ; break;
-                case Viewer.Alram : Global.m_nCurrViewer = Viewer.Alram ; break;
+                case Viewer.Alram : panelView.Controls.Add(Global.formAlarmView); Global.formAlarmView.ShowViewr(); Global.m_nCurrViewer = Viewer.Alram; break;
                 case Viewer.IO    : panelView.Controls.Add(Global.formIO); Global.formIO.ShowViewr(); Global.m_nCurrViewer = Viewer.IO    ; break;
                 case Viewer.Log   : panelView.Controls.Add(Global.formLog); Global.formLog.ShowViewr();Global.m_nCurrViewer = Viewer.Log; break;
-                
+
                 default: Global.formMain.Show(); break;
             }
+
+            Global.formMenu.UpdateSelectedButton(Global.m_nCurrViewer);
         }
 
         private void CreateDictionary()

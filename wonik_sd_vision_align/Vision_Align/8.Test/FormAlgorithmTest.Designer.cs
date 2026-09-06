@@ -988,7 +988,7 @@ namespace Vision_Align
             // FormAlgorithmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(900, 585);
             this.Controls.Add(this.tabControl1);
@@ -997,7 +997,7 @@ namespace Vision_Align
             this.MaximizeBox = false;
             this.Name = "FormAlgorithmTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Algorithm Test - ClsAlgorithm / ClsVision";
+            this.Text = "Algorithm Test - VisionAlgorithm / ClsVision";
             this.tabControl1.ResumeLayout(false);
             this.tabGetRealPos.ResumeLayout(false);
             this.grpGetRealPos_Input.ResumeLayout(false);

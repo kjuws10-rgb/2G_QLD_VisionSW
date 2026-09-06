@@ -1,9 +1,5 @@
 # wonik_sd_vision_align
 
-## 비정상 종료 진단 및 대응
-
-비정상 종료 방어 구조, 진단 로그 위치, 자동 자료 수집 및 Windows 네이티브 덤프 설정은 [`docs/CRASH_INVESTIGATION.md`](../docs/CRASH_INVESTIGATION.md)를 참고하세요.
-
 
 
 ## Getting started

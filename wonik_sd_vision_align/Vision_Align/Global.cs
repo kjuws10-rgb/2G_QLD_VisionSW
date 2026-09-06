@@ -12,40 +12,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using uEye.Types.Focus;
 using Vision_Align._2.FormViewer;
+using VoAlgorithm;
 
 namespace Vision_Align
 {
     public enum Viewer { Main, Alram, IO, Log, MAX };
-    public enum LogType { SYSTEM = 0, TCP, PLC, EXCEPTION, DB, Serial, MAX };
+    public enum LogType { SYSTEM = 0, TCP, PLC, EXCEPTION, DB, Serial, ALARM, MAX };
 
     public enum CamInfo { CAM_1, CAM_2, MAX};
 
-    public enum CamSet { COMMON, MARK_ALIGN, CONTACT, MAX };
-
-    public enum Matching_Type { MARK_GRAY, MASK_SHAPE, GLASS_SHAPE, MAX };
+    public enum CamSet { CALIBRATION, PRE_ALIGN, CONTACT_ALIGN, MAX };
 
     public enum HWindowType { MAIN_1, MAIN_2, PRE_1, PRE_2, LOG_1, LOG_2, MAX };
-
-    public enum AlarmCode
-    {
-        None = 0,                 // No Alarm
-
-        PmcAlarm = 1001,          // PMC Alarm
-        PreAlignRetryOver = 1002, // Pre Align Retry Over
-        ContactAlignRetryOver = 1003, // Contact Align Retry Over
-
-        CameraCommError = 1008,   // Camera Communication Error
-        LightCommError = 1009,    // Light Communication Error
-        UvwStageCommError = 1010, // UVW Stage Communication Error
-        CameraMotionCommError = 1011, // Camera Motion Communication Error
-        UvwStageMoveError = 1012, // UVW Stage Move Command Error
-        MarkTeachingError = 1013, // Mark Teaching Error
-        BoardInvertError = 1014,  // Board Invert Error
-        InterfaceTimeout = 1015,  // Interface Timeout Error
-        UvwStageOverTravel = 1016, // UVW Stage Over Travel Error
-        CalibrationError = 1017, // UVW Stage Over Travel Error
-        Unknown = 9999,
-    }
 
     public static class Global
     {
@@ -61,11 +39,11 @@ namespace Vision_Align
         #endregion
 
         #region FilePaht
-        public static string strRecipePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RECIPE");
-        public static string strConfigPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CONFIG");
-        public static string strRsltPath   = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RESULT");
+        public static string strRecipePath = Environment.CurrentDirectory + "\\RECIPE";
+        public static string strConfigPath = Environment.CurrentDirectory + "\\CONFIG";
+        public static string strRsltPath   = Environment.CurrentDirectory + "\\RESULT";
 
-        public static string[] strMatchPath = new string[(int)Matching_Type.MAX];
+        public static string[] strMatchPath = new string[(int)MatchingType.Max];
         #endregion
 
         #region Form Variable
@@ -76,7 +54,6 @@ namespace Vision_Align
         public static FormMain formMain;
         public static FormIO formIO;
         public static FormLogView formLog;
-        public static FormTopMassage formTopMsg;
 
         public static FormSetCam formSetCam;
 
@@ -84,6 +61,7 @@ namespace Vision_Align
         public static FormPreview[] formPreView = new FormPreview[2];
 
         public static FormModel formModel;//= new FormModel();
+        public static FormAlarmView formAlarmView;
 
         public static FormHalconDisplay[] formHDisplay = new FormHalconDisplay[(int)HWindowType.MAX];
 
@@ -117,7 +95,8 @@ namespace Vision_Align
         public static ClsOmronThread  clsOmronThread;
         public static ClsFolderThread clsFolderThread;
 
-        public static ClsAlgorithm[] clsAlgorithm = new ClsAlgorithm[(int)CamInfo.MAX];
+        public static ClsAlarmManager clsAlarmManager = new ClsAlarmManager();
+        public static VisionAlgorithm[] clsAlgorithm = new VisionAlgorithm[(int)CamInfo.MAX];
         public static ClsCsvFile clsCSV = new ClsCsvFile();
         internal static ClsUvwStage clsUvwStage = new ClsUvwStage();
         internal static ClsVision clsVision = new ClsVision();
@@ -125,22 +104,12 @@ namespace Vision_Align
 
         #region Variable
 
-        public static HModelInfo[,] hModelInfo = new HModelInfo[(int)CamInfo.MAX, (int)Matching_Type.MAX];
+        public static HModelInfo[,] hModelInfo = new HModelInfo[(int)CamInfo.MAX, (int)MatchingType.Max];
 
         /// <summary>
         /// 동작 모드
         /// </summary>
         public static bool bAutoMode = false;   // false : Manual  / true : Auto
-
-        /// <summary>
-        /// Alarm 상태
-        /// </summary>
-        public static AlarmCode m_AlarmCode = AlarmCode.None;
-
-        /// <summary>
-        /// Alarm Clear 요청
-        /// </summary>
-        public static bool bAlarmClearReq = false;
 
         /// <summary>
         /// LOG Queue
@@ -194,23 +163,23 @@ namespace Vision_Align
             Calibration_Param = IsLoad_List(IsLoad, Calibration_Param);
             inforUvw          = IsLoad_List(IsLoad, inforUvw         );
 
-            strMatchPath[(int)Matching_Type.MARK_GRAY  ] = System.IO.Path.Combine(strRecipePath, "MaskG");
-            strMatchPath[(int)Matching_Type.MASK_SHAPE ] = System.IO.Path.Combine(strRecipePath, "MaskS");
-            strMatchPath[(int)Matching_Type.GLASS_SHAPE] = System.IO.Path.Combine(strRecipePath, "GlassS");
+            strMatchPath[(int)MatchingType.MarkGray  ] = Environment.CurrentDirectory + "\\RECIPE\\MaskG" ;
+            strMatchPath[(int)MatchingType.MaskShape ] = Environment.CurrentDirectory + "\\RECIPE\\MaskS" ;
+            strMatchPath[(int)MatchingType.GlassShape] = Environment.CurrentDirectory + "\\RECIPE\\GlassS";
 
             string strPath = "";
-            for (int nType = 0; nType < (int)Matching_Type.MAX; nType++)
+            for (int nType = 0; nType < (int)MatchingType.Max; nType++)
             {
                 for (int nCam = 0; nCam < (int)CamInfo.MAX; nCam++)
                 {
-                    Global.clsAlgorithm[nCam] = new ClsAlgorithm();
+                    Global.clsAlgorithm[nCam] = new VisionAlgorithm();
                     strPath = string.Format("{0}\\{1}\\{2}", strMatchPath[nType], Sys_Param.strCurrModel[nCam, nType], Sys_Param.strCurrModel[nCam, nType]);
 
-                    Global.clsAlgorithm[nCam].LoadModel((Matching_Type)nType, strPath, out Global.hModelInfo[nCam, nType]);
+                    Global.clsAlgorithm[nCam].LoadModel((MatchingType)nType, strPath, out Global.hModelInfo[nCam, nType]);
 
-                    if      (nType == (int)Matching_Type.MARK_GRAY  ) { recipeMask_Ncc [nCam] = new Config.NCC_List(); recipeMask_Ncc [nCam] = IsLoad_List(true, recipeMask_Ncc [nCam], strPath); }
-                    else if (nType == (int)Matching_Type.MASK_SHAPE ) { recipeMask_Shm [nCam] = new Config.SHM_List(); recipeMask_Shm [nCam] = IsLoad_List(true, recipeMask_Shm [nCam], strPath); }
-                    else if (nType == (int)Matching_Type.GLASS_SHAPE) { recipeGlass_Shm[nCam] = new Config.SHM_List(); recipeGlass_Shm[nCam] = IsLoad_List(true, recipeGlass_Shm[nCam], strPath); }
+                    if      (nType == (int)MatchingType.MarkGray  ) { recipeMask_Ncc [nCam] = new Config.NCC_List(); recipeMask_Ncc [nCam] = IsLoad_List(true, recipeMask_Ncc [nCam], strPath); }
+                    else if (nType == (int)MatchingType.MaskShape ) { recipeMask_Shm [nCam] = new Config.SHM_List(); recipeMask_Shm [nCam] = IsLoad_List(true, recipeMask_Shm [nCam], strPath); }
+                    else if (nType == (int)MatchingType.GlassShape) { recipeGlass_Shm[nCam] = new Config.SHM_List(); recipeGlass_Shm[nCam] = IsLoad_List(true, recipeGlass_Shm[nCam], strPath); }
                 
                 }
             }
@@ -238,9 +207,7 @@ namespace Vision_Align
                 }
                 catch (Exception e)
                 {
-                    CrashDiagnostics.ReportRecoverableException($"Configuration {typeof(T).Name}", e);
-                    if (Global.logger != null && Global.logger.ContainsKey(LogType.EXCEPTION))
-                        Global.logger[LogType.EXCEPTION].Write($"IsLoad_List<{typeof(T).Name}> : " + e.ToString());
+                    Global.logger[LogType.EXCEPTION].Write($"IsLoad_List<{typeof(T).Name}> : " + e.ToString());
                 }
             return obj;
         }
@@ -571,7 +538,7 @@ namespace Vision_Align
     {
         public class SYSTEM_LIST
         {
-            public string[,] strCurrModel = new string[(int)CamInfo.MAX, (int)Matching_Type.MAX];
+            public string[,] strCurrModel = new string[(int)CamInfo.MAX, (int)MatchingType.Max];
 
             public bool bImgSave_Bmp = false;
             public bool bImgSave_jpg = false;
@@ -681,7 +648,11 @@ namespace Vision_Align
             public double dContactAlignXY;
             public double dContactAlignTh;
 
-            public int iPreAlignMaskAverageImageCount;
+            public int  iPreAlignMaskAverageImageCount;
+            public bool bPreAlignUseMedian;
+
+            public int  nStorageMinFreeGB;      // 잔여 공간 경고 임계값 [GB]
+            public int  nStorageRetentionDays;  // 결과 파일 보관 기간 [일]
 
             public double dUVW_LimitPosX1;
             public double dUVW_LimitPosX2;
@@ -711,6 +682,10 @@ namespace Vision_Align
                 dContactAlignTh = 0.001;
 
                 iPreAlignMaskAverageImageCount = 10;
+                bPreAlignUseMedian             = false;
+
+                nStorageMinFreeGB     = 10;
+                nStorageRetentionDays = 90;
 
                 dUVW_LimitPosX1 = 4500;
                 dUVW_LimitPosX2 = 4500;
@@ -758,8 +733,6 @@ namespace Vision_Align
             public int    nNumLevels      ;
             public string strMetric       ;
             public string strSubPixel     ;
-            public double dBoader         ;
-            public double dPixel          ;
             public string strBackGround   ;
             public double dYSize          ;
             public double dXSize          ;

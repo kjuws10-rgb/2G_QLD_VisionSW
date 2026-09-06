@@ -32,22 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_Title = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gridView_FileData = new System.Windows.Forms.DataGridView();
-            this.gridView_CsvData = new System.Windows.Forms.DataGridView();
-            this.panel_Display1 = new System.Windows.Forms.Panel();
-            this.panel_Display2 = new System.Windows.Forms.Panel();
             this.col01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridView_CsvData = new System.Windows.Forms.DataGridView();
+            this.panel_Display1 = new System.Windows.Forms.Panel();
+            this.panel_Display2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -152,6 +152,31 @@
             this.gridView_FileData.Size = new System.Drawing.Size(719, 429);
             this.gridView_FileData.TabIndex = 1159;
             // 
+            // col01
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col01.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col01.HeaderText = "File";
+            this.col01.Name = "col01";
+            this.col01.ReadOnly = true;
+            this.col01.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col01.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col01.Width = 200;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DirectoryPath";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 400;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 115;
+            // 
             // gridView_CsvData
             // 
             this.gridView_CsvData.AllowUserToAddRows = false;
@@ -216,31 +241,6 @@
             this.panel_Display2.Size = new System.Drawing.Size(582, 429);
             this.panel_Display2.TabIndex = 1157;
             // 
-            // col01
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col01.DefaultCellStyle = dataGridViewCellStyle2;
-            this.col01.HeaderText = "File";
-            this.col01.Name = "col01";
-            this.col01.ReadOnly = true;
-            this.col01.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col01.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.col01.Width = 200;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DirectoryPath";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 400;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 115;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
@@ -269,8 +269,7 @@
             // 
             // FormLogView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1920, 940);
             this.Controls.Add(this.label3);

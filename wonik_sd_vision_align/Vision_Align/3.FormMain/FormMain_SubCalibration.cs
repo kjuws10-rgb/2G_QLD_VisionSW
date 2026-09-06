@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using VoAlgorithm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,33 +26,26 @@ namespace Vision_Align
         private void ClsAutoThread_ProcessStatusMsg(object sender, string msg)
         {
             DateTime time = DateTime.Now;
-            Action updateUi = () =>
+            Task.Run(() =>
             {
-                if (!msg.Contains("[CALIBRATION_MODE]"))
-                    return;
-                if (msg.Contains("[CALIBRATION_MODE] Start"))
-                    listBoxCalStatus.Items.Clear();
-                if (listBoxCalStatus.Items.Count > 200)
-                    listBoxCalStatus.Items.Remove(0);
-                listBoxCalStatus.Items.Add($"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}");
-                if(listBoxCalStatus.Items.Count > 0)
-                    listBoxCalStatus.SelectedIndex = listBoxCalStatus.Items.Count - 1;
-            };
-
-            try
-            {
-                if (IsDisposed || Disposing || !IsHandleCreated)
-                    return;
-
                 if (InvokeRequired)
-                    BeginInvoke(updateUi);
-                else
-                    updateUi();
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("Calibration status UI update", ex);
-            }
+                {
+                    Invoke(new Action(() =>
+                    {
+                        if (!msg.Contains("[CALIBRATION_MODE]"))
+                            return;
+                        if (msg.Contains("[CALIBRATION_MODE] Start"))
+                            listBoxCalStatus.Items.Clear();
+                        if (listBoxCalStatus.Items.Count > 200)
+                        {
+                            listBoxCalStatus.Items.Remove(0);
+                        }
+                        listBoxCalStatus.Items.Add($"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}");
+                        if(listBoxCalStatus.Items.Count > 0)
+                            listBoxCalStatus.SelectedIndex = listBoxCalStatus.Items.Count - 1;
+                    }));
+                }
+            });
         }
 
         public void Initializ()
@@ -203,7 +197,7 @@ namespace Vision_Align
         private void SetUVW()
         {
             double currentX, currentY, currentAngle;
-            ClsAlgorithm.StageCalInverse(Global.inforPLC.InStageCurrentU, Global.inforPLC.InStageCurrentW, Global.inforPLC.InStageCurrentV, out currentX, out currentY, out currentAngle);
+            VisionAlgorithm.StageCalInverse(Global.inforPLC.InStageCurrentU, Global.inforPLC.InStageCurrentW, Global.inforPLC.InStageCurrentV, out currentX, out currentY, out currentAngle);
             label_OffsetX.Text = string.Format(currentX.ToString("F3"));
             label_OffsetY.Text = string.Format(currentY.ToString("F3"));
             label_OffsetT.Text = string.Format(currentAngle.ToString("F6"));

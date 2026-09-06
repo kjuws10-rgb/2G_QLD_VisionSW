@@ -34,8 +34,6 @@
             this.btn_IO = new System.Windows.Forms.Button();
             this.btn_Log = new System.Windows.Forms.Button();
             this.btn_Alram = new System.Windows.Forms.Button();
-            this.btn_About = new System.Windows.Forms.Button();
-            this.btnAlgorithmTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -58,7 +56,7 @@
             this.btn_Minimum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Minimum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minimum.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Minimum.Location = new System.Drawing.Point(1325, 10);
+            this.btn_Minimum.Location = new System.Drawing.Point(1566, 10);
             this.btn_Minimum.Name = "btn_Minimum";
             this.btn_Minimum.Size = new System.Drawing.Size(106, 53);
             this.btn_Minimum.TabIndex = 1;
@@ -86,7 +84,7 @@
             this.btn_IO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_IO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_IO.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_IO.Location = new System.Drawing.Point(170, 10);
+            this.btn_IO.Location = new System.Drawing.Point(171, 10);
             this.btn_IO.Name = "btn_IO";
             this.btn_IO.Size = new System.Drawing.Size(152, 53);
             this.btn_IO.TabIndex = 4;
@@ -113,51 +111,20 @@
             this.btn_Alram.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Alram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Alram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Alram.Font = new System.Drawing.Font("Arial", 7F);
-            this.btn_Alram.Location = new System.Drawing.Point(1207, 17);
+            this.btn_Alram.Font = new System.Drawing.Font("Arial", 9F);
+            this.btn_Alram.Location = new System.Drawing.Point(486, 10);
             this.btn_Alram.Name = "btn_Alram";
-            this.btn_Alram.Size = new System.Drawing.Size(85, 40);
+            this.btn_Alram.Size = new System.Drawing.Size(152, 53);
             this.btn_Alram.TabIndex = 6;
             this.btn_Alram.Text = "ALRAM";
             this.btn_Alram.UseVisualStyleBackColor = false;
             this.btn_Alram.Click += new System.EventHandler(this.btn_Alram_Click);
             // 
-            // btn_About
-            // 
-            this.btn_About.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_About.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_About.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_About.Location = new System.Drawing.Point(1437, 10);
-            this.btn_About.Name = "btn_About";
-            this.btn_About.Size = new System.Drawing.Size(235, 53);
-            this.btn_About.TabIndex = 7;
-            this.btn_About.Text = "PROGRAM ABOUT";
-            this.btn_About.UseVisualStyleBackColor = false;
-            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
-            // 
-            // btnAlgorithmTest
-            // 
-            this.btnAlgorithmTest.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAlgorithmTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAlgorithmTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlgorithmTest.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlgorithmTest.Location = new System.Drawing.Point(854, 17);
-            this.btnAlgorithmTest.Name = "btnAlgorithmTest";
-            this.btnAlgorithmTest.Size = new System.Drawing.Size(160, 29);
-            this.btnAlgorithmTest.TabIndex = 8;
-            this.btnAlgorithmTest.Text = "Algorithm Test";
-            this.btnAlgorithmTest.UseVisualStyleBackColor = false;
-            this.btnAlgorithmTest.Click += new System.EventHandler(this.btnAlgorithmTest_Click);
-            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1920, 74);
             this.ControlBox = false;
-            this.Controls.Add(this.btnAlgorithmTest);
-            this.Controls.Add(this.btn_About);
             this.Controls.Add(this.btn_Alram);
             this.Controls.Add(this.btn_Log);
             this.Controls.Add(this.btn_IO);
@@ -180,7 +147,5 @@
         private System.Windows.Forms.Button btn_IO;
         private System.Windows.Forms.Button btn_Log;
         private System.Windows.Forms.Button btn_Alram;
-        private System.Windows.Forms.Button btn_About;
-        private System.Windows.Forms.Button btnAlgorithmTest;
     }
 }

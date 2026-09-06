@@ -70,7 +70,7 @@
             this.btn_PreConfig.Name = "btn_PreConfig";
             this.btn_PreConfig.Size = new System.Drawing.Size(126, 23);
             this.btn_PreConfig.TabIndex = 5;
-            this.btn_PreConfig.Text = "PRE CONFIG";
+            this.btn_PreConfig.Text = "CONFIG";
             this.btn_PreConfig.UseVisualStyleBackColor = false;
             this.btn_PreConfig.Click += new System.EventHandler(this.btn_PreConfig_Click);
             // 
@@ -85,7 +85,7 @@
             this.btn_PreCalibration.Name = "btn_PreCalibration";
             this.btn_PreCalibration.Size = new System.Drawing.Size(126, 23);
             this.btn_PreCalibration.TabIndex = 4;
-            this.btn_PreCalibration.Text = "PRE CALIBRATION";
+            this.btn_PreCalibration.Text = "CALIBRATION";
             this.btn_PreCalibration.UseVisualStyleBackColor = false;
             this.btn_PreCalibration.Click += new System.EventHandler(this.btn_PreCalibration_Click);
             // 
@@ -100,22 +100,22 @@
             this.btn_PreMain.Name = "btn_PreMain";
             this.btn_PreMain.Size = new System.Drawing.Size(126, 23);
             this.btn_PreMain.TabIndex = 3;
-            this.btn_PreMain.Text = "PRE MAIN";
+            this.btn_PreMain.Text = "MAIN INFO";
             this.btn_PreMain.UseVisualStyleBackColor = false;
             this.btn_PreMain.Click += new System.EventHandler(this.btn_PreMain_Click);
             // 
             // panel_Display2
             // 
-            this.panel_Display2.Location = new System.Drawing.Point(758, 31);
+            this.panel_Display2.Location = new System.Drawing.Point(758, 5);
             this.panel_Display2.Name = "panel_Display2";
-            this.panel_Display2.Size = new System.Drawing.Size(749, 450);
+            this.panel_Display2.Size = new System.Drawing.Size(749, 476);
             this.panel_Display2.TabIndex = 6;
             // 
             // panel_Display1
             // 
-            this.panel_Display1.Location = new System.Drawing.Point(3, 31);
+            this.panel_Display1.Location = new System.Drawing.Point(3, 5);
             this.panel_Display1.Name = "panel_Display1";
-            this.panel_Display1.Size = new System.Drawing.Size(749, 450);
+            this.panel_Display1.Size = new System.Drawing.Size(749, 476);
             this.panel_Display1.TabIndex = 7;
             // 
             // panel_PreView1
@@ -134,15 +134,15 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1920, 940);
+            this.ClientSize = new System.Drawing.Size(1920, 880);
             this.Controls.Add(this.panel_PreView2);
             this.Controls.Add(this.panel_PreView1);
             this.Controls.Add(this.panel_Display1);
             this.Controls.Add(this.panel_Display2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Arial", 9F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";

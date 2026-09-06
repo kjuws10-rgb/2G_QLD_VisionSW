@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using VoAlgorithm;
 
 namespace Vision_Align
 {
     public partial class FormAlgorithmTest : Form
     {
-        private ClsAlgorithm m_Algorithm = new ClsAlgorithm();
+        private VisionAlgorithm m_Algorithm = new VisionAlgorithm();
 
         // FitCircle canvas data
         private List<PointF> m_FitCirclePoints = new List<PointF>();
@@ -90,7 +91,7 @@ namespace Vision_Align
                 }
 
                 m_Algorithm.StageBasicInfo(pinDeg, stageDeg, radius);
-                ClsAlgorithm.StageCal(x, y, angle, out double x1, out double x2, out double y1, out double y2);
+                VisionAlgorithm.StageCal(x, y, angle, out double x1, out double x2, out double y1, out double y2);
 
                 txtX1.Text = x1.ToString("F6");
                 txtX2.Text = x2.ToString("F6");
@@ -124,7 +125,7 @@ namespace Vision_Align
                 }
 
                 m_Algorithm.StageBasicInfo(pinDeg, stageDeg, radius);
-                bool result = ClsAlgorithm.StageCalInverse(x1, x2, y1, out double x, out double y, out double angle);
+                bool result = VisionAlgorithm.StageCalInverse(x1, x2, y1, out double x, out double y, out double angle);
 
                 if (result)
                 {
@@ -170,7 +171,7 @@ namespace Vision_Align
                     return;
                 }
 
-                ClsAlgorithm.FitCircle(points, out PointF center, out double radius);
+                VisionAlgorithm.FitCircle(points, out PointF center, out double radius);
 
                 txtCenterX.Text = center.X.ToString("F4");
                 txtCenterY.Text = center.Y.ToString("F4");
@@ -205,7 +206,7 @@ namespace Vision_Align
                 PointF p1 = points[0];
                 PointF p2 = points[1];
 
-                double angle = m_Algorithm.CalAngle(p1, p2);
+                double angle = m_Algorithm.CalculateAngle(p1, p2);
 
                 txtAngleResult.Text = angle.ToString("F4");
 

@@ -84,6 +84,10 @@ namespace Vision_Align
                 nud_Offset_X2.Value = (decimal)Global.PreConfig_Param.dUVW_OffsetX2; nud_Offset_Y2.Value = (decimal)Global.PreConfig_Param.dUVW_OffsetY2;
 
                 nud_AverageImageCount.Value = (decimal)Global.PreConfig_Param.iPreAlignMaskAverageImageCount;
+                cb_UseMedian  .Checked = Global.PreConfig_Param.bPreAlignUseMedian;
+
+                nud_StorageMinFreeGB     .Value = (decimal)Global.PreConfig_Param.nStorageMinFreeGB;
+                nud_StorageRetentionDays .Value = (decimal)Global.PreConfig_Param.nStorageRetentionDays;
 
                 cb_Always_Live.Checked = Global.PreConfig_Param.bAlways_Live;
             } 
@@ -110,6 +114,10 @@ namespace Vision_Align
                 Global.PreConfig_Param.dUVW_OffsetX2 = Convert.ToDouble(nud_Offset_X2.Value); Global.PreConfig_Param.dUVW_OffsetY2 = Convert.ToDouble(nud_Offset_Y2.Value);
 
                 Global.PreConfig_Param.iPreAlignMaskAverageImageCount = Convert.ToInt32(nud_AverageImageCount.Value);
+                Global.PreConfig_Param.bPreAlignUseMedian             = cb_UseMedian.Checked;
+
+                Global.PreConfig_Param.nStorageMinFreeGB     = Convert.ToInt32(nud_StorageMinFreeGB.Value);
+                Global.PreConfig_Param.nStorageRetentionDays = Convert.ToInt32(nud_StorageRetentionDays.Value);
 
                 Global.PreConfig_Param.bAlways_Live = cb_Always_Live.Checked;
 

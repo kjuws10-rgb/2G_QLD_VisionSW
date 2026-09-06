@@ -1178,7 +1178,7 @@ namespace Vision_Align._2.FormViewer
             this.listBoxPlcIoLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxPlcIoLog.BackColor = System.Drawing.Color.Black;
-            this.listBoxPlcIoLog.Font = new System.Drawing.Font("±¼¸²", 9F);
+            this.listBoxPlcIoLog.Font = new System.Drawing.Font("ï¿½ï¿½ï¿½ï¿½", 9F);
             this.listBoxPlcIoLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.listBoxPlcIoLog.FormattingEnabled = true;
             this.listBoxPlcIoLog.HorizontalScrollbar = true;
@@ -1229,7 +1229,7 @@ namespace Vision_Align._2.FormViewer
             // FormIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1414, 552);
             this.Controls.Add(this.checkBox_AiStage);

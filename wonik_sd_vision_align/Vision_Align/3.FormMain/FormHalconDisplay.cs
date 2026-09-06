@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using VoAlgorithm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace Vision_Align
             this.MouseWheel += hControl_Display.HSmartWindowControl_MouseWheel;
             hControl_Display.HMouseDown += HWindowControl_MouseDown;
 
-            ClsAlgorithm.FitImage(hv_WindowHandle, 2456, 2054);
+            VisionAlgorithm.FitImage(hv_WindowHandle, 2456, 2054);
         }
 
         private void HWindowControl_MouseDown(object sender, HMouseEventArgs e)
@@ -63,20 +64,16 @@ namespace Vision_Align
             // ─────────────── MASK
             var mask = new ToolStripMenuItem("Mask");
 
-            var maskGray = new ToolStripMenuItem("Gray");
-            maskGray.Click += (s, e) => Global.formModel.ShowViewer(m_nCamNo, Matching_Type.MARK_GRAY);
+            var maskShape = new ToolStripMenuItem("Shape");
+            maskShape.Click += (s, e) => Global.formModel.ShowViewer(m_nCamNo, MatchingType.MaskShape);
 
-            var maskShape = new ToolStripMenuItem("Templete");
-            maskShape.Click += (s, e) => Global.formModel.ShowViewer(m_nCamNo, Matching_Type.MASK_SHAPE);
-
-            mask.DropDownItems.Add(maskGray);
             mask.DropDownItems.Add(maskShape);
 
             // ─────────────── GLASS
             var glass = new ToolStripMenuItem("Glass");
 
             var glassShape = new ToolStripMenuItem("Shape");
-            glassShape.Click += (s, e) => Global.formModel.ShowViewer(m_nCamNo, Matching_Type.GLASS_SHAPE);
+            glassShape.Click += (s, e) => Global.formModel.ShowViewer(m_nCamNo, MatchingType.GlassShape);
 
             glass.DropDownItems.Add(glassShape);
 

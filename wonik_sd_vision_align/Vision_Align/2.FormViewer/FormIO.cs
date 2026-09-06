@@ -23,37 +23,28 @@ namespace Vision_Align._2.FormViewer
         private void ClsOmron_ChangedIoMsg(object sender, string msg)
         {
             DateTime time = DateTime.Now;
-            Action updateUi = () =>
+            Task.Run(() =>
             {
-                if (!checkBox_AiStage.Checked && msg.Contains("[AI"))
-                    return;
-                string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
-
-                if (checkBox_AliveSignal.Checked || !msg.Contains(DI_STAGE_BIT.ALIVE.ToString()))
-                {
-                    if (listBoxPlcIoLog.Items.Count > 200)
-                        listBoxPlcIoLog.Items.Remove(0);
-                    listBoxPlcIoLog.Items.Add(message);
-                    listBoxPlcIoLog.SelectedIndex = listBoxPlcIoLog.Items.Count - 1;
-                }
-
-                Global.logger[LogType.PLC].Write(msg);
-            };
-
-            try
-            {
-                if (IsDisposed || Disposing || !IsHandleCreated)
-                    return;
-
                 if (InvokeRequired)
-                    BeginInvoke(updateUi);
-                else
-                    updateUi();
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("PLC I/O UI update", ex);
-            }
+                {
+                    Invoke(new Action(() =>
+                    {
+                        if (!checkBox_AiStage.Checked && msg.Contains("[AI"))
+                            return;
+                        string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
+
+                        if (checkBox_AliveSignal.Checked || !msg.Contains(DI_STAGE_BIT.ALIVE.ToString()))
+                        {
+                            if (listBoxPlcIoLog.Items.Count > 200)
+                                listBoxPlcIoLog.Items.Remove(0);
+                            listBoxPlcIoLog.Items.Add(message);
+                            listBoxPlcIoLog.SelectedIndex = listBoxPlcIoLog.Items.Count - 1;
+                        }
+
+                        Global.logger[LogType.PLC].Write(msg);
+                    }));
+                }
+            });
         }
 
         public void Initializ(Color? color = null)

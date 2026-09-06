@@ -76,6 +76,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.nud_AverageImageCount = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
+            this.cb_UseMedian = new System.Windows.Forms.CheckBox();
+            this.label_StorageSect = new System.Windows.Forms.Label();
+            this.label_MinFreeGB = new System.Windows.Forms.Label();
+            this.nud_StorageMinFreeGB = new System.Windows.Forms.NumericUpDown();
+            this.label_RetentionDays = new System.Windows.Forms.Label();
+            this.nud_StorageRetentionDays = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Score_Limit_Mark_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Pre_XY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Score_Limit_Glass_0)).BeginInit();
@@ -95,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Contact_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Contact_XY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_AverageImageCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_StorageMinFreeGB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_StorageRetentionDays)).BeginInit();
             this.SuspendLayout();
             // 
             // nud_Score_Limit_Mark_0
@@ -214,7 +222,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 23);
             this.label7.TabIndex = 1165;
-            this.label7.Text = "Pre T[mdeg]";
+            this.label7.Text = "Pre T[Deg]";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nud_Pre_T
@@ -370,6 +378,7 @@
             this.nud_Offset_X2.Name = "nud_Offset_X2";
             this.nud_Offset_X2.Size = new System.Drawing.Size(196, 21);
             this.nud_Offset_X2.TabIndex = 1190;
+            this.nud_Offset_X2.Visible = false;
             // 
             // label19
             // 
@@ -383,6 +392,7 @@
             this.label19.TabIndex = 1189;
             this.label19.Text = "X2 Offset(um)";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.Visible = false;
             // 
             // label20
             // 
@@ -396,6 +406,7 @@
             this.label20.TabIndex = 1188;
             this.label20.Text = "X1 Offset(um)";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.Visible = false;
             // 
             // nud_Offset_X1
             // 
@@ -410,6 +421,7 @@
             this.nud_Offset_X1.Name = "nud_Offset_X1";
             this.nud_Offset_X1.Size = new System.Drawing.Size(196, 21);
             this.nud_Offset_X1.TabIndex = 1187;
+            this.nud_Offset_X1.Visible = false;
             // 
             // nud_Offset_Y2
             // 
@@ -424,6 +436,7 @@
             this.nud_Offset_Y2.Name = "nud_Offset_Y2";
             this.nud_Offset_Y2.Size = new System.Drawing.Size(196, 21);
             this.nud_Offset_Y2.TabIndex = 1194;
+            this.nud_Offset_Y2.Visible = false;
             // 
             // label21
             // 
@@ -437,6 +450,7 @@
             this.label21.TabIndex = 1193;
             this.label21.Text = "Y2 Offset(um)";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.Visible = false;
             // 
             // label22
             // 
@@ -450,6 +464,7 @@
             this.label22.TabIndex = 1192;
             this.label22.Text = "Y1 Offset(um)";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Visible = false;
             // 
             // nud_Offset_Y1
             // 
@@ -464,6 +479,7 @@
             this.nud_Offset_Y1.Name = "nud_Offset_Y1";
             this.nud_Offset_Y1.Size = new System.Drawing.Size(196, 21);
             this.nud_Offset_Y1.TabIndex = 1191;
+            this.nud_Offset_Y1.Visible = false;
             // 
             // label23
             // 
@@ -510,7 +526,7 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Font = new System.Drawing.Font("Arial", 9F);
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(12, 464);
+            this.label24.Location = new System.Drawing.Point(12, 482);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(104, 23);
             this.label24.TabIndex = 1198;
@@ -523,7 +539,7 @@
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.Font = new System.Drawing.Font("Arial", 9F);
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(203, 464);
+            this.label25.Location = new System.Drawing.Point(203, 482);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(104, 23);
             this.label25.TabIndex = 1199;
@@ -535,7 +551,7 @@
             this.cb_Comport.Font = new System.Drawing.Font("굴림", 11F);
             this.cb_Comport.ForeColor = System.Drawing.Color.Black;
             this.cb_Comport.FormattingEnabled = true;
-            this.cb_Comport.Location = new System.Drawing.Point(120, 464);
+            this.cb_Comport.Location = new System.Drawing.Point(120, 482);
             this.cb_Comport.Name = "cb_Comport";
             this.cb_Comport.Size = new System.Drawing.Size(77, 23);
             this.cb_Comport.TabIndex = 1200;
@@ -551,7 +567,7 @@
             "14400",
             "19200",
             "115200"});
-            this.cb_BaudRate.Location = new System.Drawing.Point(313, 464);
+            this.cb_BaudRate.Location = new System.Drawing.Point(313, 482);
             this.cb_BaudRate.Name = "cb_BaudRate";
             this.cb_BaudRate.Size = new System.Drawing.Size(77, 23);
             this.cb_BaudRate.TabIndex = 1201;
@@ -713,7 +729,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 23);
             this.label11.TabIndex = 1212;
-            this.label11.Text = "Contact T[mdeg]";
+            this.label11.Text = "Contact T[Deg]";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nud_Contact_XY
@@ -778,14 +794,110 @@
             this.label13.Text = "Pre Mask Average Image Count";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cb_UseMedian
+            // 
+            this.cb_UseMedian.AutoSize = true;
+            this.cb_UseMedian.ForeColor = System.Drawing.Color.White;
+            this.cb_UseMedian.Location = new System.Drawing.Point(12, 463);
+            this.cb_UseMedian.Name = "cb_UseMedian";
+            this.cb_UseMedian.Size = new System.Drawing.Size(173, 16);
+            this.cb_UseMedian.TabIndex = 1216;
+            this.cb_UseMedian.Text = "Use Median (not Average)";
+            this.cb_UseMedian.UseVisualStyleBackColor = true;
+            // 
+            // label_StorageSect
+            // 
+            this.label_StorageSect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.label_StorageSect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_StorageSect.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_StorageSect.ForeColor = System.Drawing.Color.White;
+            this.label_StorageSect.Location = new System.Drawing.Point(2, 520);
+            this.label_StorageSect.Name = "label_StorageSect";
+            this.label_StorageSect.Size = new System.Drawing.Size(392, 18);
+            this.label_StorageSect.TabIndex = 1217;
+            this.label_StorageSect.Text = "Storage Management";
+            this.label_StorageSect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_MinFreeGB
+            // 
+            this.label_MinFreeGB.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_MinFreeGB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_MinFreeGB.Font = new System.Drawing.Font("Arial", 9F);
+            this.label_MinFreeGB.ForeColor = System.Drawing.Color.White;
+            this.label_MinFreeGB.Location = new System.Drawing.Point(2, 546);
+            this.label_MinFreeGB.Name = "label_MinFreeGB";
+            this.label_MinFreeGB.Size = new System.Drawing.Size(195, 23);
+            this.label_MinFreeGB.TabIndex = 1218;
+            this.label_MinFreeGB.Text = "Min Free Space [GB]";
+            this.label_MinFreeGB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nud_StorageMinFreeGB
+            // 
+            this.nud_StorageMinFreeGB.Font = new System.Drawing.Font("굴림", 11F);
+            this.nud_StorageMinFreeGB.Location = new System.Drawing.Point(200, 546);
+            this.nud_StorageMinFreeGB.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_StorageMinFreeGB.Name = "nud_StorageMinFreeGB";
+            this.nud_StorageMinFreeGB.Size = new System.Drawing.Size(80, 24);
+            this.nud_StorageMinFreeGB.TabIndex = 1219;
+            this.nud_StorageMinFreeGB.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label_RetentionDays
+            // 
+            this.label_RetentionDays.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_RetentionDays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_RetentionDays.Font = new System.Drawing.Font("Arial", 9F);
+            this.label_RetentionDays.ForeColor = System.Drawing.Color.White;
+            this.label_RetentionDays.Location = new System.Drawing.Point(2, 574);
+            this.label_RetentionDays.Name = "label_RetentionDays";
+            this.label_RetentionDays.Size = new System.Drawing.Size(195, 23);
+            this.label_RetentionDays.TabIndex = 1220;
+            this.label_RetentionDays.Text = "Retention [days]";
+            this.label_RetentionDays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nud_StorageRetentionDays
+            // 
+            this.nud_StorageRetentionDays.Font = new System.Drawing.Font("굴림", 11F);
+            this.nud_StorageRetentionDays.Location = new System.Drawing.Point(200, 574);
+            this.nud_StorageRetentionDays.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.nud_StorageRetentionDays.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_StorageRetentionDays.Name = "nud_StorageRetentionDays";
+            this.nud_StorageRetentionDays.Size = new System.Drawing.Size(80, 24);
+            this.nud_StorageRetentionDays.TabIndex = 1221;
+            this.nud_StorageRetentionDays.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
             // FormMain_SubConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(397, 898);
             this.Controls.Add(this.nud_AverageImageCount);
             this.Controls.Add(this.label13);
+            this.Controls.Add(this.cb_UseMedian);
+            this.Controls.Add(this.label_StorageSect);
+            this.Controls.Add(this.label_MinFreeGB);
+            this.Controls.Add(this.nud_StorageMinFreeGB);
+            this.Controls.Add(this.label_RetentionDays);
+            this.Controls.Add(this.nud_StorageRetentionDays);
             this.Controls.Add(this.nud_Contact_T);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.nud_Contact_XY);
@@ -854,6 +966,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Contact_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Contact_XY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_AverageImageCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_StorageMinFreeGB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_StorageRetentionDays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -908,5 +1022,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown nud_AverageImageCount;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox cb_UseMedian;
+        private System.Windows.Forms.Label label_StorageSect;
+        private System.Windows.Forms.Label label_MinFreeGB;
+        private System.Windows.Forms.NumericUpDown nud_StorageMinFreeGB;
+        private System.Windows.Forms.Label label_RetentionDays;
+        private System.Windows.Forms.NumericUpDown nud_StorageRetentionDays;
     }
 }

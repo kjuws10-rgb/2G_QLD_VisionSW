@@ -42,7 +42,6 @@
             this.cb_GS_Dir = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.btn_Add_Glass = new System.Windows.Forms.Button();
-            this.btn_Init_Glass = new System.Windows.Forms.Button();
             this.cb_GS_BackGround = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.btn_Create_Glass = new System.Windows.Forms.Button();
@@ -72,10 +71,6 @@
             this.nud_GS_Angle_Max = new System.Windows.Forms.NumericUpDown();
             this.nud_GS_Angle_Min = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
-            this.nud_GS_Pixel = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.nud_GS_Boader = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
             this.nud_GS_Depth = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.nud_GS_Y_Size = new System.Windows.Forms.NumericUpDown();
@@ -83,11 +78,15 @@
             this.nud_GS_X_Size = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_AutoGenMaskTemplate = new System.Windows.Forms.Button();
+            this.nud_MS_Scale_Max = new System.Windows.Forms.NumericUpDown();
+            this.nud_MS_Scale_Min = new System.Windows.Forms.NumericUpDown();
+            this.label_MS_ScaleTilde = new System.Windows.Forms.Label();
+            this.label_MS_Scale = new System.Windows.Forms.Label();
             this.cb_MS_MulOption = new System.Windows.Forms.CheckBox();
             this.label42 = new System.Windows.Forms.Label();
             this.nud_MS_MulOption = new System.Windows.Forms.NumericUpDown();
             this.btn_Add_Mask = new System.Windows.Forms.Button();
-            this.btn_Init_Mask = new System.Windows.Forms.Button();
             this.cb_MS_BackGround = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.cb_MS_SubPixel = new System.Windows.Forms.ComboBox();
@@ -104,10 +103,6 @@
             this.nud_MS_Angle_Max = new System.Windows.Forms.NumericUpDown();
             this.nud_MS_Angle_Min = new System.Windows.Forms.NumericUpDown();
             this.label38 = new System.Windows.Forms.Label();
-            this.nud_MS_Pixel = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
-            this.nud_MS_Boader = new System.Windows.Forms.NumericUpDown();
-            this.label40 = new System.Windows.Forms.Label();
             this.nud_MS_Radius = new System.Windows.Forms.NumericUpDown();
             this.label41 = new System.Windows.Forms.Label();
             this.btn_Create_Mask = new System.Windows.Forms.Button();
@@ -163,20 +158,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Scale_Min)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Angle_Max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Angle_Min)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Pixel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Boader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Depth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Y_Size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_X_Size)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Scale_Max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Scale_Min)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MulOption)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_NumLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MaxOverlap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MinScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Angle_Max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Angle_Min)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Pixel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Boader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Radius)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -256,7 +249,6 @@
             this.tabPage1.Controls.Add(this.cb_GS_Dir);
             this.tabPage1.Controls.Add(this.label43);
             this.tabPage1.Controls.Add(this.btn_Add_Glass);
-            this.tabPage1.Controls.Add(this.btn_Init_Glass);
             this.tabPage1.Controls.Add(this.cb_GS_BackGround);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.btn_Create_Glass);
@@ -286,10 +278,6 @@
             this.tabPage1.Controls.Add(this.nud_GS_Angle_Max);
             this.tabPage1.Controls.Add(this.nud_GS_Angle_Min);
             this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.nud_GS_Pixel);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.nud_GS_Boader);
-            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.nud_GS_Depth);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.nud_GS_Y_Size);
@@ -301,7 +289,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(763, 272);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Model Templete";
+            this.tabPage1.Text = "Glass Shape";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // cb_GS_Dir
@@ -330,26 +318,13 @@
             this.btn_Add_Glass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Add_Glass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add_Glass.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_Add_Glass.Location = new System.Drawing.Point(653, 38);
+            this.btn_Add_Glass.Location = new System.Drawing.Point(413, 9);
             this.btn_Add_Glass.Name = "btn_Add_Glass";
-            this.btn_Add_Glass.Size = new System.Drawing.Size(86, 25);
+            this.btn_Add_Glass.Size = new System.Drawing.Size(125, 25);
             this.btn_Add_Glass.TabIndex = 1171;
-            this.btn_Add_Glass.Text = "Add";
+            this.btn_Add_Glass.Text = "Create Image";
             this.btn_Add_Glass.UseVisualStyleBackColor = false;
             this.btn_Add_Glass.Click += new System.EventHandler(this.btn_Add_Glass_Click);
-            // 
-            // btn_Init_Glass
-            // 
-            this.btn_Init_Glass.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Init_Glass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Init_Glass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Init_Glass.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_Init_Glass.Location = new System.Drawing.Point(507, 38);
-            this.btn_Init_Glass.Name = "btn_Init_Glass";
-            this.btn_Init_Glass.Size = new System.Drawing.Size(86, 25);
-            this.btn_Init_Glass.TabIndex = 1168;
-            this.btn_Init_Glass.Text = "Init";
-            this.btn_Init_Glass.UseVisualStyleBackColor = false;
             // 
             // cb_GS_BackGround
             // 
@@ -581,7 +556,17 @@
             // nud_GS_Scale_Max
             // 
             this.nud_GS_Scale_Max.DecimalPlaces = 2;
+            this.nud_GS_Scale_Max.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.nud_GS_Scale_Max.Location = new System.Drawing.Point(164, 67);
+            this.nud_GS_Scale_Max.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nud_GS_Scale_Max.Name = "nud_GS_Scale_Max";
             this.nud_GS_Scale_Max.Size = new System.Drawing.Size(72, 21);
             this.nud_GS_Scale_Max.TabIndex = 22;
@@ -589,17 +574,17 @@
             // nud_GS_Scale_Min
             // 
             this.nud_GS_Scale_Min.DecimalPlaces = 2;
+            this.nud_GS_Scale_Min.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.nud_GS_Scale_Min.Location = new System.Drawing.Point(66, 67);
             this.nud_GS_Scale_Min.Maximum = new decimal(new int[] {
-            0,
+            10,
             0,
             0,
             0});
-            this.nud_GS_Scale_Min.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
             this.nud_GS_Scale_Min.Name = "nud_GS_Scale_Min";
             this.nud_GS_Scale_Min.Size = new System.Drawing.Size(72, 21);
             this.nud_GS_Scale_Min.TabIndex = 21;
@@ -661,60 +646,6 @@
             this.label18.Size = new System.Drawing.Size(37, 12);
             this.label18.TabIndex = 16;
             this.label18.Text = "Angle";
-            // 
-            // nud_GS_Pixel
-            // 
-            this.nud_GS_Pixel.DecimalPlaces = 4;
-            this.nud_GS_Pixel.Location = new System.Drawing.Point(667, 11);
-            this.nud_GS_Pixel.Maximum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.nud_GS_Pixel.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nud_GS_Pixel.Name = "nud_GS_Pixel";
-            this.nud_GS_Pixel.Size = new System.Drawing.Size(72, 21);
-            this.nud_GS_Pixel.TabIndex = 15;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(616, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 12);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Pxl Res.";
-            // 
-            // nud_GS_Boader
-            // 
-            this.nud_GS_Boader.DecimalPlaces = 4;
-            this.nud_GS_Boader.Location = new System.Drawing.Point(521, 11);
-            this.nud_GS_Boader.Maximum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.nud_GS_Boader.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nud_GS_Boader.Name = "nud_GS_Boader";
-            this.nud_GS_Boader.Size = new System.Drawing.Size(72, 21);
-            this.nud_GS_Boader.TabIndex = 13;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(470, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 12);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Boader";
             // 
             // nud_GS_Depth
             // 
@@ -784,11 +715,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_AutoGenMaskTemplate);
+            this.tabPage3.Controls.Add(this.nud_MS_Scale_Max);
+            this.tabPage3.Controls.Add(this.nud_MS_Scale_Min);
+            this.tabPage3.Controls.Add(this.label_MS_ScaleTilde);
+            this.tabPage3.Controls.Add(this.label_MS_Scale);
             this.tabPage3.Controls.Add(this.cb_MS_MulOption);
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.nud_MS_MulOption);
             this.tabPage3.Controls.Add(this.btn_Add_Mask);
-            this.tabPage3.Controls.Add(this.btn_Init_Mask);
             this.tabPage3.Controls.Add(this.cb_MS_BackGround);
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.cb_MS_SubPixel);
@@ -805,10 +740,6 @@
             this.tabPage3.Controls.Add(this.nud_MS_Angle_Max);
             this.tabPage3.Controls.Add(this.nud_MS_Angle_Min);
             this.tabPage3.Controls.Add(this.label38);
-            this.tabPage3.Controls.Add(this.nud_MS_Pixel);
-            this.tabPage3.Controls.Add(this.label39);
-            this.tabPage3.Controls.Add(this.nud_MS_Boader);
-            this.tabPage3.Controls.Add(this.label40);
             this.tabPage3.Controls.Add(this.nud_MS_Radius);
             this.tabPage3.Controls.Add(this.label41);
             this.tabPage3.Controls.Add(this.btn_Create_Mask);
@@ -816,8 +747,91 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(763, 272);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Templete";
+            this.tabPage3.Text = "Mask Shpae";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_AutoGenMaskTemplate
+            // 
+            this.btn_AutoGenMaskTemplate.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_AutoGenMaskTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_AutoGenMaskTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AutoGenMaskTemplate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutoGenMaskTemplate.Location = new System.Drawing.Point(529, 148);
+            this.btn_AutoGenMaskTemplate.Name = "btn_AutoGenMaskTemplate";
+            this.btn_AutoGenMaskTemplate.Size = new System.Drawing.Size(215, 51);
+            this.btn_AutoGenMaskTemplate.TabIndex = 1173;
+            this.btn_AutoGenMaskTemplate.Text = "Auto Gen && Create Model\r\n(Scale)";
+            this.btn_AutoGenMaskTemplate.UseVisualStyleBackColor = false;
+            this.btn_AutoGenMaskTemplate.Click += new System.EventHandler(this.btn_AutoGenMaskTemplate_Click);
+            // 
+            // nud_MS_Scale_Max
+            // 
+            this.nud_MS_Scale_Max.DecimalPlaces = 2;
+            this.nud_MS_Scale_Max.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nud_MS_Scale_Max.Location = new System.Drawing.Point(164, 67);
+            this.nud_MS_Scale_Max.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nud_MS_Scale_Max.Name = "nud_MS_Scale_Max";
+            this.nud_MS_Scale_Max.Size = new System.Drawing.Size(72, 21);
+            this.nud_MS_Scale_Max.TabIndex = 1199;
+            this.nud_MS_Scale_Max.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            65536});
+            // 
+            // nud_MS_Scale_Min
+            // 
+            this.nud_MS_Scale_Min.DecimalPlaces = 2;
+            this.nud_MS_Scale_Min.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nud_MS_Scale_Min.Location = new System.Drawing.Point(66, 67);
+            this.nud_MS_Scale_Min.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nud_MS_Scale_Min.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nud_MS_Scale_Min.Name = "nud_MS_Scale_Min";
+            this.nud_MS_Scale_Min.Size = new System.Drawing.Size(72, 21);
+            this.nud_MS_Scale_Min.TabIndex = 1198;
+            this.nud_MS_Scale_Min.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            65536});
+            // 
+            // label_MS_ScaleTilde
+            // 
+            this.label_MS_ScaleTilde.AutoSize = true;
+            this.label_MS_ScaleTilde.Location = new System.Drawing.Point(144, 69);
+            this.label_MS_ScaleTilde.Name = "label_MS_ScaleTilde";
+            this.label_MS_ScaleTilde.Size = new System.Drawing.Size(14, 12);
+            this.label_MS_ScaleTilde.TabIndex = 1197;
+            this.label_MS_ScaleTilde.Text = "~";
+            // 
+            // label_MS_Scale
+            // 
+            this.label_MS_Scale.AutoSize = true;
+            this.label_MS_Scale.Location = new System.Drawing.Point(23, 69);
+            this.label_MS_Scale.Name = "label_MS_Scale";
+            this.label_MS_Scale.Size = new System.Drawing.Size(37, 12);
+            this.label_MS_Scale.TabIndex = 1196;
+            this.label_MS_Scale.Text = "Scale";
             // 
             // cb_MS_MulOption
             // 
@@ -857,27 +871,13 @@
             this.btn_Add_Mask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Add_Mask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add_Mask.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_Add_Mask.Location = new System.Drawing.Point(653, 38);
+            this.btn_Add_Mask.Location = new System.Drawing.Point(248, 9);
             this.btn_Add_Mask.Name = "btn_Add_Mask";
-            this.btn_Add_Mask.Size = new System.Drawing.Size(86, 25);
+            this.btn_Add_Mask.Size = new System.Drawing.Size(132, 25);
             this.btn_Add_Mask.TabIndex = 1195;
-            this.btn_Add_Mask.Text = "Add";
+            this.btn_Add_Mask.Text = "Create Image";
             this.btn_Add_Mask.UseVisualStyleBackColor = false;
             this.btn_Add_Mask.Click += new System.EventHandler(this.btn_Add_Mask_Click);
-            // 
-            // btn_Init_Mask
-            // 
-            this.btn_Init_Mask.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Init_Mask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Init_Mask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Init_Mask.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_Init_Mask.Location = new System.Drawing.Point(507, 38);
-            this.btn_Init_Mask.Name = "btn_Init_Mask";
-            this.btn_Init_Mask.Size = new System.Drawing.Size(86, 25);
-            this.btn_Init_Mask.TabIndex = 1192;
-            this.btn_Init_Mask.Text = "Init";
-            this.btn_Init_Mask.UseVisualStyleBackColor = false;
-            this.btn_Init_Mask.Click += new System.EventHandler(this.btn_Init_Mask_Click);
             // 
             // cb_MS_BackGround
             // 
@@ -1048,60 +1048,6 @@
             this.label38.TabIndex = 1178;
             this.label38.Text = "Angle";
             // 
-            // nud_MS_Pixel
-            // 
-            this.nud_MS_Pixel.DecimalPlaces = 4;
-            this.nud_MS_Pixel.Location = new System.Drawing.Point(667, 11);
-            this.nud_MS_Pixel.Maximum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.nud_MS_Pixel.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nud_MS_Pixel.Name = "nud_MS_Pixel";
-            this.nud_MS_Pixel.Size = new System.Drawing.Size(72, 21);
-            this.nud_MS_Pixel.TabIndex = 1177;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(616, 13);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(53, 12);
-            this.label39.TabIndex = 1176;
-            this.label39.Text = "Pxl Res.";
-            // 
-            // nud_MS_Boader
-            // 
-            this.nud_MS_Boader.DecimalPlaces = 4;
-            this.nud_MS_Boader.Location = new System.Drawing.Point(521, 11);
-            this.nud_MS_Boader.Maximum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.nud_MS_Boader.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nud_MS_Boader.Name = "nud_MS_Boader";
-            this.nud_MS_Boader.Size = new System.Drawing.Size(72, 21);
-            this.nud_MS_Boader.TabIndex = 1175;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(470, 13);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(45, 12);
-            this.label40.TabIndex = 1174;
-            this.label40.Text = "Boader";
-            // 
             // nud_MS_Radius
             // 
             this.nud_MS_Radius.DecimalPlaces = 2;
@@ -1130,9 +1076,9 @@
             this.btn_Create_Mask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Create_Mask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Create_Mask.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Create_Mask.Location = new System.Drawing.Point(529, 151);
+            this.btn_Create_Mask.Location = new System.Drawing.Point(529, 204);
             this.btn_Create_Mask.Name = "btn_Create_Mask";
-            this.btn_Create_Mask.Size = new System.Drawing.Size(215, 101);
+            this.btn_Create_Mask.Size = new System.Drawing.Size(215, 48);
             this.btn_Create_Mask.TabIndex = 1169;
             this.btn_Create_Mask.Text = "Create Model";
             this.btn_Create_Mask.UseVisualStyleBackColor = false;
@@ -1669,8 +1615,7 @@
             // 
             // FormModel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1162, 654);
             this.Controls.Add(this.btn_ModelLoad);
             this.Controls.Add(this.btn_CreateModel);
@@ -1704,21 +1649,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Scale_Min)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Angle_Max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Angle_Min)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Pixel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Boader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Depth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_Y_Size)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_GS_X_Size)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Scale_Max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Scale_Min)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MulOption)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_NumLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MaxOverlap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_MinScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Angle_Max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Angle_Min)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Pixel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Boader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_MS_Radius)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1779,7 +1722,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown nud_ModelingRotio;
         private System.Windows.Forms.Button btn_Add_Glass;
-        private System.Windows.Forms.Button btn_Init_Glass;
         private System.Windows.Forms.ComboBox cb_GS_BackGround;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button btn_Create_Glass;
@@ -1809,10 +1751,6 @@
         private System.Windows.Forms.NumericUpDown nud_GS_Angle_Max;
         private System.Windows.Forms.NumericUpDown nud_GS_Angle_Min;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown nud_GS_Pixel;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown nud_GS_Boader;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown nud_GS_Depth;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown nud_GS_Y_Size;
@@ -1821,7 +1759,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btn_Add_Mask;
-        private System.Windows.Forms.Button btn_Init_Mask;
         private System.Windows.Forms.ComboBox cb_MS_BackGround;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cb_MS_SubPixel;
@@ -1838,13 +1775,14 @@
         private System.Windows.Forms.NumericUpDown nud_MS_Angle_Max;
         private System.Windows.Forms.NumericUpDown nud_MS_Angle_Min;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.NumericUpDown nud_MS_Pixel;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.NumericUpDown nud_MS_Boader;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.NumericUpDown nud_MS_Radius;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button btn_Create_Mask;
+        private System.Windows.Forms.Button btn_AutoGenMaskTemplate;
+        private System.Windows.Forms.NumericUpDown nud_MS_Scale_Max;
+        private System.Windows.Forms.NumericUpDown nud_MS_Scale_Min;
+        private System.Windows.Forms.Label label_MS_ScaleTilde;
+        private System.Windows.Forms.Label label_MS_Scale;
         private HalconDotNet.HSmartWindowControl hControl_Display;
         private System.Windows.Forms.TextBox tb_CurrName;
         private System.Windows.Forms.Label label44;

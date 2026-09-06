@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using VoAlgorithm;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -38,32 +39,23 @@ namespace Vision_Align
         private void ClsAutoThread_ProcessStatusMsg(object sender, string msg)
         {
             DateTime time = DateTime.Now;
-            Action updateUi = () =>
+            Task.Run(() =>
             {
-                if(listBoxProcessStatus.Items.Count > 200)
+                if(InvokeRequired)
                 {
-                    listBoxProcessStatus.Items.Remove(0);
+                    Invoke(new Action(() =>
+                    {
+                        if(listBoxProcessStatus.Items.Count > 200)
+                        {
+                            listBoxProcessStatus.Items.Remove(0);
+                        }
+                        string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
+                        listBoxProcessStatus.Items.Add(message);
+                        listBoxProcessStatus.SelectedIndex = listBoxProcessStatus.Items.Count - 1;
+                        Global.logger[LogType.SYSTEM].Write(msg);
+                    }));
                 }
-                string message = $"[{time.ToString("yyMMdd-HHmmss.fff")}] {msg}";
-                listBoxProcessStatus.Items.Add(message);
-                listBoxProcessStatus.SelectedIndex = listBoxProcessStatus.Items.Count - 1;
-                Global.logger[LogType.SYSTEM].Write(msg);
-            };
-
-            try
-            {
-                if (IsDisposed || Disposing || !IsHandleCreated)
-                    return;
-
-                if (InvokeRequired)
-                    BeginInvoke(updateUi);
-                else
-                    updateUi();
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("Process status UI update", ex);
-            }
+            });
         }
 
 
@@ -207,7 +199,7 @@ namespace Vision_Align
         private void SetUVW()
         {
             double currentX, currentY, currentAngle;
-            ClsAlgorithm.StageCalInverse(Global.inforPLC.InStageCurrentU, Global.inforPLC.InStageCurrentW, Global.inforPLC.InStageCurrentV, out currentX, out currentY, out currentAngle);
+            VisionAlgorithm.StageCalInverse(Global.inforPLC.InStageCurrentU, Global.inforPLC.InStageCurrentW, Global.inforPLC.InStageCurrentV, out currentX, out currentY, out currentAngle);
             label_OffsetX.Text = string.Format(currentX.ToString("F3"));
             label_OffsetY.Text = string.Format(currentY.ToString("F3"));
             label_OffsetT.Text = string.Format(currentAngle.ToString("F6"));

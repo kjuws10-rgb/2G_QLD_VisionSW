@@ -1,4 +1,5 @@
 ﻿using NLog.Targets;
+using VoAlgorithm;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -61,25 +62,25 @@ namespace Vision_Align
                 Global.inforResult.dTarget_Y[0] = fiducialPixelY1;
                 Global.inforResult.dTarget_Score[0] = fiducialScore1;
                 Global.inforResult.dTarget_Scale[0] = fiducialScale1;
-                Global.inforResult.strTarget_Match[0] = Matching_Type.GLASS_SHAPE.ToString();
+                Global.inforResult.strTarget_Match[0] = MatchingType.GlassShape.ToString();
 
                 Global.inforResult.dTarget_X[1] = fiducialPixelX2;
                 Global.inforResult.dTarget_Y[1] = fiducialPixelY2;
                 Global.inforResult.dTarget_Score[1] = fiducialScore2;
                 Global.inforResult.dTarget_Scale[1] = fiducialScale2;
-                Global.inforResult.strTarget_Match[1] = Matching_Type.GLASS_SHAPE.ToString();
+                Global.inforResult.strTarget_Match[1] = MatchingType.GlassShape.ToString();
 
                 Global.inforResult.dMark_X[0] = maskPixelX1;
                 Global.inforResult.dMark_Y[0] = maskPixelY1;
                 Global.inforResult.dMark_Score[0] = maskScore1;
                 Global.inforResult.dMark_Scale[0] = maskScale1;
-                Global.inforResult.strMark_Match[0] = Matching_Type.MASK_SHAPE.ToString();
+                Global.inforResult.strMark_Match[0] = MatchingType.MaskShape.ToString();
 
                 Global.inforResult.dMark_X[1] = maskPixelX2;
                 Global.inforResult.dMark_Y[1] = maskPixelY2;
                 Global.inforResult.dMark_Score[1] = maskScore2;
                 Global.inforResult.dMark_Scale[1] = maskScale2;
-                Global.inforResult.strMark_Match[1] = Matching_Type.MASK_SHAPE.ToString();
+                Global.inforResult.strMark_Match[1] = MatchingType.MaskShape.ToString();
 
                 // 2. PixelPosToRealPos를 사용하여 Hardware 좌표로 변환
                 PixelPosToRealPos(CamInfo.CAM_1, fiducialPixelX1, fiducialPixelY1, out double fiducialRealX1, out double fiducialRealY1);
@@ -112,7 +113,7 @@ namespace Vision_Align
                 currentX2 += Global.PreConfig_Param.dUVW_OffsetX2;
                 currentY1 += Global.PreConfig_Param.dUVW_OffsetY1;
 
-                ClsAlgorithm.StageCalInverse(currentX1, currentX2, currentY1,
+                VisionAlgorithm.StageCalInverse(currentX1, currentX2, currentY1,
                     out double currentX, out double currentY, out double currentAngle);
 
                 // 7. 현재 위치에 이동량을 반영하여 Target Position 계산
@@ -125,9 +126,9 @@ namespace Vision_Align
                     if (Global.clsAutoThread.CurrentStep == SeqStep.PRE_ALIGN)
                     {
                         // 오차 값 PRE Mode 일 때 Contact Slip Offset 차감 적용
-                        deltaX -= Global.inforResult.ContactErrorX;
-                        deltaY -= Global.inforResult.ContactErrorY;
-                        deltaAngle -= Global.inforResult.ContactErrorT;
+                        deltaX += Global.inforResult.ContactErrorX;
+                        deltaY += Global.inforResult.ContactErrorY;
+                        deltaAngle += Global.inforResult.ContactErrorT;
 
                         // Target 위치 PRE Mode 일 때 Contact Slip Offset 적용
                         targetX += Global.inforResult.ContactErrorX;
@@ -227,13 +228,13 @@ namespace Vision_Align
                 Global.inforResult.dMark_Y[0] = maskPixelY1;
                 Global.inforResult.dMark_Score[0] = maskScore1;
                 Global.inforResult.dMark_Scale[0] = maskScale1;
-                Global.inforResult.strMark_Match[0] = Matching_Type.MASK_SHAPE.ToString();
+                Global.inforResult.strMark_Match[0] = MatchingType.MaskShape.ToString();
 
                 Global.inforResult.dMark_X[1] = maskPixelX2;
                 Global.inforResult.dMark_Y[1] = maskPixelY2;
                 Global.inforResult.dMark_Score[1] = maskScore2;
                 Global.inforResult.dMark_Scale[1] = maskScale2;
-                Global.inforResult.strMark_Match[1] = Matching_Type.MASK_SHAPE.ToString();
+                Global.inforResult.strMark_Match[1] = MatchingType.MaskShape.ToString();
 
                 // 2. PixelPosToRealPos를 사용하여 Hardware 좌표로 변환
                 PixelPosToRealPos(CamInfo.CAM_1, fiducialPixelX1, fiducialPixelY1, out double fiducialRealX1, out double fiducialRealY1);
@@ -261,7 +262,7 @@ namespace Vision_Align
                 double currentX2 = Global.inforPLC.InStageCurrentW;
                 double currentY1 = Global.inforPLC.InStageCurrentV;
 
-                ClsAlgorithm.StageCalInverse(currentX1, currentX2, currentY1,
+                VisionAlgorithm.StageCalInverse(currentX1, currentX2, currentY1,
                     out double currentX, out double currentY, out double currentAngle);
 
                 // 7. 현재 위치에 이동량을 반영하여 Target Position 계산
@@ -331,24 +332,26 @@ namespace Vision_Align
 
             bool bRslt;
 
-            modelParam.nNumLevels = Convert.ToInt32(Global.recipeGlass_Shm[n].nNumLevels);
-            modelParam.dAngleMin = Convert.ToDouble(Global.recipeGlass_Shm[n].dAngleMin);
-            modelParam.dAngleMax = Convert.ToDouble(Global.recipeGlass_Shm[n].dAngleMax);
-            modelParam.dMinScore = Convert.ToDouble(Global.recipeGlass_Shm[n].dMinScore);
-            modelParam.dMaxOverlap = Convert.ToDouble(Global.recipeGlass_Shm[n].dMaxOverlap);
-            modelParam.strSubPixel = Global.recipeGlass_Shm[n].strSubPixel;
-            modelParam.dGreedNess = Global.recipeGlass_Shm[n].dGreedNess;
+            modelParam.NumLevels = Convert.ToInt32(Global.recipeGlass_Shm[n].nNumLevels);
+            modelParam.AngleMin = Convert.ToDouble(Global.recipeGlass_Shm[n].dAngleMin);
+            modelParam.AngleMax = Convert.ToDouble(Global.recipeGlass_Shm[n].dAngleMax);
+            modelParam.MinScore = Convert.ToDouble(Global.recipeGlass_Shm[n].dMinScore);
+            modelParam.MaxOverlap = Convert.ToDouble(Global.recipeGlass_Shm[n].dMaxOverlap);
+            modelParam.SubPixel = Global.recipeGlass_Shm[n].strSubPixel;
+            modelParam.Greediness = Global.recipeGlass_Shm[n].dGreedNess;
+            modelParam.ScaleMin = Global.recipeGlass_Shm[n].dScaleMin;
+            modelParam.ScaleMax = Global.recipeGlass_Shm[n].dScaleMax;
 
-            bRslt = Global.clsAlgorithm[n].FindShmModel(modelParam, Global.hModelInfo[n, (int)Matching_Type.GLASS_SHAPE], out ModelRslt rsltGlass);
-            pixelX = rsltGlass.dX;
-            pixelY = rsltGlass.dY;
-            scale = rsltGlass.dScale;
-            score = rsltGlass.dScore;
+            bRslt = Global.clsAlgorithm[n].FindShapeModel(modelParam, Global.hModelInfo[n, (int)MatchingType.GlassShape], out ModelResult rsltGlass);
+            pixelX = rsltGlass.X;
+            pixelY = rsltGlass.Y;
+            scale = rsltGlass.Scale;
+            score = rsltGlass.Score;
 
-            ClsAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltGlass.dX, rsltGlass.dY, rsltGlass.dAngle, "green");
+            VisionAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltGlass.X, rsltGlass.Y, rsltGlass.Angle, "green");
 
-            Global.clsAlgorithm[n].Find_DirectionMark(out ModelRslt rsltDir);
-            ClsAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltDir.dX, rsltDir.dY, rsltDir.dAngle, "red");
+            Global.clsAlgorithm[n].FindDirectionMark(out ModelResult rsltDir);
+            VisionAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltDir.X, rsltDir.Y, rsltDir.Angle, "red");
 
             return true;
         }
@@ -361,7 +364,7 @@ namespace Vision_Align
         /// <param name="pixelY">찾은 Mask Hole Y Pixel값</param>
         /// <param name="score">찾은 Mask Hole Score</param>
         /// <returns></returns>
-        public bool FindMaskHole(CamInfo camInfo, out double pixelX, out double pixelY, out double score, out double scale, Matching_Type matchingType = Matching_Type.MASK_SHAPE)
+        public bool FindMaskHole(CamInfo camInfo, out double pixelX, out double pixelY, out double score, out double scale, MatchingType matchingType = MatchingType.MaskShape)
         {
             ModelParam modelParam = new ModelParam();
 
@@ -371,35 +374,37 @@ namespace Vision_Align
             stopwatch.Restart();
             Global.inforResult.dGray[n] = Global.clsAlgorithm[n].MeanGrayValue();
 
-            if (matchingType == Matching_Type.MARK_GRAY)
+            if (matchingType == MatchingType.MarkGray)
             {
-                modelParam.nNumLevels = Convert.ToInt32(Global.recipeMask_Ncc[n].nNumLevels);
-                modelParam.dAngleMin = Convert.ToDouble(Global.recipeMask_Ncc[n].dAngleMin);
-                modelParam.dAngleMax = Convert.ToDouble(Global.recipeMask_Ncc[n].dAngleMax);
-                modelParam.dMinScore = Convert.ToDouble(Global.recipeMask_Ncc[n].dMinScore);
-                modelParam.dMaxOverlap = Convert.ToDouble(Global.recipeMask_Ncc[n].dMaxOverlap);
-                modelParam.strSubPixel = Global.recipeMask_Ncc[n].strSubPixel;
+                modelParam.NumLevels = Convert.ToInt32(Global.recipeMask_Ncc[n].nNumLevels);
+                modelParam.AngleMin = Convert.ToDouble(Global.recipeMask_Ncc[n].dAngleMin);
+                modelParam.AngleMax = Convert.ToDouble(Global.recipeMask_Ncc[n].dAngleMax);
+                modelParam.MinScore = Convert.ToDouble(Global.recipeMask_Ncc[n].dMinScore);
+                modelParam.MaxOverlap = Convert.ToDouble(Global.recipeMask_Ncc[n].dMaxOverlap);
+                modelParam.SubPixel = Global.recipeMask_Ncc[n].strSubPixel;
             }
-            else if (matchingType == Matching_Type.MASK_SHAPE)
+            else if (matchingType == MatchingType.MaskShape)
             {
-                modelParam.nNumLevels = Convert.ToInt32(Global.recipeMask_Shm[n].nNumLevels);
-                modelParam.dAngleMin = Convert.ToDouble(Global.recipeMask_Shm[n].dAngleMin);
-                modelParam.dAngleMax = Convert.ToDouble(Global.recipeMask_Shm[n].dAngleMax);
-                modelParam.dMinScore = Convert.ToDouble(Global.recipeMask_Shm[n].dMinScore);
-                modelParam.dMaxOverlap = Convert.ToDouble(Global.recipeMask_Shm[n].dMaxOverlap);
-                modelParam.strSubPixel = Global.recipeMask_Shm[n].strSubPixel;
-                modelParam.dGreedNess = Global.recipeMask_Shm[n].dGreedNess;
+                modelParam.NumLevels = Convert.ToInt32(Global.recipeMask_Shm[n].nNumLevels);
+                modelParam.AngleMin = Convert.ToDouble(Global.recipeMask_Shm[n].dAngleMin);
+                modelParam.AngleMax = Convert.ToDouble(Global.recipeMask_Shm[n].dAngleMax);
+                modelParam.MinScore = Convert.ToDouble(Global.recipeMask_Shm[n].dMinScore);
+                modelParam.MaxOverlap = Convert.ToDouble(Global.recipeMask_Shm[n].dMaxOverlap);
+                modelParam.SubPixel = Global.recipeMask_Shm[n].strSubPixel;
+                modelParam.Greediness = Global.recipeMask_Shm[n].dGreedNess;
+                modelParam.ScaleMin = Global.recipeMask_Shm[n].dScaleMin;
+                modelParam.ScaleMax = Global.recipeMask_Shm[n].dScaleMax;
             }
             else
             { 
             }
             
             bool bRslt = false;
-            ModelRslt rsltMark;
-            if (matchingType == Matching_Type.MARK_GRAY)
-                bRslt = Global.clsAlgorithm[n].NCC_FindModel(modelParam, Global.hModelInfo[n, (int)Matching_Type.MARK_GRAY], out rsltMark);
-            else if (matchingType == Matching_Type.MASK_SHAPE)
-                bRslt = Global.clsAlgorithm[n].FindShmModel(modelParam, Global.hModelInfo[n, (int)Matching_Type.MASK_SHAPE], out rsltMark);
+            ModelResult rsltMark;
+            if (matchingType == MatchingType.MarkGray)
+                bRslt = Global.clsAlgorithm[n].FindNccModel(modelParam, Global.hModelInfo[n, (int)MatchingType.MarkGray], out rsltMark);
+            else if (matchingType == MatchingType.MaskShape)
+                bRslt = Global.clsAlgorithm[n].FindShapeModel(modelParam, Global.hModelInfo[n, (int)MatchingType.MaskShape], out rsltMark);
             else
             {
                 rsltMark = null;
@@ -408,11 +413,11 @@ namespace Vision_Align
 
             if (rsltMark != null)
             {
-                pixelX = rsltMark.dX;
-                pixelY = rsltMark.dY;
-                scale = rsltMark.dScale;
-                score = rsltMark.dScore;
-                ClsAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltMark.dX, rsltMark.dY, rsltMark.dAngle, "cyan");
+                pixelX = rsltMark.X;
+                pixelY = rsltMark.Y;
+                scale = rsltMark.Scale;
+                score = rsltMark.Score;
+                VisionAlgorithm.OverlayCross(Global.formHDisplay[n].HWindow, rsltMark.X, rsltMark.Y, rsltMark.Angle, "cyan");
             }
             else
             {
@@ -450,7 +455,7 @@ namespace Vision_Align
             {
                 int camIdx = (int)camInfo;
 
-                // ClsAlgorithm의 9 Point Calibration 알고리즘 호출
+                // VisionAlgorithm의 9 Point Calibration 알고리즘 호출
                 bool result = Global.clsAlgorithm[camIdx].Calculate9PointCalibration(
                     offsetMove, pixelPoints,
                     out double pixelResolutionX,
@@ -527,7 +532,7 @@ namespace Vision_Align
                 }
 
                 // 2. FitCircle을 사용하여 원의 중심과 반지름 계산
-                ClsAlgorithm.FitCircle(realPoints, out PointF circleCenter, out double radius);
+                VisionAlgorithm.FitCircle(realPoints, out PointF circleCenter, out double radius);
 
                 // 3. 원의 중심이 UVW Stage Center(0,0) 기준이므로,
                 //    카메라 중심에서 원의 중심까지의 오프셋이 Camera Center 위치가 됨

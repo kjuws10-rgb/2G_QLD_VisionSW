@@ -47,7 +47,7 @@ namespace Vision_Align
 
         public static void OpenLib()
         {
-            string strMotPaht = System.IO.Path.Combine(Global.strConfigPath, "Vision_Align.mot");
+            string strMotPaht = "D:\\1.Program\\BIN\\CONFIG\\Vision_Align.mot";
             CAXL.AxlClose();
 
             //++ AXL(AjineXtek Library)을 사용가능하게 하고 장착된 보드들을 초기화합니다.
@@ -148,12 +148,6 @@ namespace Vision_Align
                 }
 #endif
             }
-        }
-
-        public static void CloseLib()
-        {
-            CAXL.AxlClose();
-            m_bOpen = false;
         }
 
         public void UpdateStatus()

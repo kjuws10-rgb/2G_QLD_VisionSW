@@ -39,8 +39,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cb_Align_Ok = new System.Windows.Forms.CheckBox();
             this.cb_Glass_Loding_Pos = new System.Windows.Forms.CheckBox();
-            this.cb_Slip_Distribution = new System.Windows.Forms.CheckBox();
-            this.btn_Plotting = new System.Windows.Forms.Button();
             this.panel_Display = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_LogDate)).BeginInit();
             this.SuspendLayout();
@@ -156,27 +154,6 @@
             this.cb_Glass_Loding_Pos.Text = "Glass Loading Pos";
             this.cb_Glass_Loding_Pos.UseVisualStyleBackColor = true;
             // 
-            // cb_Slip_Distribution
-            // 
-            this.cb_Slip_Distribution.AutoSize = true;
-            this.cb_Slip_Distribution.Font = new System.Drawing.Font("Arial", 9F);
-            this.cb_Slip_Distribution.Location = new System.Drawing.Point(590, 378);
-            this.cb_Slip_Distribution.Name = "cb_Slip_Distribution";
-            this.cb_Slip_Distribution.Size = new System.Drawing.Size(113, 19);
-            this.cb_Slip_Distribution.TabIndex = 1162;
-            this.cb_Slip_Distribution.Text = "Slip Distribution";
-            this.cb_Slip_Distribution.UseVisualStyleBackColor = true;
-            // 
-            // btn_Plotting
-            // 
-            this.btn_Plotting.ForeColor = System.Drawing.Color.Black;
-            this.btn_Plotting.Location = new System.Drawing.Point(588, 425);
-            this.btn_Plotting.Name = "btn_Plotting";
-            this.btn_Plotting.Size = new System.Drawing.Size(158, 23);
-            this.btn_Plotting.TabIndex = 1163;
-            this.btn_Plotting.Text = "Slip Plotting";
-            this.btn_Plotting.UseVisualStyleBackColor = true;
-            // 
             // panel_Display
             // 
             this.panel_Display.Location = new System.Drawing.Point(2, 19);
@@ -186,13 +163,10 @@
             // 
             // FormPreview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(749, 450);
             this.Controls.Add(this.panel_Display);
-            this.Controls.Add(this.btn_Plotting);
-            this.Controls.Add(this.cb_Slip_Distribution);
             this.Controls.Add(this.cb_Glass_Loding_Pos);
             this.Controls.Add(this.cb_Align_Ok);
             this.Controls.Add(this.label20);
@@ -214,8 +188,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckBox cb_Align_Ok;
         private System.Windows.Forms.CheckBox cb_Glass_Loding_Pos;
-        private System.Windows.Forms.CheckBox cb_Slip_Distribution;
-        private System.Windows.Forms.Button btn_Plotting;
         private System.Windows.Forms.Panel panel_Display;
     }
 }

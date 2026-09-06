@@ -22,7 +22,6 @@ namespace Vision_Align
     {
         private Camera m_Cam;
         private static uEye.Types.CameraInformation[] m_camList;
-        private readonly object _cameraSync = new object();
         
         int m_nCamNo = 0;
         string m_strSerial = "";
@@ -35,38 +34,13 @@ namespace Vision_Align
 
         private void CameraAdded(object sender, EventArgs e)
         {
-            try
-            {
-                InitCam(m_strSerial);
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " device-added event", ex);
-            }
+            InitCam(m_strSerial);
         }
 
         private void CameraRemoved(object sender, EventArgs e)
         {
-            try
-            {
-                lock (_cameraSync)
-                {
-                    if (m_Cam == null)
-                        return;
-
-                    Camera removedCamera = m_Cam;
-                    m_Cam = null;
-                    Global.bConnectCam = false;
-
-                    removedCamera.EventDeviceRemove -= CameraRemoved;
-                    removedCamera.Exit();
-                    CrashDiagnostics.RecordActivity("Camera removed: CAM_" + (m_nCamNo + 1));
-                }
-            }
-            catch (Exception ex)
-            {
-                CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " device-removed event", ex);
-            }
+            m_Cam.Exit();
+            m_Cam = null;
         }
         
         public ClsCamera(CamInfo nCamNo, string strSerial)
@@ -78,92 +52,32 @@ namespace Vision_Align
 
         public void InitCam(string strSerial)
         {
-            lock (_cameraSync)
+            if (m_Cam != null) return;
+
+            m_Cam = new Camera();
+            m_Cam.EventDeviceRemove += CameraRemoved;
+            uEye.Info.Camera.EventNewDevice += CameraAdded;
+
+            uEye.Defines.Status lCameraStatus;
+            uEye.Types.CameraInformation[] cameraList;
+            uEye.Info.Camera.GetCameraList(out cameraList);
+            foreach (uEye.Types.CameraInformation info in cameraList)
             {
-                Camera candidate = null;
-                try
+                if (strSerial == info.SerialNumber)
                 {
-                    if (m_Cam != null && m_Cam.IsOpened)
-                        return;
-
-                    if (m_Cam != null)
-                    {
-                        try
-                        {
-                            m_Cam.EventDeviceRemove -= CameraRemoved;
-                            m_Cam.Exit();
-                        }
-                        catch (Exception staleCameraException)
-                        {
-                            CrashDiagnostics.ReportRecoverableException(
-                                "Camera " + (m_nCamNo + 1) + " stale handle cleanup",
-                                staleCameraException);
-                        }
-                        finally
-                        {
-                            m_Cam = null;
-                        }
-                    }
-
-                    // Keep exactly one global device-added subscription per wrapper instance.
-                    uEye.Info.Camera.EventNewDevice -= CameraAdded;
-                    uEye.Info.Camera.EventNewDevice += CameraAdded;
-
-                    uEye.Types.CameraInformation[] cameraList;
-                    EnsureSuccess(uEye.Info.Camera.GetCameraList(out cameraList), "get camera list");
-                    uEye.Types.CameraInformation? cameraInfo = null;
-                    foreach (uEye.Types.CameraInformation info in cameraList)
-                    {
-                        if (strSerial == info.SerialNumber)
-                        {
-                            cameraInfo = info;
-                            break;
-                        }
-                    }
-
-                    if (!cameraInfo.HasValue)
-                    {
-                        CrashDiagnostics.RecordActivity("Camera not found: serial " + strSerial);
-                        return;
-                    }
-
-                    candidate = new Camera();
-                    EnsureSuccess(candidate.Init(cameraInfo.Value.CameraID), "initialize serial " + strSerial);
-
-                    string cameraParameterPath = Path.Combine(
-                        Global.strConfigPath,
-                        m_nCamNo == 0 ? "IDS_8345.ini" : "IDS_3522.ini");
-
-                    // Parameter loading can change AOI and pixel format. Allocate image memory only
-                    // after it, otherwise the buffer can retain the old dimensions.
-                    EnsureSuccess(candidate.Parameter.Load(cameraParameterPath), "load parameters " + cameraParameterPath);
-                    Rectangle rect;
-                    EnsureSuccess(candidate.Size.AOI.Get(out rect), "read AOI");
-                    EnsureSuccess(candidate.Memory.Allocate(), "allocate image memory");
-
-                    candidate.EventDeviceRemove += CameraRemoved;
-                    m_Cam = candidate;
-                    m_nWidth = rect.Width;
-                    m_nHeight = rect.Height;
-                    CrashDiagnostics.RecordActivity("Camera initialized: CAM_" + (m_nCamNo + 1));
-                }
-                catch (Exception ex)
-                {
-                    if (candidate != null)
-                    {
-                        try
-                        {
-                            candidate.Exit();
-                        }
-                        catch
-                        {
-                        }
-                    }
-
-                    m_Cam = null;
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " initialization", ex);
+                    lCameraStatus = m_Cam.Init((int)info.CameraID); //| (Int32)uEye.Defines.DeviceEnumeration.UseDeviceID);
+                    lCameraStatus = m_Cam.Memory.Allocate();
                 }
             }
+            string strCamParamPath = "";
+            if (m_nCamNo == 0) strCamParamPath = Global.strConfigPath + "\\IDS_8345.ini";// 현장확인필요
+            else strCamParamPath = Global.strConfigPath + "\\IDS_3522.ini";// 현장확인필요
+
+            m_Cam.Parameter.Load(strCamParamPath);
+            System.Drawing.Rectangle rect;
+            m_Cam.Size.AOI.Get(out rect);
+            m_nWidth = rect.Width;
+            m_nHeight = rect.Height;    
         }
 
         public static bool DeviceList()
@@ -185,217 +99,151 @@ namespace Vision_Align
 
         public bool Grab()
         {
-            lock (_cameraSync)
-            {
-                if (m_Cam == null) return false;
+            if (m_Cam == null) return false;
 #if !TEST
-                if(!m_Cam.IsOpened)
-                {
-                    return false;
-                }
-                byte[] temp = GetImgBuff();
-                long requiredLength = (long)m_nWidth * m_nHeight;
-                if (temp == null || requiredLength <= 0 || temp.LongLength < requiredLength)
-                {
-                    CrashDiagnostics.RecordActivity(string.Format(
-                        "Camera {0} returned an invalid buffer. Buffer={1}, Width={2}, Height={3}",
-                        m_nCamNo + 1,
-                        temp == null ? "null" : temp.LongLength.ToString(),
-                        m_nWidth,
-                        m_nHeight));
-                    return false;
-                }
+            if(!m_Cam.IsOpened)
+            {
+                return false;
+            }
+            byte[] temp = GetImgBuff();
 
-                try
-                {
-                    Global.inforResult.dGray[m_nCamNo] = Global.clsAlgorithm[m_nCamNo].SetImage(
-                        Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].HWindow,
-                        temp,
-                        m_nWidth,
-                        m_nHeight);
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " image conversion", ex);
-                    return false;
-                }
+            Global.inforResult.dGray[m_nCamNo] = Global.clsAlgorithm[m_nCamNo].SetImage(Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].HWindow, temp, m_nWidth, m_nHeight);
 
 #else
-                byte[] temp;
-                Bitmap bmp;
-                if (m_nCamNo == 0)
+            byte[] temp;
+            Bitmap bmp = null;
+            string selectedFile = null;
+
+            // OpenFileDialog 실행 Action
+            Action showDialog = () =>
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Title = m_nCamNo == 0 ? "CAM1 이미지 선택" : "CAM2 이미지 선택";
+                dlg.Filter = "BMP 파일 (*.bmp)|*.bmp";
+                if (dlg.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(dlg.FileName))
                 {
-                    OpenFileDialog dlg = new OpenFileDialog();
-                    dlg.ShowDialog();
-                    if (dlg.FileName != null && dlg.FileName.Length > 0)
+                    selectedFile = dlg.FileName;
+                }
+            };
+
+            // UI 스레드에서 OpenFileDialog 실행
+            if (Global.formBase != null && Global.formBase.IsHandleCreated && Global.formBase.InvokeRequired)
+            {
+                Global.formBase.Invoke(showDialog);
+            }
+            else
+            {
+                showDialog();
+            }
+
+            if (string.IsNullOrEmpty(selectedFile))
+                return false;
+
+            bmp = new Bitmap(selectedFile);
+
+            // Bitmap을 Grayscale byte[] 배열로 변환
+            m_nWidth = bmp.Width;
+            m_nHeight = bmp.Height;
+            temp = new byte[m_nWidth * m_nHeight];
+
+            BitmapData bmpData = bmp.LockBits(
+                new Rectangle(0, 0, m_nWidth, m_nHeight),
+                ImageLockMode.ReadOnly,
+                bmp.PixelFormat);
+
+            int bytesPerPixel = System.Drawing.Image.GetPixelFormatSize(bmp.PixelFormat) / 8;
+            int stride = bmpData.Stride;
+            IntPtr ptr = bmpData.Scan0;
+            byte[] rawData = new byte[Math.Abs(stride) * m_nHeight];
+            Marshal.Copy(ptr, rawData, 0, rawData.Length);
+
+            for (int y = 0; y < m_nHeight; y++)
+            {
+                for (int x = 0; x < m_nWidth; x++)
+                {
+                    int idx = y * stride + x * bytesPerPixel;
+                    if (bytesPerPixel >= 3)
                     {
-                        bmp = new Bitmap(dlg.FileName);
+                        // RGB -> Grayscale (BT.601)
+                        byte b = rawData[idx];
+                        byte g = rawData[idx + 1];
+                        byte r = rawData[idx + 2];
+                        temp[y * m_nWidth + x] = (byte)(0.299 * r + 0.587 * g + 0.114 * b);
                     }
                     else
-                        return false;
-                }
-                else
-                {
-                    OpenFileDialog dlg = new OpenFileDialog();
-                    dlg.ShowDialog();
-                    if (dlg.FileName != null && dlg.FileName.Length > 0)
                     {
-                        bmp = new Bitmap(dlg.FileName);
-                    }
-                    else
-                        return false;
-                }
-
-                // Bitmap을 Grayscale byte[] 배열로 변환
-                m_nWidth = bmp.Width;
-                m_nHeight = bmp.Height;
-                temp = new byte[m_nWidth * m_nHeight];
-
-                BitmapData bmpData = bmp.LockBits(
-                    new Rectangle(0, 0, m_nWidth, m_nHeight),
-                    ImageLockMode.ReadOnly,
-                    bmp.PixelFormat);
-
-                int bytesPerPixel = System.Drawing.Image.GetPixelFormatSize(bmp.PixelFormat) / 8;
-                int stride = bmpData.Stride;
-                IntPtr ptr = bmpData.Scan0;
-                byte[] rawData = new byte[Math.Abs(stride) * m_nHeight];
-                Marshal.Copy(ptr, rawData, 0, rawData.Length);
-
-                for (int y = 0; y < m_nHeight; y++)
-                {
-                    for (int x = 0; x < m_nWidth; x++)
-                    {
-                        int idx = y * stride + x * bytesPerPixel;
-                        if (bytesPerPixel >= 3)
-                        {
-                            // RGB -> Grayscale (BT.601)
-                            byte b = rawData[idx];
-                            byte g = rawData[idx + 1];
-                            byte r = rawData[idx + 2];
-                            temp[y * m_nWidth + x] = (byte)(0.299 * r + 0.587 * g + 0.114 * b);
-                        }
-                        else
-                        {
-                            // 이미 Grayscale
-                            temp[y * m_nWidth + x] = rawData[idx];
-                        }
+                        // 이미 Grayscale
+                        temp[y * m_nWidth + x] = rawData[idx];
                     }
                 }
+            }
 
-                bmp.UnlockBits(bmpData);
-                bmp.Dispose();
+            bmp.UnlockBits(bmpData);
+            bmp.Dispose();
 
-                Global.inforResult.dGray[m_nCamNo] = Global.clsAlgorithm[m_nCamNo].SetImage(Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].HWindow, temp, m_nWidth, m_nHeight);
+            Global.inforResult.dGray[m_nCamNo] = Global.clsAlgorithm[m_nCamNo].SetImage(Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].HWindow, temp, m_nWidth, m_nHeight);
 #endif
 
-                return true;
-            }
+            return true;
         }
 
         public bool IsOpen()
         {
-            lock (_cameraSync)
-            {
-                try
-                {
-                    return m_Cam != null && m_Cam.IsOpened;
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " state check", ex);
-                    return false;
-                }
-            }
+            if (m_Cam == null) return false;
+            return m_Cam.IsOpened;
         }
 
         public byte[] GetImgBuff()
         {
-            lock (_cameraSync)
+            uEye.Defines.Status statusRet = uEye.Defines.Status.SUCCESS;
+
+            try
             {
-                int memoryId = 0;
-                bool memoryLocked = false;
+                if (m_Cam == null) return null;
 
-                try
+                if (m_Cam.Acquisition.Freeze(1) == uEye.Defines.Status.Success)
                 {
-                    if (m_Cam == null || !m_Cam.IsOpened)
-                        return null;
+                    int s32MemId;
 
-                    EnsureSuccess(m_Cam.Acquisition.Freeze(1), "freeze image");
+                    m_Cam.Memory.GetActive(out s32MemId);
+                    m_Cam.Memory.Lock(s32MemId);
 
-                    EnsureSuccess(m_Cam.Memory.GetActive(out memoryId), "get active image memory");
-                    EnsureSuccess(m_Cam.Memory.Lock(memoryId), "lock image memory");
-                    memoryLocked = true;
+                    m_Cam.Memory.GetSize(s32MemId, out m_nWidth, out m_nHeight);
 
-                    EnsureSuccess(m_Cam.Memory.GetSize(memoryId, out m_nWidth, out m_nHeight), "read image size");
+                    // 이미지 정보 가져오기
+                    //m_Cam.Memory.GetSize(s32MemId, out int width, out int height);
+                    //m_Cam.Memory.GetBitsPerPixel(s32MemId, out int bpp);
 
-                    byte[] imageData;
-                    EnsureSuccess(m_Cam.Memory.CopyToArray(memoryId, out imageData), "copy image memory");
+                    // 픽셀 데이터 포인터 가져오기
+                    m_Cam.Memory.CopyToArray(s32MemId, out byte[] imageData);
+
+                    m_Cam.Memory.Unlock(s32MemId);
+                    m_Cam.Memory.Clear(s32MemId);
+                    m_Cam.Memory.Free(s32MemId);
+
+                    statusRet = m_Cam.Memory.Allocate();
 
                     return imageData;
                 }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " acquisition", ex);
-                    return null;
-                }
-                finally
-                {
-                    if (memoryLocked && m_Cam != null)
-                    {
-                        try
-                        {
-                            m_Cam.Memory.Unlock(memoryId);
-                        }
-                        catch (Exception ex)
-                        {
-                            CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " memory unlock", ex);
-                        }
-                    }
-                }
             }
-        }
+            catch { return null; }
 
-        public void Close()
-        {
-            lock (_cameraSync)
-            {
-                uEye.Info.Camera.EventNewDevice -= CameraAdded;
-
-                if (m_Cam == null)
-                    return;
-
-                m_Cam.EventDeviceRemove -= CameraRemoved;
-                m_Cam.Exit();
-                m_Cam = null;
-            }
-        }
-
-        private void EnsureSuccess(uEye.Defines.Status status, string operation)
-        {
-            if (status != uEye.Defines.Status.SUCCESS)
-            {
-                throw new InvalidOperationException(
-                    "Camera " + (m_nCamNo + 1) + " failed to " + operation + ": " + status);
-            }
+            return null;
         }
 
 
         public void SetParam(double dExposure, int nGain, double dGamma, bool bFilpX, bool bFilpY, bool bRotate )
         {
-            lock (_cameraSync)
-            {
-                SetExposure(dExposure);
-                SetGain(nGain);
-                SetGamma(dGamma);
-                MirrorCol(bFilpX);
-                MirrorRow(bFilpY);
+            SetExposure(dExposure);
+            SetGain(nGain);
+            SetGamma(dGamma);
+            MirrorCol(bFilpX);
+            MirrorRow(bFilpY);
 
-                if(bRotate)
-                {
-                    MirrorCol(bRotate);
-                    MirrorRow(bRotate);
-                }
+            if(bRotate)
+            {
+                MirrorCol(bRotate);
+                MirrorRow(bRotate);
             }
         }
 
@@ -404,39 +252,26 @@ namespace Vision_Align
         {
             dMin = 0; dMax = 0;
 
-            lock (_cameraSync)
-            {
-                try
-                {
-                    if (m_Cam == null) return;
+            if (m_Cam == null) return;
 
-                    uEye.Types.Range<Double> range;
-                    EnsureSuccess(m_Cam.Timing.Exposure.GetRange(out range), "read exposure range");
+            uEye.Types.Range<Double> range;
+            m_Cam.Timing.Exposure.GetRange(out range);
 
-                    dMin = range.Minimum;
-                    dMax = range.Maximum;
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " exposure range", ex);
-                }
-            }
+            dMin = range.Minimum;
+            dMax = range.Maximum;
         }
 
         public int GetGain()
         {
             int nValue = 0;
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return nValue;
-                    EnsureSuccess(m_Cam.Gain.Hardware.Scaled.GetMaster(out nValue), "read gain");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " gain read", ex);
-                }
+                if (m_Cam == null) return nValue;
+                m_Cam.Gain.Hardware.Scaled.GetMaster(out nValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
 
             return nValue;
@@ -444,71 +279,59 @@ namespace Vision_Align
 
         public void SetGain(int nValue)
         {
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return;
-                    EnsureSuccess(m_Cam.Gain.Hardware.Scaled.SetMaster(nValue), "set gain");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " gain write", ex);
-                }
+                if (m_Cam == null) return;
+                m_Cam.Gain.Hardware.Scaled.SetMaster(nValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
         }
 
         public double GetGamma()
         {
             int nValue = 0;
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return nValue;
-                    EnsureSuccess(m_Cam.Gamma.Software.Get(out nValue), "read gamma");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " gamma read", ex);
-                }
+                if (m_Cam == null) return nValue;
+                m_Cam.Gamma.Software.Get(out nValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
 
-            return nValue / 100.0;
+            return Convert.ToDouble(nValue / 100) ;
         }
 
         public void SetGamma(double dValue)
         {
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return;
+                if (m_Cam == null) return;
 
-                    int nValue = Convert.ToInt32(dValue * 100);
-                    EnsureSuccess(m_Cam.Gamma.Software.Set(nValue), "set gamma");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " gamma write", ex);
-                }
+                int nValue = Convert.ToInt32(dValue * 100);
+                m_Cam.Gamma.Software.Set(nValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
         }
 
         public double GetExposure()
         {
             double dValue = 0;
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return dValue;
-                    EnsureSuccess(m_Cam.Timing.Exposure.Get(out dValue), "read exposure");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " exposure read", ex);
-                }
+                if (m_Cam == null) return dValue;
+                m_Cam.Timing.Exposure.Get(out dValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
 
             return dValue;
@@ -516,34 +339,28 @@ namespace Vision_Align
 
         public void SetExposure(double dValue)
         {
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return;
-                    EnsureSuccess(m_Cam.Timing.Exposure.Set(dValue), "set exposure");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " exposure write", ex);
-                }
+                if (m_Cam == null) return;
+                m_Cam.Timing.Exposure.Set(dValue);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
         }
 
         public double GetFocus()
         {
             UInt32 Value = 0;
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return Value;
-                    EnsureSuccess(m_Cam.Focus.Manual.Get(out Value), "read focus");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " focus read", ex);
-                }
+                if (m_Cam == null) return Value;
+                m_Cam.Focus.Manual.Get(out Value);
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
 
             return Convert.ToDouble(Value);
@@ -551,54 +368,32 @@ namespace Vision_Align
 
         public void SetFocus(double dValue)
         {
-            lock (_cameraSync)
+            try
             {
-                try
-                {
-                    if (m_Cam == null) return;
-                    EnsureSuccess(m_Cam.Focus.Manual.Set(Convert.ToUInt32(dValue)), "set focus");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " focus write", ex);
-                }
+                if (m_Cam == null) return;
+                m_Cam.Focus.Manual.Set(Convert.ToUInt32(dValue));
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.Print("[ERROR] " + ex.Message);
             }
         }
 
         public void MirrorRow(bool bMirror)
         {
-            lock (_cameraSync)
-            {
-                try
-                {
-                    if (m_Cam == null) return;
-                    EnsureSuccess(
-                        m_Cam.RopEffect.Set(uEye.Defines.RopEffectMode.LeftRight, bMirror),
-                        "set horizontal mirror");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " horizontal mirror", ex);
-                }
-            }
+            if (m_Cam == null) return;
+
+            uEye.Defines.Status statusRet;
+
+            statusRet = m_Cam.RopEffect.Set(uEye.Defines.RopEffectMode.LeftRight, bMirror);
         }
 
         public void MirrorCol(bool bMirror)
         {
-            lock (_cameraSync)
-            {
-                try
-                {
-                    if (m_Cam == null) return;
-                    EnsureSuccess(
-                        m_Cam.RopEffect.Set(uEye.Defines.RopEffectMode.UpDown, bMirror),
-                        "set vertical mirror");
-                }
-                catch (Exception ex)
-                {
-                    CrashDiagnostics.ReportRecoverableException("Camera " + (m_nCamNo + 1) + " vertical mirror", ex);
-                }
-            }
+            if (m_Cam == null) return;
+            uEye.Defines.Status statusRet;
+
+            statusRet = m_Cam.RopEffect.Set(uEye.Defines.RopEffectMode.UpDown, bMirror);
         }
     }
     #endregion

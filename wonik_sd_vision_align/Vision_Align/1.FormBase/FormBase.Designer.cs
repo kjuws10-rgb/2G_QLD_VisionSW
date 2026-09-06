@@ -53,7 +53,7 @@
             // 
             // panelView
             // 
-            this.panelView.BackColor = System.Drawing.SystemColors.Control;
+            this.panelView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.panelView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelView.Location = new System.Drawing.Point(12, 72);
             this.panelView.Name = "panelView";
@@ -66,8 +66,8 @@
             // 
             // FormBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(765, 498);
             this.ControlBox = false;
@@ -79,7 +79,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormBase";
-            this.Text = "SAT Review";
+            this.Text = "HLD Vision Aligner";
             this.ResumeLayout(false);
 
         }

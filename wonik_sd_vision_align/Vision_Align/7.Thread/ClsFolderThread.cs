@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using HalconDotNet;
-using System.IO;
 using System.Collections.Concurrent;
 
 namespace Vision_Align
@@ -16,8 +17,12 @@ namespace Vision_Align
 
         private readonly AutoResetEvent _signal = new AutoResetEvent(false);
         private readonly ConcurrentQueue<SaveJob> _jobs = new ConcurrentQueue<SaveJob>();
-        private volatile bool _stopRequested;
-        private bool _started;
+
+        // RESULT 폴더 하위에서 날짜 기반 폴더를 관리할 서브디렉터리 목록
+        private static readonly string[] ManagedSubDirs = { "Image", "Capture", "CALIBRATION" };
+
+        private static readonly TimeSpan StorageCheckInterval = TimeSpan.FromMinutes(5);
+        private DateTime _lastStorageCheck = DateTime.MinValue;
 
         private class SaveJob
         {
@@ -27,36 +32,18 @@ namespace Vision_Align
 
         public ClsFolderThread()
         {
-        }
-
-        public void Start()
-        {
-            if (_started)
-                return;
-
-            _started = true;
-            _stopRequested = false;
-            m_MainThread = new Thread(MainThreadRunAsync)
-            {
-                IsBackground = true,
-                Name = "VisionAlign.FileSave"
-            };
+            m_MainThread = new Thread(MainThreadRunAsync);
             m_MainThread.Start();
         }
 
         public void Release()
         {
-            _stopRequested = true;
-            _signal.Set();
+            if (m_MainThread != null)
+                m_MainThread.Abort();
 
-            if (m_MainThread != null && m_MainThread != Thread.CurrentThread && m_MainThread.IsAlive)
-                m_MainThread.Join(5000);
         }
         public void RequestSave(DateTime ts, string tag)
         {
-            if (_stopRequested)
-                return;
-
             if (string.IsNullOrWhiteSpace(tag))
                 tag = "RESULT";
 
@@ -66,45 +53,154 @@ namespace Vision_Align
 
         public void MainThreadRunAsync()
         {
-            CrashDiagnostics.PulseWorker("FileSave", "Started");
+            while (true)
+            {
+                Thread.Sleep(10);
 
+                if (_jobs.IsEmpty)
+                    _signal.WaitOne(200);
+
+                while (_jobs.TryDequeue(out var job))
+                {
+                    Thread.Sleep(10);
+                    try
+                    {
+                        // BMP 2장 저장 + SaveImageNo 세팅
+                        SaveBothCamsBmpAndSetSaveNo(job.Ts, job.Tag);
+
+                        // CSV 1줄 저장 (Global 기반)
+                        Global.clsCSV.WriteCsv(job.Tag);
+                    }
+                    catch
+                    {
+                        // 예외 로그 처리
+                    }
+                }
+
+                // 5분 주기 저장소 관리
+                if ((DateTime.Now - _lastStorageCheck) >= StorageCheckInterval)
+                {
+                    _lastStorageCheck = DateTime.Now;
+                    ManageStorage();
+                }
+            }
+        }
+
+        // ─────────────────────────── Storage Management ───────────────────────────
+
+        private void ManageStorage()
+        {
             try
             {
-                while (!_stopRequested || !_jobs.IsEmpty)
+                int  retentionDays = Global.PreConfig_Param.nStorageRetentionDays;
+                long minFreeBytes  = (long)Global.PreConfig_Param.nStorageMinFreeGB * 1024L * 1024L * 1024L;
+
+                // Step 1: 보관 기간 초과 폴더 삭제
+                DeleteExpiredResultFolders(retentionDays);
+
+                // Step 2: 잔여 공간 확인
+                if (!HasSufficientFreeSpace(minFreeBytes, out long freeBytes))
                 {
-                    CrashDiagnostics.PulseWorker("FileSave", _jobs.IsEmpty ? "Waiting" : "Saving queued result");
+                    // Step 3: 공간 부족 → 오래된 폴더부터 추가 삭제
+                    FreeSpaceByDeletingOldest(minFreeBytes);
 
-                    if (_jobs.IsEmpty)
-                        _signal.WaitOne(200);
-
-                    SaveJob job;
-                    while (_jobs.TryDequeue(out job))
+                    // Step 4: 재확인 — 여전히 부족하면 알람
+                    if (!HasSufficientFreeSpace(minFreeBytes, out freeBytes))
                     {
-                        try
-                        {
-                            CrashDiagnostics.RecordActivity("Saving result: " + job.Tag);
-
-                            // BMP 2장 저장 + SaveImageNo 세팅
-                            SaveBothCamsBmpAndSetSaveNo(job.Ts, job.Tag);
-
-                            // CSV 1줄 저장 (Global 기반)
-                            Global.clsCSV.WriteCsv(job.Tag);
-                        }
-                        catch (Exception ex)
-                        {
-                            // Result persistence must never terminate the entire vision process.
-                            CrashDiagnostics.ReportWorkerException("FileSave", ex, job.Tag);
-                        }
+                        string msg = $"Drive free: {freeBytes / (1024.0 * 1024 * 1024):F1} GB  (min: {Global.PreConfig_Param.nStorageMinFreeGB} GB)";
+                        Global.logger[LogType.SYSTEM].Write($"[Storage] ALARM - {msg}");
+                        Global.clsAlarmManager.SetAlarm(AlarmCode.StorageLowError, msg);
                     }
                 }
             }
             catch (Exception ex)
             {
-                CrashDiagnostics.ReportWorkerException("FileSave", ex, "worker boundary");
+                try { Global.logger[LogType.EXCEPTION].Write($"[Storage] ManageStorage error: {ex.Message}"); } catch { }
             }
-            finally
+        }
+
+        /// <summary>RESULT 드라이브 잔여 공간을 반환합니다.</summary>
+        private bool HasSufficientFreeSpace(long minFreeBytes, out long freeBytes)
+        {
+            freeBytes = long.MaxValue;
+            try
             {
-                CrashDiagnostics.PulseWorker("FileSave", "Stopped");
+                string root = Path.GetPathRoot(Path.GetFullPath(Global.strRsltPath));
+                freeBytes = new DriveInfo(root).AvailableFreeSpace;
+                return freeBytes >= minFreeBytes;
+            }
+            catch
+            {
+                return true; // 확인 불가 시 알람 발생 방지
+            }
+        }
+
+        /// <summary>
+        /// RESULT 하위 ManagedSubDirs 안의 yyyyMMdd 폴더를 날짜 오름차순으로 반환합니다.
+        /// </summary>
+        private List<DirectoryInfo> GetResultDateFolders()
+        {
+            var folders = new List<DirectoryInfo>();
+            if (!Directory.Exists(Global.strRsltPath)) return folders;
+
+            foreach (string sub in ManagedSubDirs)
+            {
+                string subPath = Path.Combine(Global.strRsltPath, sub);
+                if (!Directory.Exists(subPath)) continue;
+
+                foreach (var dir in new DirectoryInfo(subPath).GetDirectories())
+                {
+                    if (DateTime.TryParseExact(dir.Name, "yyyyMMdd", CultureInfo.InvariantCulture,
+                            DateTimeStyles.None, out _))
+                        folders.Add(dir);
+                }
+            }
+
+            // yyyyMMdd 이름 기준 오름차순(= 오래된 것부터)
+            folders.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.Ordinal));
+            return folders;
+        }
+
+        /// <summary>보관 기간 초과 yyyyMMdd 폴더를 삭제합니다.</summary>
+        private void DeleteExpiredResultFolders(int retentionDays)
+        {
+            DateTime cutoff = DateTime.Today.AddDays(-retentionDays);
+
+            foreach (var dir in GetResultDateFolders())
+            {
+                if (!DateTime.TryParseExact(dir.Name, "yyyyMMdd", CultureInfo.InvariantCulture,
+                        DateTimeStyles.None, out DateTime folderDate)) continue;
+
+                if (folderDate >= cutoff) continue;
+
+                try
+                {
+                    dir.Delete(true);
+                    Global.logger[LogType.SYSTEM].Write($"[Storage] Deleted expired: {dir.FullName}");
+                }
+                catch (Exception ex)
+                {
+                    Global.logger[LogType.EXCEPTION].Write($"[Storage] Delete failed: {dir.FullName} - {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>잔여 공간이 확보될 때까지 오래된 폴더부터 삭제합니다.</summary>
+        private void FreeSpaceByDeletingOldest(long minFreeBytes)
+        {
+            foreach (var dir in GetResultDateFolders())
+            {
+                if (HasSufficientFreeSpace(minFreeBytes, out _)) break;
+
+                try
+                {
+                    dir.Delete(true);
+                    Global.logger[LogType.SYSTEM].Write($"[Storage] Deleted for space: {dir.FullName}");
+                }
+                catch (Exception ex)
+                {
+                    Global.logger[LogType.EXCEPTION].Write($"[Storage] Delete failed: {dir.FullName} - {ex.Message}");
+                }
             }
         }
 
@@ -187,7 +283,7 @@ namespace Vision_Align
                 }
                 else
                 {
-                    if (algo.TryCopyProcessingImage(out HObject copy))
+                    if (algo.TryCopyOriImage(out HObject copy))
                     {
                         try
                         {

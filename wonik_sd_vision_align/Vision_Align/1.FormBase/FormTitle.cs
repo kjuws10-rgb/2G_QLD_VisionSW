@@ -39,6 +39,13 @@ namespace Vision_Align
             label_Mode.BackColor = Color.Yellow;
             label_Mode.ForeColor = Color.Black;
             btn_Auto_Manul.Text = "AUTO";
+
+            // 로고 이미지 로드
+            string logoPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Images", "logo.png");
+            if (System.IO.File.Exists(logoPath))
+            {
+                picture_Log.Image = Image.FromFile(logoPath);
+            }
         }
 
         void OnTimer(object obj, EventArgs ea)
@@ -54,8 +61,8 @@ namespace Vision_Align
             //Global.bConnectPLC = Global.clsOmron.IsConnect;
             if (Global.dicClsMotion[CamInfo.CAM_1].IsConnect && Global.dicClsMotion[CamInfo.CAM_2].IsConnect) Global.bConnectAxisZ = true;
 
-            labelAlarm.Text = "Alarm\r\n[" + Global.m_AlarmCode.ToString()+"]";
-            if (Global.m_AlarmCode == AlarmCode.None)
+            labelAlarm.Text = "Alarm\r\n[" + Global.clsAlarmManager.CurrentAlarm.ToString()+"]";
+            if (Global.clsAlarmManager.CurrentAlarm == AlarmCode.None)
                 labelAlarm.BackColor = SystemColors.Control;
             else
                 labelAlarm.BackColor = Color.Red;
@@ -178,15 +185,13 @@ namespace Vision_Align
         private void btnAlarmClear_Click(object sender, EventArgs e)
         {
             if(Global.bAutoMode)
-                Global.bAlarmClearReq = true;
+                Global.clsAlarmManager.AlarmClearReq = true;
             else
             {
-                Global.m_AlarmCode = AlarmCode.None;
+                Global.clsAlarmManager.ClearAlarm();
 
                 //PLC 출력 영역 모두 초기화
                 Global.inforPLC.ClearOutput();
-
-                Global.bAlarmClearReq = false;
             }
         }
 
@@ -211,7 +216,9 @@ namespace Vision_Align
             // 설비가 START 일때는 강제로 알람 발생 후 종료
             if (MessageBox.Show("Do you want exit program ?", "Exit program", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
 
-            Global.formBase.RequestShutdown();
+            Global.logger[LogType.SYSTEM].Write("------========= Program End =========------");
+
+            Environment.Exit(0);
         }
     }
 }

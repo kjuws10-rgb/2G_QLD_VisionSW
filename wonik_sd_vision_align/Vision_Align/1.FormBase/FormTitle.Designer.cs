@@ -57,16 +57,16 @@
             // 
             // picture_Log
             // 
-            this.picture_Log.Location = new System.Drawing.Point(12, 5);
+            this.picture_Log.Location = new System.Drawing.Point(2, 5);
             this.picture_Log.Name = "picture_Log";
-            this.picture_Log.Size = new System.Drawing.Size(197, 50);
+            this.picture_Log.Size = new System.Drawing.Size(214, 52);
             this.picture_Log.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture_Log.TabIndex = 0;
             this.picture_Log.TabStop = false;
             // 
             // label_Title
             // 
-            this.label_Title.Font = new System.Drawing.Font("굴림", 25F);
+            this.label_Title.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label_Title.Location = new System.Drawing.Point(222, 5);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(312, 52);
@@ -213,7 +213,7 @@
             this.btn_Auto_Manul.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Auto_Manul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Auto_Manul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Auto_Manul.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Auto_Manul.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.btn_Auto_Manul.Location = new System.Drawing.Point(1435, 5);
             this.btn_Auto_Manul.Name = "btn_Auto_Manul";
             this.btn_Auto_Manul.Size = new System.Drawing.Size(147, 50);
@@ -227,10 +227,10 @@
             this.btnAlarmClear.BackColor = System.Drawing.SystemColors.Control;
             this.btnAlarmClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAlarmClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlarmClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlarmClear.Location = new System.Drawing.Point(1191, 13);
+            this.btnAlarmClear.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAlarmClear.Location = new System.Drawing.Point(1187, 9);
             this.btnAlarmClear.Name = "btnAlarmClear";
-            this.btnAlarmClear.Size = new System.Drawing.Size(117, 37);
+            this.btnAlarmClear.Size = new System.Drawing.Size(56, 44);
             this.btnAlarmClear.TabIndex = 1146;
             this.btnAlarmClear.Text = "Alarm Clear";
             this.btnAlarmClear.UseVisualStyleBackColor = false;
@@ -259,7 +259,7 @@
             // FormTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1920, 62);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);

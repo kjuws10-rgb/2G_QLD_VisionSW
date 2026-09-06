@@ -35,6 +35,7 @@
             // 
             this.hControl_Display.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.hControl_Display.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.hControl_Display.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hControl_Display.HDoubleClickToFitContent = true;
             this.hControl_Display.HDrawingObjectsModifier = HalconDotNet.HSmartWindowControl.DrawingObjectsModifier.None;
             this.hControl_Display.HImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
@@ -50,8 +51,7 @@
             // 
             // FormHalconDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(582, 429);
             this.Controls.Add(this.hControl_Display);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

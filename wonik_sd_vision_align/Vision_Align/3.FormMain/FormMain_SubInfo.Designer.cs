@@ -86,7 +86,7 @@
             this.listBoxProcessStatus = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Live = new System.Windows.Forms.Button();
-            this.btn_Snap = new System.Windows.Forms.Button();
+            this.btn_Grab = new System.Windows.Forms.Button();
             this.btn_Judgement = new System.Windows.Forms.Button();
             this.btn_Capture = new System.Windows.Forms.Button();
             this.labelContactSlip = new System.Windows.Forms.Label();
@@ -155,7 +155,7 @@
             this.label_Title_OffsetT.Name = "label_Title_OffsetT";
             this.label_Title_OffsetT.Size = new System.Drawing.Size(127, 12);
             this.label_Title_OffsetT.TabIndex = 0;
-            this.label_Title_OffsetT.Text = "Stage T[mdeg]";
+            this.label_Title_OffsetT.Text = "Stage T[Deg]";
             this.label_Title_OffsetT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel15
@@ -357,7 +357,7 @@
             this.label_Title_ErrT.Name = "label_Title_ErrT";
             this.label_Title_ErrT.Size = new System.Drawing.Size(179, 42);
             this.label_Title_ErrT.TabIndex = 0;
-            this.label_Title_ErrT.Text = "T-ERR [mdeg]";
+            this.label_Title_ErrT.Text = "T-ERR [Deg]";
             this.label_Title_ErrT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -798,20 +798,20 @@
             this.btn_Live.UseVisualStyleBackColor = false;
             this.btn_Live.Click += new System.EventHandler(this.btn_Live_Click);
             // 
-            // btn_Snap
+            // btn_Grab
             // 
-            this.btn_Snap.BackColor = System.Drawing.Color.White;
-            this.btn_Snap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Snap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Snap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Snap.ForeColor = System.Drawing.Color.Black;
-            this.btn_Snap.Location = new System.Drawing.Point(2, 574);
-            this.btn_Snap.Name = "btn_Snap";
-            this.btn_Snap.Size = new System.Drawing.Size(97, 27);
-            this.btn_Snap.TabIndex = 1081;
-            this.btn_Snap.Text = "Snap";
-            this.btn_Snap.UseVisualStyleBackColor = false;
-            this.btn_Snap.Click += new System.EventHandler(this.btn_Snap_Click);
+            this.btn_Grab.BackColor = System.Drawing.Color.White;
+            this.btn_Grab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Grab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Grab.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Grab.ForeColor = System.Drawing.Color.Black;
+            this.btn_Grab.Location = new System.Drawing.Point(2, 574);
+            this.btn_Grab.Name = "btn_Grab";
+            this.btn_Grab.Size = new System.Drawing.Size(97, 27);
+            this.btn_Grab.TabIndex = 1081;
+            this.btn_Grab.Text = "Grab";
+            this.btn_Grab.UseVisualStyleBackColor = false;
+            this.btn_Grab.Click += new System.EventHandler(this.btn_Snap_Click);
             // 
             // btn_Judgement
             // 
@@ -919,7 +919,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 12);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Stage T[mdeg]";
+            this.label4.Text = "Stage T[Deg]";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel13
@@ -990,8 +990,7 @@
             // 
             // FormMain_SubInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(397, 898);
             this.Controls.Add(this.panel10);
@@ -1009,7 +1008,7 @@
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.btn_Judgement);
             this.Controls.Add(this.panel18);
-            this.Controls.Add(this.btn_Snap);
+            this.Controls.Add(this.btn_Grab);
             this.Controls.Add(this.panel19);
             this.Controls.Add(this.btn_Live);
             this.Controls.Add(this.panel21);
@@ -1135,7 +1134,7 @@
         private System.Windows.Forms.ListBox listBoxProcessStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Live;
-        private System.Windows.Forms.Button btn_Snap;
+        private System.Windows.Forms.Button btn_Grab;
         private System.Windows.Forms.Button btn_Judgement;
         private System.Windows.Forms.Button btn_Capture;
         private System.Windows.Forms.Label labelContactSlip;

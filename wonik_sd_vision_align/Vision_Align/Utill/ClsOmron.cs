@@ -165,6 +165,8 @@ namespace Vision_Align
         public int[] AI_Word { get => _AI_Word; }
         public int[] AO_Word { get => _AO_Word; }
 
+        public event EventHandler<string> ChangedIoMsg;
+
 #if !TEST
         public bool IsConnect { get => DataAccessCompolet1.IsConnected; }
 
@@ -173,7 +175,6 @@ namespace Vision_Align
         DataAccessCompolet DataAccessCompolet1;
         System.ComponentModel.IContainer components;
 
-        public event EventHandler<string> ChangedIoMsg;
 
         public ClsOmron()
         {

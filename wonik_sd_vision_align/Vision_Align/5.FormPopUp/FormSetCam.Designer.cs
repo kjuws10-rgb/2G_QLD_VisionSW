@@ -183,10 +183,6 @@
             // 
             this.cb_Mode.Font = new System.Drawing.Font("굴림", 14F);
             this.cb_Mode.FormattingEnabled = true;
-            this.cb_Mode.Items.AddRange(new object[] {
-            "common",
-            "Mark Align",
-            "Contact"});
             this.cb_Mode.Location = new System.Drawing.Point(341, 46);
             this.cb_Mode.Name = "cb_Mode";
             this.cb_Mode.Size = new System.Drawing.Size(322, 27);
@@ -1185,7 +1181,7 @@
             // FormSetCam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(675, 940);
             this.Controls.Add(this.btnSavedPosMove);
             this.Controls.Add(this.nud_SetDec);

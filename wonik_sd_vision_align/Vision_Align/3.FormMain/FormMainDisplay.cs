@@ -43,8 +43,8 @@ namespace Vision_Align
             panel_Display.Controls.Clear();
             panel_Display.Controls.Add(Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo]);
 
-            Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].Show();
             Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].Dock = DockStyle.Fill;
+            Global.formHDisplay[(int)HWindowType.MAIN_1 + m_nCamNo].Show();
         }
 
         #region Style
@@ -125,7 +125,7 @@ namespace Vision_Align
 
         private void SetTitle(int nCamNo)
         {
-            label_Title.Text = string.Format("Pre Align Cam#" + (nCamNo + 1).ToString());
+            label_Title.Text = string.Format("Align Cam#" + (nCamNo + 1).ToString());
         }
 
     }

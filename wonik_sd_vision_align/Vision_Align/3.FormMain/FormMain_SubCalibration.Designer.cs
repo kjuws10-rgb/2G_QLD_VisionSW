@@ -101,6 +101,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_OffsetX = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.panelCalibrationResult = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Mask_Score_Limit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_OffsetXY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_OffsetTh)).BeginInit();
@@ -121,6 +122,7 @@
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelCalibrationResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxCalStatus
@@ -235,7 +237,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 17);
             this.label7.TabIndex = 1093;
-            this.label7.Text = "Th[mdeg]";
+            this.label7.Text = "Th[Deg]";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nud_OffsetXY
@@ -306,7 +308,7 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Arial", 9F);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(2, 753);
+            this.label13.Location = new System.Drawing.Point(0, 28);
             this.label13.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(194, 17);
@@ -321,7 +323,7 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Arial", 9F);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(200, 753);
+            this.label14.Location = new System.Drawing.Point(198, 28);
             this.label14.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(194, 17);
@@ -336,7 +338,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Arial", 9F);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(2, 769);
+            this.label15.Location = new System.Drawing.Point(0, 44);
             this.label15.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(93, 21);
@@ -346,7 +348,7 @@
             // 
             // txtCam1PixelResolutionX
             // 
-            this.txtCam1PixelResolutionX.Location = new System.Drawing.Point(96, 769);
+            this.txtCam1PixelResolutionX.Location = new System.Drawing.Point(94, 44);
             this.txtCam1PixelResolutionX.Name = "txtCam1PixelResolutionX";
             this.txtCam1PixelResolutionX.ReadOnly = true;
             this.txtCam1PixelResolutionX.Size = new System.Drawing.Size(100, 21);
@@ -354,7 +356,7 @@
             // 
             // txtCam1PixelResolutionY
             // 
-            this.txtCam1PixelResolutionY.Location = new System.Drawing.Point(96, 789);
+            this.txtCam1PixelResolutionY.Location = new System.Drawing.Point(94, 64);
             this.txtCam1PixelResolutionY.Name = "txtCam1PixelResolutionY";
             this.txtCam1PixelResolutionY.ReadOnly = true;
             this.txtCam1PixelResolutionY.Size = new System.Drawing.Size(100, 21);
@@ -367,7 +369,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Arial", 9F);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(2, 789);
+            this.label16.Location = new System.Drawing.Point(0, 64);
             this.label16.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 21);
@@ -377,7 +379,7 @@
             // 
             // txtCam1Tilt
             // 
-            this.txtCam1Tilt.Location = new System.Drawing.Point(96, 809);
+            this.txtCam1Tilt.Location = new System.Drawing.Point(94, 84);
             this.txtCam1Tilt.Name = "txtCam1Tilt";
             this.txtCam1Tilt.ReadOnly = true;
             this.txtCam1Tilt.Size = new System.Drawing.Size(100, 21);
@@ -390,7 +392,7 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.Font = new System.Drawing.Font("Arial", 9F);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(2, 809);
+            this.label17.Location = new System.Drawing.Point(0, 84);
             this.label17.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(93, 21);
@@ -400,7 +402,7 @@
             // 
             // txtCam1OffsetX
             // 
-            this.txtCam1OffsetX.Location = new System.Drawing.Point(96, 829);
+            this.txtCam1OffsetX.Location = new System.Drawing.Point(94, 104);
             this.txtCam1OffsetX.Name = "txtCam1OffsetX";
             this.txtCam1OffsetX.ReadOnly = true;
             this.txtCam1OffsetX.Size = new System.Drawing.Size(100, 21);
@@ -413,7 +415,7 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Font = new System.Drawing.Font("Arial", 9F);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(2, 829);
+            this.label18.Location = new System.Drawing.Point(0, 104);
             this.label18.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(93, 21);
@@ -423,7 +425,7 @@
             // 
             // txtCam1OffsetY
             // 
-            this.txtCam1OffsetY.Location = new System.Drawing.Point(96, 848);
+            this.txtCam1OffsetY.Location = new System.Drawing.Point(94, 123);
             this.txtCam1OffsetY.Name = "txtCam1OffsetY";
             this.txtCam1OffsetY.ReadOnly = true;
             this.txtCam1OffsetY.Size = new System.Drawing.Size(100, 21);
@@ -436,7 +438,7 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Font = new System.Drawing.Font("Arial", 9F);
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(2, 848);
+            this.label19.Location = new System.Drawing.Point(0, 123);
             this.label19.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(93, 21);
@@ -446,7 +448,7 @@
             // 
             // txtCam2OffsetY
             // 
-            this.txtCam2OffsetY.Location = new System.Drawing.Point(294, 848);
+            this.txtCam2OffsetY.Location = new System.Drawing.Point(292, 123);
             this.txtCam2OffsetY.Name = "txtCam2OffsetY";
             this.txtCam2OffsetY.ReadOnly = true;
             this.txtCam2OffsetY.Size = new System.Drawing.Size(100, 21);
@@ -459,7 +461,7 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.Font = new System.Drawing.Font("Arial", 9F);
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(200, 848);
+            this.label20.Location = new System.Drawing.Point(198, 123);
             this.label20.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(93, 21);
@@ -469,7 +471,7 @@
             // 
             // txtCam2OffsetX
             // 
-            this.txtCam2OffsetX.Location = new System.Drawing.Point(294, 829);
+            this.txtCam2OffsetX.Location = new System.Drawing.Point(292, 104);
             this.txtCam2OffsetX.Name = "txtCam2OffsetX";
             this.txtCam2OffsetX.ReadOnly = true;
             this.txtCam2OffsetX.Size = new System.Drawing.Size(100, 21);
@@ -482,7 +484,7 @@
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.Font = new System.Drawing.Font("Arial", 9F);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(200, 829);
+            this.label21.Location = new System.Drawing.Point(198, 104);
             this.label21.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(93, 21);
@@ -492,7 +494,7 @@
             // 
             // txtCam2Tilt
             // 
-            this.txtCam2Tilt.Location = new System.Drawing.Point(294, 809);
+            this.txtCam2Tilt.Location = new System.Drawing.Point(292, 84);
             this.txtCam2Tilt.Name = "txtCam2Tilt";
             this.txtCam2Tilt.ReadOnly = true;
             this.txtCam2Tilt.Size = new System.Drawing.Size(100, 21);
@@ -505,7 +507,7 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Font = new System.Drawing.Font("Arial", 9F);
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(200, 809);
+            this.label22.Location = new System.Drawing.Point(198, 84);
             this.label22.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(93, 21);
@@ -515,7 +517,7 @@
             // 
             // txtCam2PixelResolutionY
             // 
-            this.txtCam2PixelResolutionY.Location = new System.Drawing.Point(294, 789);
+            this.txtCam2PixelResolutionY.Location = new System.Drawing.Point(292, 64);
             this.txtCam2PixelResolutionY.Name = "txtCam2PixelResolutionY";
             this.txtCam2PixelResolutionY.ReadOnly = true;
             this.txtCam2PixelResolutionY.Size = new System.Drawing.Size(100, 21);
@@ -528,7 +530,7 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Font = new System.Drawing.Font("Arial", 9F);
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(200, 789);
+            this.label23.Location = new System.Drawing.Point(198, 64);
             this.label23.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(93, 21);
@@ -538,7 +540,7 @@
             // 
             // txtCam2PixelResolutionX
             // 
-            this.txtCam2PixelResolutionX.Location = new System.Drawing.Point(294, 769);
+            this.txtCam2PixelResolutionX.Location = new System.Drawing.Point(292, 44);
             this.txtCam2PixelResolutionX.Name = "txtCam2PixelResolutionX";
             this.txtCam2PixelResolutionX.ReadOnly = true;
             this.txtCam2PixelResolutionX.Size = new System.Drawing.Size(100, 21);
@@ -551,7 +553,7 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Font = new System.Drawing.Font("Arial", 9F);
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(200, 769);
+            this.label24.Location = new System.Drawing.Point(198, 44);
             this.label24.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(93, 21);
@@ -566,7 +568,7 @@
             // 
             // txtPiducialMarkDistance
             // 
-            this.txtPiducialMarkDistance.Location = new System.Drawing.Point(96, 868);
+            this.txtPiducialMarkDistance.Location = new System.Drawing.Point(94, 143);
             this.txtPiducialMarkDistance.Name = "txtPiducialMarkDistance";
             this.txtPiducialMarkDistance.ReadOnly = true;
             this.txtPiducialMarkDistance.Size = new System.Drawing.Size(100, 21);
@@ -579,7 +581,7 @@
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.Font = new System.Drawing.Font("Arial", 9F);
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(2, 868);
+            this.label25.Location = new System.Drawing.Point(0, 143);
             this.label25.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(93, 21);
@@ -691,7 +693,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(127, 17);
             this.label26.TabIndex = 1137;
-            this.label26.Text = "Th[mdeg]";
+            this.label26.Text = "Th[Deg]";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
@@ -878,7 +880,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "T[mdeg]";
+            this.label4.Text = "T[Deg]";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel29
@@ -1004,7 +1006,7 @@
             this.label_Title_OffsetT.Name = "label_Title_OffsetT";
             this.label_Title_OffsetT.Size = new System.Drawing.Size(86, 13);
             this.label_Title_OffsetT.TabIndex = 0;
-            this.label_Title_OffsetT.Text = "Stage T[mdeg]";
+            this.label_Title_OffsetT.Text = "Stage T[Deg]";
             this.label_Title_OffsetT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel18
@@ -1081,19 +1083,52 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Arial", 9F);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(2, 735);
+            this.label12.Location = new System.Drawing.Point(0, 10);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(392, 17);
             this.label12.TabIndex = 1108;
             this.label12.Text = "Calibration Result";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelCalibrationResult
+            // 
+            this.panelCalibrationResult.Controls.Add(this.txtPiducialMarkDistance);
+            this.panelCalibrationResult.Controls.Add(this.label25);
+            this.panelCalibrationResult.Controls.Add(this.txtCam2OffsetY);
+            this.panelCalibrationResult.Controls.Add(this.label20);
+            this.panelCalibrationResult.Controls.Add(this.txtCam2OffsetX);
+            this.panelCalibrationResult.Controls.Add(this.label21);
+            this.panelCalibrationResult.Controls.Add(this.txtCam2Tilt);
+            this.panelCalibrationResult.Controls.Add(this.label22);
+            this.panelCalibrationResult.Controls.Add(this.txtCam2PixelResolutionY);
+            this.panelCalibrationResult.Controls.Add(this.label23);
+            this.panelCalibrationResult.Controls.Add(this.txtCam2PixelResolutionX);
+            this.panelCalibrationResult.Controls.Add(this.label24);
+            this.panelCalibrationResult.Controls.Add(this.txtCam1OffsetY);
+            this.panelCalibrationResult.Controls.Add(this.label19);
+            this.panelCalibrationResult.Controls.Add(this.txtCam1OffsetX);
+            this.panelCalibrationResult.Controls.Add(this.label18);
+            this.panelCalibrationResult.Controls.Add(this.txtCam1Tilt);
+            this.panelCalibrationResult.Controls.Add(this.label17);
+            this.panelCalibrationResult.Controls.Add(this.txtCam1PixelResolutionY);
+            this.panelCalibrationResult.Controls.Add(this.label16);
+            this.panelCalibrationResult.Controls.Add(this.txtCam1PixelResolutionX);
+            this.panelCalibrationResult.Controls.Add(this.label15);
+            this.panelCalibrationResult.Controls.Add(this.label14);
+            this.panelCalibrationResult.Controls.Add(this.label13);
+            this.panelCalibrationResult.Controls.Add(this.label12);
+            this.panelCalibrationResult.Location = new System.Drawing.Point(2, 725);
+            this.panelCalibrationResult.Name = "panelCalibrationResult";
+            this.panelCalibrationResult.Size = new System.Drawing.Size(393, 167);
+            this.panelCalibrationResult.TabIndex = 1158;
+            this.panelCalibrationResult.Visible = false;
+            // 
             // FormMain_SubCalibration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(397, 898);
+            this.Controls.Add(this.panelCalibrationResult);
             this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel16);
@@ -1119,31 +1154,6 @@
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.chbManualMode);
-            this.Controls.Add(this.txtPiducialMarkDistance);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.txtCam2OffsetY);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.txtCam2OffsetX);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.txtCam2Tilt);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.txtCam2PixelResolutionY);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.txtCam2PixelResolutionX);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.txtCam1OffsetY);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.txtCam1OffsetX);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.txtCam1Tilt);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.txtCam1PixelResolutionY);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.txtCam1PixelResolutionX);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.btn_SetParam);
             this.Controls.Add(this.btn_Auto_Cal);
             this.Controls.Add(this.nud_OffsetTh);
@@ -1180,8 +1190,9 @@
             this.panel18.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panelCalibrationResult.ResumeLayout(false);
+            this.panelCalibrationResult.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1259,5 +1270,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_OffsetX;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panelCalibrationResult;
     }
 }

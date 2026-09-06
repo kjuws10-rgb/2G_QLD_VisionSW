@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoAlgorithm;
 using System.Threading;
 using System.Diagnostics;
 
@@ -36,7 +37,7 @@ namespace Vision_Align
 
                 // 1) (x,y,t) -> (u,v,w) 변환
                 double dX1, dX2, dY1, dY2;
-                ClsAlgorithm.StageCal(x, y, t, out dX1, out dX2, out dY1, out dY2);
+                VisionAlgorithm.StageCal(x, y, t, out dX1, out dX2, out dY1, out dY2);
 
                 // 결과값 로그/CSV용으로 저장해두고 싶으면 여기서 채워도 됨
                 Global.inforResult.dMove_UVW_X1 = dX1;

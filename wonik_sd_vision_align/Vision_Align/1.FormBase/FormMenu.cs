@@ -63,7 +63,7 @@ namespace Vision_Align
 
             //btn_Minimum.BackColor = btn_Exit.BackColor = BtnColor;
             btn_Minimum.ForeColor = btn_Exit.ForeColor = TextColor;
-            btn_Minimum.Font = btn_About.Font = btn_Exit.Font = font;
+            btn_Minimum.Font = btn_Exit.Font = font;
 
             //btn_Alram.BackColor = btn_Main.BackColor = btn_Manual.BackColor = BtnColor;
             //btn_Comm.BackColor = btn_IO.BackColor = btn_Recipe.BackColor = BtnColor;
@@ -73,16 +73,25 @@ namespace Vision_Align
 
             btn_Main.Font = font;
             btn_IO.Font = font;
-            btn_Log.Font  = new Font("Arial", 11, FontStyle.Bold);
-            btn_Alram.Font = new Font("Arial", 11, FontStyle.Bold);
+            btn_Log.Font  = font;
+            btn_Alram.Font = font;
 
             btn_Minimum.ForeColor = Color.White;
             btn_Minimum.BackColor = Color.FromArgb(120, 60, 80);
 
-            btn_About.ForeColor = btn_Exit.ForeColor = Color.White;
-            btn_About.BackColor = btn_Exit.BackColor = Color.FromArgb(20, 50, 100);
         }
         #endregion
+
+        public void UpdateSelectedButton(Viewer viewer)
+        {
+            Color defaultColor  = SystemColors.Control;
+            Color selectedColor = Color.DeepSkyBlue;
+
+            btn_Main .BackColor = (viewer == Viewer.Main ) ? selectedColor : defaultColor;
+            btn_IO   .BackColor = (viewer == Viewer.IO   ) ? selectedColor : defaultColor;
+            btn_Log  .BackColor = (viewer == Viewer.Log  ) ? selectedColor : defaultColor;
+            btn_Alram.BackColor = (viewer == Viewer.Alram) ? selectedColor : defaultColor;
+        }
 
         #region Btn Func
         private void btn_About_Click(object sender, EventArgs e)
@@ -95,7 +104,13 @@ namespace Vision_Align
             // 설비가 START 일때는 강제로 알람 발생 후 종료
             if (MessageBox.Show("Do you want exit program ?", "Exit program", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
 
-            Global.formBase.RequestShutdown();
+            Global.logger[LogType.SYSTEM].Write("------========= Program End =========------");
+
+            Global.clsOmronThread.Release();
+            Global.clsAutoThread.Release();
+            Global.clsFolderThread.Release();
+
+            Environment.Exit(0);
         }
 
         private void btn_Minimum_Click(object sender, EventArgs e)
@@ -125,10 +140,6 @@ namespace Vision_Align
 
         #endregion
 
-        private void btnAlgorithmTest_Click(object sender, EventArgs e)
-        {
-            FormAlgorithmTest formAlgorithmTest = new FormAlgorithmTest();
-            formAlgorithmTest.ShowDialog();
-        }
+
     }
 }

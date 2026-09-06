@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using VoAlgorithm;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,10 +17,15 @@ namespace Vision_Align
 {
     public partial class FormLogView : Form
     {
+
         public FormLogView()
         {
             InitializeComponent();
+
         }
+
+
+
 
         public void Initializ(Color? color = null)
         {
@@ -45,6 +51,7 @@ namespace Vision_Align
 
             Global.formHDisplay[(int)HWindowType.LOG_2].Show();
             Global.formHDisplay[(int)HWindowType.LOG_2].Dock = DockStyle.Fill;
+
         }
 
         #region Style
@@ -65,7 +72,6 @@ namespace Vision_Align
         public void ShowViewr()
         {
             GetFolder(Global.strRsltPath);
-
             Show();
         }
 
@@ -87,7 +93,7 @@ namespace Vision_Align
 
                 gridView_FileData.DefaultCellStyle.Font = new Font("Arial", 9);
 
-                //if (matching_Type == Matching_Type.GLASS_SHAPE) strExtension = ".shm";
+                //if (matching_Type == MatchingType.GlassShape) strExtension = ".shm";
                 //else strExtension = ".ncm";
 
                 for (int i = 0; i < files.Length; i++)
@@ -162,13 +168,13 @@ namespace Vision_Align
                 if (!double.TryParse(selectedRow.Cells[42].Value.ToString(), out Cam2maskCol)) Cam2maskCol = -1;
 
                 if (Cam1glassRow != -1 && Cam1glassCol != -1)
-                    ClsAlgorithm.OverlayCross(hWindow1, Cam1glassCol, Cam1glassRow, 0, "green");
+                    VisionAlgorithm.OverlayCross(hWindow1, Cam1glassCol, Cam1glassRow, 0, "green");
                 if (Cam1maskRow != -1 && Cam1maskCol != -1)
-                    ClsAlgorithm.OverlayCross(hWindow1, Cam1maskCol, Cam1maskRow, 0, "cyan");
+                    VisionAlgorithm.OverlayCross(hWindow1, Cam1maskCol, Cam1maskRow, 0, "cyan");
                 if (Cam2glassRow != -1 && Cam2glassCol != -1)
-                    ClsAlgorithm.OverlayCross(hWindow2, Cam2glassCol, Cam2glassRow,  0, "green");
+                    VisionAlgorithm.OverlayCross(hWindow2, Cam2glassCol, Cam2glassRow,  0, "green");
                 if (Cam2maskRow != -1 && Cam2maskCol != -1)
-                    ClsAlgorithm.OverlayCross(hWindow2, Cam2maskCol, Cam2maskRow,  0, "cyan");
+                    VisionAlgorithm.OverlayCross(hWindow2, Cam2maskCol, Cam2maskRow,  0, "cyan");
 
 
             }
@@ -223,6 +229,7 @@ namespace Vision_Align
 
 
                 gridView_CsvData.SelectionChanged += new System.EventHandler(this.gridView_CsvData_SelectionChanged);
+                gridView_CsvData.Rows[gridView_CsvData.Rows.Count - 1].Selected = false;
                 gridView_CsvData.Rows[gridView_CsvData.Rows.Count - 1].Selected = true;
                 //List<string> listJudge = Global.clsCSV.ReadCsvColumn(strPath, "Judge");
 
@@ -234,5 +241,7 @@ namespace Vision_Align
             }
 
         }
+
+
     }
 }

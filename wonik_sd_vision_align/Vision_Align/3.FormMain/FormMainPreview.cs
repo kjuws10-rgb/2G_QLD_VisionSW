@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using VoAlgorithm;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -76,12 +77,10 @@ namespace Vision_Align
             cb_Glass_Loding_Pos.CheckedChanged -= Filter_CheckedChanged;
             cb_Glass_Loding_Pos.CheckedChanged += Filter_CheckedChanged;
 
-            cb_Slip_Distribution.CheckedChanged -= Filter_CheckedChanged;
-            cb_Slip_Distribution.CheckedChanged += Filter_CheckedChanged;
 
 
 
-            _hEmptyImage.ReadImage("EmptyImage.bmp");
+            _hEmptyImage.ReadImage("Images\\EmptyImage.bmp");
 
             HOperatorSet.DispObj(_hEmptyImage, HalconDisplay.HWindow);
 
@@ -164,7 +163,7 @@ namespace Vision_Align
 
                 gridView_LogDate.DefaultCellStyle.Font = new Font("Arial", 9);
 
-                //if (matching_Type == Matching_Type.GLASS_SHAPE) strExtension = ".shm";
+                //if (matching_Type == MatchingType.GlassShape) strExtension = ".shm";
                 //else strExtension = ".ncm";
 
                 for (int i = 0; i < files.Length; i++)
@@ -226,7 +225,7 @@ namespace Vision_Align
         {
             if (_allData == null || _allData.Count == 0) return;
 
-            if (!cb_Align_Ok.Checked && !cb_Glass_Loding_Pos.Checked && !cb_Slip_Distribution.Checked)
+            if (!cb_Align_Ok.Checked && !cb_Glass_Loding_Pos.Checked )
             {
                 _filteredData = new List<AlignResult>();
                 RenderToHalcon(_filteredData);   // 내부에서 ClearWindow 하고 종료함
@@ -241,8 +240,6 @@ namespace Vision_Align
             if (cb_Glass_Loding_Pos.Checked)
                 q = q.Where(x => x.GlassX.HasValue || x.GlassY.HasValue);
 
-            if (cb_Slip_Distribution.Checked)
-                q = q.Where(x => x.SlipX.HasValue || x.SlipY.HasValue);
 
             _filteredData = q.ToList();
 
@@ -283,15 +280,6 @@ namespace Vision_Align
                     HOperatorSet.DispCross(hWindow, d.GlassY.Value, d.GlassX.Value, 30, 0);
                 }
 
-                // Slip Distribution 표시 (체크됐을 때만 그리기)
-                if (cb_Slip_Distribution.Checked && d.SlipX.HasValue && d.SlipY.HasValue)
-                {
-                    HOperatorSet.SetColor(hWindow, "red");
-
-                    // 지금은 일단 SlipX/Y를 X/Y로 찍음
-                    // 실제로는 화면 좌표계에 맞게 변환이 필요할 수 있음
-                    HOperatorSet.DispCross(hWindow, d.SlipY.Value, d.SlipX.Value, 30, 0);
-                }
             }
         }
         private List<AlignResult> LoadAlignCsv(string path)

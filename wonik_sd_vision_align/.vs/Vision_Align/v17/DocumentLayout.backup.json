@@ -1,0 +1,1096 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Vision_Align||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formhalcondisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formhalcondisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formsetcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formsetcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formsetcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formsetcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formhalcondisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formhalcondisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmaindisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmaindisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmaindisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmaindisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\BIN\\RECIPE\\MaskG\\Mask#1_Cam2\\Mask#1_Cam2.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\7.thread\\clsautothread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\7.thread\\clsautothread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmainpreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmainpreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formsetcam.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formsetcam.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clsvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clsvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clsuvwstage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clsuvwstage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subcalibration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subcalibration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subinfo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subinfo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clscsvfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clscsvfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subcalibration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subcalibration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subconfig.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subconfig.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formalarmview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formalarmview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formlogview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formlogview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmainpreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmainpreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\5.formpopup\\formmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\5.formpopup\\formmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\8.test\\formalgorithmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\8.test\\formalgorithmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formlogview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formlogview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clsomron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clsomron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\7.thread\\clsfolderthread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\7.thread\\clsfolderthread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clscamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clscamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formbase.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formbase.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\7.thread\\clsomronthread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\7.thread\\clsomronthread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formlogview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formlogview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formmain_subcalibration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formmain_subcalibration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formtitle.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formtitle.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\3.formmain\\formhalcondisplay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\3.formmain\\formhalcondisplay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\1.Program\\BIN\\CONFIG\\UVW_Info.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\6.communication\\clsserial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\6.communication\\clsserial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\1.formbase\\formmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\1.formbase\\formmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\1.Program\\BIN\\CONFIG\\PRE_CONFIG_LIST.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\8.test\\formalgorithmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\8.test\\formalgorithmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clsmotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clsmotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\2.formviewer\\formio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\2.formviewer\\formio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\ajinapi\\axhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\ajinapi\\axhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clslogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clslogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\clslight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\clslight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\vision_align\\utill\\jsonconvertor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|solutionrelative:vision_align\\utill\\jsonconvertor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\1.Project\\7.IPS-Align\\1.Program\\Vision_Align\\Vision_Align\\Utill\\ClsCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\ljh\\00_work\\01_project\\010_po-25-012\\source\\wonik_sd_vision_align\\vision_align\\2.formviewer\\formomronmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\Utill\\ClsAlgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\VoAlgorithm\\ClsAlgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21718D4C-E76C-40A3-8793-0A403583D553}|Vision_Align\\Vision_Align.csproj|d:\\ljh\\00_work\\01_project\\010_po-25-012\\source\\wonik_sd_vision_align_260306\\vision_align\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAF4JAAAAAAAAAAAqwGwJAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-01-06T07:33:45.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormMain.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T01:09:44.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormHalconDisplay.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormHalconDisplay.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormHalconDisplay.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T23:58:59.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormBase.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormBase.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormBase.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormBase.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormBase.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T06:23:27.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Vision_Align",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Vision_Align.csproj",
+              "RelativeDocumentMoniker": "Vision_Align\\Vision_Align.csproj",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Vision_Align.csproj",
+              "RelativeToolTip": "Vision_Align\\Vision_Align.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T07:58:57.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Program.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Program.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Program.cs",
+              "RelativeToolTip": "Vision_Align\\Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowE8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T01:04:36.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "PRE_CONFIG_LIST.json",
+              "DocumentMoniker": "D:\\1.Program\\BIN\\CONFIG\\PRE_CONFIG_LIST.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\1.Program\\BIN\\CONFIG\\PRE_CONFIG_LIST.json",
+              "ToolTip": "D:\\1.Program\\BIN\\CONFIG\\PRE_CONFIG_LIST.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\1.Program\\BIN\\CONFIG\\PRE_CONFIG_LIST.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-13T11:50:46.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormModel.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\5.FormPopUp\\FormModel.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\5.FormPopUp\\FormModel.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T00:25:33.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormOmronMonitor.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.Designer.cs",
+              "RelativeDocumentMoniker": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.Designer.cs",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.Designer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T14:36:30.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Global.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Global.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Global.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Global.cs",
+              "RelativeToolTip": "Vision_Align\\Global.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T00:16:28.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormSetCam.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\5.FormPopUp\\FormSetCam.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\5.FormPopUp\\FormSetCam.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T06:40:58.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormMain_SubInfo.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubInfo.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubInfo.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:13:30.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Mask#1_Cam2.json",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\BIN\\RECIPE\\MaskG\\Mask#1_Cam2\\Mask#1_Cam2.json",
+              "RelativeDocumentMoniker": "..\\BIN\\RECIPE\\MaskG\\Mask#1_Cam2\\Mask#1_Cam2.json",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\BIN\\RECIPE\\MaskG\\Mask#1_Cam2\\Mask#1_Cam2.json",
+              "RelativeToolTip": "..\\BIN\\RECIPE\\MaskG\\Mask#1_Cam2\\Mask#1_Cam2.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-03T05:19:39.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormSetCam.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "RelativeToolTip": "Vision_Align\\5.FormPopUp\\FormSetCam.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwCwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T02:50:07.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormMenu.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormMenu.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormMenu.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormMenu.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormMenu.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T06:40:19.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormModel.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "RelativeToolTip": "Vision_Align\\5.FormPopUp\\FormModel.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAlwM4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T04:44:12.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FormMainDisplay.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMainDisplay.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMainDisplay.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:17:15.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormMainDisplay.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMainDisplay.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:17:15.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormHalconDisplay.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormHalconDisplay.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAMwEMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T04:24:18.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ClsAutoThread.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsAutoThread.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\7.Thread\\ClsAutoThread.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsAutoThread.cs",
+              "RelativeToolTip": "Vision_Align\\7.Thread\\ClsAutoThread.cs",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAUwBECAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T04:39:29.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ClsCamera.cs",
+              "DocumentMoniker": "D:\\1.Project\\7.IPS-Align\\1.Program\\Vision_Align\\Vision_Align\\Utill\\ClsCamera.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\1.Project\\7.IPS-Align\\1.Program\\Vision_Align\\Vision_Align\\Utill\\ClsCamera.cs",
+              "ToolTip": "D:\\1.Project\\7.IPS-Align\\1.Program\\Vision_Align\\Vision_Align\\Utill\\ClsCamera.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\1.Project\\7.IPS-Align\\1.Program\\Vision_Align\\Vision_Align\\Utill\\ClsCamera.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAASwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T05:34:16.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "UVW_Info.json",
+              "DocumentMoniker": "D:\\1.Program\\BIN\\CONFIG\\UVW_Info.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\1.Program\\BIN\\CONFIG\\UVW_Info.json",
+              "ToolTip": "D:\\1.Program\\BIN\\CONFIG\\UVW_Info.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\1.Program\\BIN\\CONFIG\\UVW_Info.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-11T00:48:21.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "ClsAlgorithm.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\Utill\\ClsAlgorithm.cs",
+              "RelativeDocumentMoniker": "..\\wonik_sd_vision_align\\Vision_Align\\Utill\\ClsAlgorithm.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\Utill\\ClsAlgorithm.cs",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\Utill\\ClsAlgorithm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T02:03:42.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ClsUvwStage.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsUvwStage.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsUvwStage.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsUvwStage.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsUvwStage.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAiwDYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T01:51:02.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FormMainPreview.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMainPreview.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMainPreview.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T06:33:31.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FormMain_SubConfig.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubConfig.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubConfig.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T05:03:47.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FormMain_SubConfig.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubConfig.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T04:10:03.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FormTitle.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormTitle.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormTitle.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormTitle.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\1.FormBase\\FormTitle.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T07:22:31.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FormSetCam.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormSetCam.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormSetCam.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormSetCam.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\5.FormPopUp\\FormSetCam.Designer.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAADwv7gAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T10:23:32.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FormBase.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormBase.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormBase.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormBase.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormBase.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAqwNIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T00:53:39.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ClsVision.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsVision.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsVision.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsVision.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsVision.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAiwIIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T08:59:16.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "FormMenu.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormMenu.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormMenu.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormMenu.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormMenu.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAAEoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T10:10:00.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "FormMain_SubCalibration.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T07:42:46.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "FormMain_SubInfo.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubInfo.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAwwLkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:13:33.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "FormMain_SubConfig.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubConfig.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubConfig.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubConfig.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubConfig.Designer.cs",
+              "ViewState": "AgIAALQCAAAAAAAAAAArwMsCAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T02:15:58.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FormMain_SubInfo.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubInfo.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubInfo.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubInfo.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubInfo.Designer.cs",
+              "ViewState": "AgIAAIIDAAAAAAAAAAArwJkDAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T02:16:08.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "FormLogView.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormLogView.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormLogView.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T06:05:48.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "FormIO.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormIO.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormIO.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormIO.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormIO.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T09:23:56.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "FormMain_SubCalibration.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubCalibration.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubCalibration.Designer.cs",
+              "ViewState": "AgIAANkDAAAAAAAAAAArwPADAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T08:38:29.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ClsCsvFile.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsCsvFile.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsCsvFile.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsCsvFile.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsCsvFile.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwBgAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T00:04:44.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "FormAlarmView.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormAlarmView.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormAlarmView.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormAlarmView.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormAlarmView.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T01:34:49.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FormMainPreview.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMainPreview.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAWwA4BAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T00:06:43.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "ClsAlgorithm.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\VoAlgorithm\\ClsAlgorithm.cs",
+              "RelativeDocumentMoniker": "..\\wonik_sd_vision_align\\VoAlgorithm\\ClsAlgorithm.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\VoAlgorithm\\ClsAlgorithm.cs",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\VoAlgorithm\\ClsAlgorithm.cs",
+              "ViewState": "AgIAAJwBAAAAAAAAAAArwKIDAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T08:21:16.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FormModel.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormModel.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\5.FormPopUp\\FormModel.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\5.FormPopUp\\FormModel.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\5.FormPopUp\\FormModel.Designer.cs",
+              "ViewState": "AgIAAAYHAAAAAAAAAABQwAkHAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T11:06:20.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FormAlgorithmTest.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\8.Test\\FormAlgorithmTest.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Vision_Align\\8.Test\\FormAlgorithmTest.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T00:04:31.293Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "FormLogView.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "RelativeToolTip": "Vision_Align\\2.FormViewer\\FormLogView.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAABQwNUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:51:07.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ClsOmron.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsOmron.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsOmron.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsOmron.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsOmron.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAewKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:25:59.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "FormIO.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormIO.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormIO.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormIO.cs",
+              "RelativeToolTip": "Vision_Align\\2.FormViewer\\FormIO.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAMBTwBMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T01:39:09.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ClsFolderThread.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsFolderThread.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\7.Thread\\ClsFolderThread.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsFolderThread.cs",
+              "RelativeToolTip": "Vision_Align\\7.Thread\\ClsFolderThread.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAqwHEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T08:11:41.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ClsCamera.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsCamera.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsCamera.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsCamera.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsCamera.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAswG0AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T05:00:12.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "FormTitle.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormTitle.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormTitle.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormTitle.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormTitle.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAABQwCIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T00:49:06.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "FormBase.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormBase.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormBase.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormBase.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormBase.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABQwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T00:26:22.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ClsOmronThread.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsOmronThread.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\7.Thread\\ClsOmronThread.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\7.Thread\\ClsOmronThread.cs",
+              "RelativeToolTip": "Vision_Align\\7.Thread\\ClsOmronThread.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwBgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T08:31:55.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "FormLogView.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormLogView.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormLogView.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormLogView.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\2.FormViewer\\FormLogView.Designer.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAtwMkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T05:16:40.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "FormMain.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAABQwKIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T01:50:38.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "FormMain_SubCalibration.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormMain_SubCalibration.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAABQwK0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T07:21:07.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "FormHalconDisplay.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormHalconDisplay.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\3.FormMain\\FormHalconDisplay.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\3.FormMain\\FormHalconDisplay.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\3.FormMain\\FormHalconDisplay.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABQwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T06:27:33.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "FormTitle.designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormTitle.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormTitle.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormTitle.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormTitle.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABQwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T06:27:38.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "FormMenu.designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormMenu.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\1.FormBase\\FormMenu.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\1.FormBase\\FormMenu.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\1.FormBase\\FormMenu.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABQwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T00:27:52.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ClsSerial.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\6.Communication\\ClsSerial.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\6.Communication\\ClsSerial.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\6.Communication\\ClsSerial.cs",
+              "RelativeToolTip": "Vision_Align\\6.Communication\\ClsSerial.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvyMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T01:10:27.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "FormAlgorithmTest.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "RelativeToolTip": "Vision_Align\\8.Test\\FormAlgorithmTest.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAABQwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T09:41:31.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ClsMotion.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsMotion.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsMotion.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsMotion.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsMotion.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAWwJgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T00:18:45.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "FormIO.Designer.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormIO.Designer.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\2.FormViewer\\FormIO.Designer.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\2.FormViewer\\FormIO.Designer.cs",
+              "RelativeToolTip": "Vision_Align\\2.FormViewer\\FormIO.Designer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAABQwA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T08:21:05.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AXHS.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\AjinAPI\\AXHS.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\AjinAPI\\AXHS.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\AjinAPI\\AXHS.cs",
+              "RelativeToolTip": "Vision_Align\\AjinAPI\\AXHS.cs",
+              "ViewState": "AgIAAHUFAAAAAAAAAAASwIUFAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T07:23:04.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "ClsLogger.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsLogger.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsLogger.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsLogger.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsLogger.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAWwBgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T00:03:18.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "ClsLight.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsLight.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\ClsLight.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\ClsLight.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\ClsLight.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwEwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T00:18:26.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "FormOmronMonitor.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.cs",
+              "RelativeDocumentMoniker": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\wonik_sd_vision_align\\Vision_Align\\2.FormViewer\\FormOmronMonitor.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T14:32:39.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "JsonConvertor.cs",
+              "DocumentMoniker": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\JsonConvertor.cs",
+              "RelativeDocumentMoniker": "Vision_Align\\Utill\\JsonConvertor.cs",
+              "ToolTip": "D:\\LJH\\00_Work\\01_Project\\010_PO-25-012\\Source\\wonik_sd_vision_align_260306\\Vision_Align\\Utill\\JsonConvertor.cs",
+              "RelativeToolTip": "Vision_Align\\Utill\\JsonConvertor.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T06:59:35.072Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
