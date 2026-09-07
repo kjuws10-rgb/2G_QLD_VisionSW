@@ -1,0 +1,5 @@
+Added: .gitignore
+Modified: push_file.bat
+Removed from Git tracking: wonik_sd_vision_align/.vs/**
+Removed from Git tracking: wonik_sd_vision_align/Vision_Align/.vs/**
+Removed from Git tracking: wonik_sd_vision_align/Vision_Align/obj/**
