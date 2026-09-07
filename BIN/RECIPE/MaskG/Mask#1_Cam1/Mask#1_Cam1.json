@@ -1,0 +1,15 @@
+{
+  "dRow": 0.0,
+  "dCol": 0.0,
+  "dRadius": 0.0,
+  "dAngleMin": 0.0,
+  "dAngleMax": 360.0,
+  "dMaxOverlap": 0.0,
+  "dMinScore": 50.0,
+  "dInner_Circle": 450.0,
+  "dMultiOption": 0.0,
+  "bMultiOption": false,
+  "nNumLevels": 0,
+  "strMetric": "use_polarity",
+  "strSubPixel": "true"
+}
