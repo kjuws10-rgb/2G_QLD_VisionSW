@@ -1,0 +1,38 @@
+{
+  "MaskHoleDistanceX": 440000.0,
+  "MaskHoleDistanceY": 340000.0,
+  "MaskHoleDistanceC": 555402.6825788056,
+  "MarkScoreLimit": 0.5,
+  "AverageImageCount": 10,
+  "MoveOffsetXY": 800.0,
+  "MoveOffsetAngle": 0.08,
+  "MoveOffsetAngleCount": 3,
+  "StartPositionX": -2623.0538080918632,
+  "StartPositionY": -2508.58692004259,
+  "StartPositionAngle": 0.059647781245398088,
+  "CameraPixelResolutionX": [
+    2.3189364417297456,
+    2.2997877052456537,
+    0.0
+  ],
+  "CameraPixelResolutionY": [
+    2.3761593654003095,
+    2.3498172601397029,
+    0.0
+  ],
+  "CameraTilt": [
+    -0.47741514711482963,
+    -0.58179511268060957,
+    0.0
+  ],
+  "CameraCoordinateOffsetX": [
+    219974.84668159485,
+    -219525.47875976563,
+    0.0
+  ],
+  "CameraCoordinateOffsetY": [
+    -169664.92303466797,
+    170447.60824584961,
+    0.0
+  ]
+}
