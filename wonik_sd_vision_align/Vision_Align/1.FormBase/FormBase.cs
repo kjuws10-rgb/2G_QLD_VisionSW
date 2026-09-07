@@ -38,6 +38,8 @@ namespace Vision_Align
             }
             #endregion
 
+            Global.logger[LogType.SYSTEM].Write("HALCON Runtime : " + NativeRuntimeBootstrapper.HalconRuntimePath);
+
             SplashManager.UpdateStatus("Initializing HALCON...");
             VisionAlgorithm.Initialize();
 

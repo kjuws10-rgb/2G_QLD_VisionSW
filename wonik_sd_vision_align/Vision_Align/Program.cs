@@ -29,26 +29,75 @@ namespace Vision_Align
                 e.SetObserved();
             };
 
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            Process[] objProcess = Process.GetProcessesByName("Vision_Align");
-            Process objCurrentProcess = Process.GetCurrentProcess();
-            if (objProcess.Length > 1)
-            {
-                MessageBox.Show(String.Format("Vision_Align process already running.\nKill \"Vision_Align.exe\" in the TaskManager"));
-                objCurrentProcess.Kill();
-                return;
-            }
             try
             {
+                NativeRuntimeBootstrapper.ConfigureHalconRuntime();
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                Process[] objProcess = Process.GetProcessesByName("Vision_Align");
+                Process objCurrentProcess = Process.GetCurrentProcess();
+                if (objProcess.Length > 1)
+                {
+                    MessageBox.Show(String.Format("Vision_Align process already running.\nKill \"Vision_Align.exe\" in the TaskManager"));
+                    objCurrentProcess.Kill();
+                    return;
+                }
+
                 SplashManager.Show();
                 Application.Run(new FormBase());
             }
             catch (Exception ex)
             {
                 WriteExceptionLog("Program.Main", ex, true);
+                SplashManager.Close();
+                ShowStartupFailure(ex);
+                Environment.ExitCode = 1;
+            }
+        }
+
+        private static void ShowStartupFailure(Exception exception)
+        {
+            try
+            {
+                string logPath = Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "LOG",
+                    "CRASH",
+                    DateTime.Now.ToString("yyyyMMdd") + ".log");
+
+                Exception cause = exception;
+                while (cause.InnerException != null)
+                    cause = cause.InnerException;
+
+                string message;
+                bool isNativeLoadFailure = cause is DllNotFoundException || cause is BadImageFormatException;
+                bool isHalconFailure = isNativeLoadFailure
+                    && cause.Message.IndexOf("halcon", StringComparison.OrdinalIgnoreCase) >= 0;
+                if (isHalconFailure)
+                {
+                    message = "비전 엔진의 halcon.dll을 불러오지 못했습니다.\r\n\r\n"
+                        + "HALCON 18.11 Steady x64 Runtime 설치와 HALCONROOT 환경 변수를 확인해 주세요.\r\n"
+                        + "파일이 있는데도 실패하면 x64 버전 및 Microsoft Visual C++ 런타임을 확인해 주세요.";
+                }
+                else if (isNativeLoadFailure)
+                {
+                    message = "프로그램의 필수 네이티브 DLL을 불러오지 못했습니다.\r\n\r\n" + cause.Message;
+                }
+                else
+                {
+                    message = "프로그램 시작 중 오류가 발생했습니다.\r\n\r\n" + cause.Message;
+                }
+
+                MessageBox.Show(
+                    message + "\r\n\r\n상세 로그: " + logPath,
+                    "Vision_Align 시작 실패",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            catch
+            {
             }
         }
 
@@ -100,6 +149,9 @@ namespace Vision_Align
                 Thread.CurrentThread.Name ?? "unnamed", Thread.CurrentThread.ManagedThreadId);
             sb.AppendFormat("BaseDirectory: {0}\r\n", AppDomain.CurrentDomain.BaseDirectory);
             sb.AppendFormat("CurrentDirectory: {0}\r\n", Environment.CurrentDirectory);
+            sb.AppendFormat("HALCONROOT: {0}\r\n", Environment.GetEnvironmentVariable("HALCONROOT") ?? "NotSet");
+            sb.AppendFormat("HALCONARCH: {0}\r\n", Environment.GetEnvironmentVariable("HALCONARCH") ?? "NotSet");
+            sb.AppendFormat("HalconRuntime: {0}\r\n", NativeRuntimeBootstrapper.HalconRuntimePath ?? "NotLoaded");
 
             try
             {
