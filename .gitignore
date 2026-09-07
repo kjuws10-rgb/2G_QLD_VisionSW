@@ -1,0 +1,14 @@
+# Visual Studio local state and indexes
+.vs/
+**/.vs/
+
+# Compiler-generated intermediate files
+**/obj/
+
+# Per-user IDE settings
+*.suo
+*.user
+
+# Runtime logs and inspection results
+BIN/LOG/
+BIN/RESULT/
